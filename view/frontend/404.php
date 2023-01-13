@@ -1,8 +1,7 @@
-<?php $title = 'Mon blog'; ?>
+<?php $title = 'Error 404'; ?>
 <?php ob_start(); ?>
 
-<h1 class="mb-0">Killian Colla</h1>
-<h4>Développeur web</h4>
+<h1 class="mb-0">404 not found</h1>
 
 <?php $content = ob_get_clean(); ?>
 <?php require('view/template.php'); ?>
