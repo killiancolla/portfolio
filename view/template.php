@@ -9,7 +9,7 @@
         
     </head>
         
-    <body>
+    <body class="">
         <div id="transition_page" class=" transition active">
             <div class="section-center">
                 <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
@@ -19,6 +19,8 @@
             <img src="https://assets.codepen.io/1462889/fcy.png" alt="">
         </a>
 
+        
+        <input class="theme-icon" type="button" id="theme-icon" name="theme-icon"/>
         <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon"/>
         <label for="menu-icon"></label>
         <nav class="nav"> 		
