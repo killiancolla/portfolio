@@ -11,25 +11,17 @@ function Portfolio() {
         {
             title: 'Pomodoro',
             image: project1,
-            techno: ["ReactJS", "PHP"]
+            techno: ["ReactJS", "PHP"],
+            link: "https://www.twitch.tv/moderator/superkevintran"
         },
         {
             title: 'tructruc',
             image: project2,
-            techno: ["ReactJS", "PHP"]
+            techno: ["ReactJS", "PHP"],
+            link: "https://www.twitch.tv/moderator/superkevintran"
         }
     ];
 
-    const columnCount = 3;
-    const projectsPerColumn = Math.ceil(projects.length / columnCount);
-
-    const columns = [];
-
-    for (let i = 0; i < columnCount; i++) {
-        const start = i * projectsPerColumn;
-        const end = start + projectsPerColumn;
-        columns.push(projects.slice(start, end));
-    }
 
     const [activeItem, setActiveItem] = useState('all');
 
@@ -37,17 +29,39 @@ function Portfolio() {
         setActiveItem(itemName);
     };
 
+    const filtered_projects = projects.filter(project => {
+        return activeItem == "all" || project.techno.some(tech => tech.toLowerCase() === activeItem.toLowerCase());
+    })
+
+    const columnCount = 3;
+    const projectsPerColumn = Math.ceil(filtered_projects.length / columnCount);
+
+    const columns = [];
+
+    for (let i = 0; i < columnCount; i++) {
+        const start = i * projectsPerColumn;
+        const end = start + projectsPerColumn;
+        columns.push(filtered_projects.slice(start, end));
+    }
+
     const [processing, setProcessing] = useState([]);
 
-    const handleButtonClick = (index) => {
+    const handleButtonClick = (index, link) => {
         setProcessing((prev) => [...prev, index]);
         setTimeout(() => {
             setProcessing((prev) => prev.filter((item) => item !== index));
-        }, 2000); // Réinitialiser après 2 secondes
+            window.open(link, "_blank");
+        }, 2000);
     };
 
     const handleRestartClick = () => {
         setProcessing([]);
+    };
+
+    const handleClickButtonRedirect = (link) => {
+        setTimeout(() => {
+            window.open(link, "_blank");
+        }, 2000);
     };
 
     return (
@@ -59,7 +73,7 @@ function Portfolio() {
             </div>
             <ul className='menu'>
                 <li className={activeItem === 'all' ? 'active' : ''} onClick={() => setActiveItem('all')}>All Projects</li>
-                <li className={activeItem === 'react' ? 'active' : ''} onClick={() => setActiveItem('react')}>ReactJS</li>
+                <li className={activeItem === 'reactjs' ? 'active' : ''} onClick={() => setActiveItem('reactjs')}>ReactJS</li>
                 <li className={activeItem === 'php' ? 'active' : ''} onClick={() => setActiveItem('php')}>PHP</li>
                 <li className={activeItem === 'python' ? 'active' : ''} onClick={() => setActiveItem('python')}>Python</li>
             </ul>
@@ -71,25 +85,25 @@ function Portfolio() {
                                 <div className="img">
                                     <img src={project.image} alt={project.title} />
                                     <button
-                        key={index}
-                        className={`button ${processing.includes(index) ? 'processing' : ''}`}
-                        onClick={() => handleButtonClick(index)}
-                    >
-                        <span>Submit</span>
-                        <svg viewBox="0 0 15 13">
-                            <polyline points="2 6.5 6 10.5 13 2.5"></polyline>
-                        </svg>
-                    </button>
+                                        key={index}
+                                        className={`button ${processing.includes(index) ? 'processing' : ''}`}
+                                        onClick={() => handleButtonClick(index, project.link)}
+                                    >
+                                        <span>See project</span>
+                                        <svg viewBox="0 0 15 13">
+                                            <polyline points="2 6.5 6 10.5 13 2.5"></polyline>
+                                        </svg>
+                                    </button>
                                 </div>
                                 <h2>{project.title}</h2>
                                 <h3>
-                                {project.techno.map((tech, index) => (
-                                    <React.Fragment key={index}>
-                                        {index > 0 && ' • '}
-                                        {tech}
-                                    </React.Fragment>
-                                ))}
-                            </h3>
+                                    {project.techno.map((tech, index) => (
+                                        <React.Fragment key={index}>
+                                            {index > 0 && ' • '}
+                                            {tech}
+                                        </React.Fragment>
+                                    ))}
+                                </h3>
                             </div>
                         ))}
                     </div>

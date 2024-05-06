@@ -77,9 +77,9 @@
 
 .button {
     --color: #fff;
-    --background: #6d58ff;
+    --background: #FB6423;
     --height: 41px;
-    --width: 160px;
+    --width: 130px;
     --icon: #fff;
     padding: 0;
     cursor: pointer;
@@ -93,27 +93,30 @@
     width: var(--width);
     letter-spacing: 0.5px;
     font-size: 14px;
-    font-weight: 500;
     color: var(--color);
     line-height: var(--height);
 }
-.button:before, .button:after {
+
+.button:before,
+.button:after {
     content: '';
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
 }
+
 .button:before {
     transform: translate(-50%, -50%);
     width: var(--before-w, var(--width));
     height: var(--before-h, var(--height));
-    border-radius: var(--before-r, 7px);
+    border-radius: var(--before-r, 30px);
     background: var(--background);
     transform-origin: 50% 50%;
     transition: width 0.3s, height 0.3s, border-radius 0.2s;
     transition-delay: 0.2s;
 }
+
 .button:after {
     width: 16px;
     height: 16px;
@@ -123,6 +126,7 @@
     border-radius: 50%;
     transform: scale(0);
 }
+
 .button span {
     z-index: 1;
     display: block;
@@ -132,6 +136,7 @@
     transition: opacity 0.3s, transform 0.2s;
     transition-delay: 0.2s;
 }
+
 .button svg {
     width: 15px;
     height: 13px;
@@ -149,6 +154,7 @@
     stroke-dashoffset: var(--svg-o, 17px);
     transition: stroke-dashoffset 0.3s ease;
 }
+
 .button.processing {
     --before-w: 41px;
     --before-h: 41px;
@@ -158,40 +164,54 @@
     --after-s: 1;
     --svg-o: 34px;
 }
+
 .button.processing:before {
     animation: pulse 1.5s linear forwards;
 }
+
 .button.processing:after {
     animation: dot 1.5s linear forwards;
 }
+
 .button.processing svg {
     transition-delay: 1.5s;
 }
+
 @keyframes pulse {
     4% {
         transform: translate(-50%, -50%) scaleX(1.1);
-   }
+    }
+
     8% {
         transform: translate(-50%, -50%);
-   }
-    24%, 56%, 88% {
+    }
+
+    24%,
+    56%,
+    88% {
         transform: translate(-50%, -50%) scale(0.8);
-   }
-    40%, 72% {
+    }
+
+    40%,
+    72% {
         transform: translate(-50%, -50%) scale(1.2);
-   }
+    }
 }
+
 @keyframes dot {
     8% {
         transform: scale(0);
-   }
+    }
+
     16% {
         transform: scale(1) rotate(30deg) translateX(48px);
-   }
+    }
+
     95% {
         transform: scale(1) rotate(1000deg) translateX(48px);
-   }
+    }
+
     100% {
         transform: scale(0.125) rotate(1050deg) translate(52px, -6px);
-   }
+    }
 }
