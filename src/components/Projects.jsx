@@ -54,16 +54,6 @@ function Portfolio() {
         }, 2000);
     };
 
-    const handleRestartClick = () => {
-        setProcessing([]);
-    };
-
-    const handleClickButtonRedirect = (link) => {
-        setTimeout(() => {
-            window.open(link, "_blank");
-        }, 2000);
-    };
-
     return (
         <div id='projects' className="projects part">
             <div className='title mb-50'>

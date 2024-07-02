@@ -6,6 +6,8 @@ import Skills from './components/Skills'
 import About from './components/About'
 import Projects from './components/Projects'
 import Portfolio from './components/Portfolio'
+import Parallax from './components/Parallax'
+import AosInit from './components/AosInit';
 
 function App() {
 
@@ -38,8 +40,9 @@ function App() {
 
   return (
     <>
+      <AosInit />
       <nav>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_%28square%29.png' />
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png' />
         <ul>
           <li>
             <a className={activeItem === 'home' ? 'active' : ''} onClick={() => handleMouseEnter('home')} >Home</a>
@@ -68,4 +71,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

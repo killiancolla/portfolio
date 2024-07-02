@@ -5,6 +5,12 @@
 
 @font-face {
   font-family: 'Roboto';
+  src: url('../fonts/Roboto-ThinItalic.ttf');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
   src: url('../fonts/Roboto-Bold.ttf');
   font-weight: bold;
 }
@@ -87,13 +93,17 @@ nav>img {
   margin-left: 18px;
 }
 
-button {
+nav button {
   margin-left: auto;
+  margin-right: 20px;
+  background: linear-gradient(to right, #5CA5E9, #1C24EA, #9E00FF, #EB1896, #FF7A00);
+}
+
+button {
+  background-color: #FB6423;
   padding: 10px 20px;
   border-radius: 50px;
-  margin-right: 20px;
   border: none;
-  background: linear-gradient(to right, #5CA5E9, #1C24EA, #9E00FF, #EB1896, #FF7A00);
 }
 
 nav a.active::after {
@@ -152,24 +162,6 @@ nav a {
 
 .left button {
   font-size: 15px;
-}
-
-#skills .card {
-  position: relative;
-  background-color: #2B2B2B;
-  border-radius: 20px;
-  padding-left: 30px;
-}
-
-#skills .card img {
-  position: absolute;
-  background-color: #D9D9D9;
-  border-radius: 50%;
-  border: 8px solid #D9D9D9;
-  top: -30px;
-  width: 52px;
-  height: auto;
-  aspect-ratio: 1/1;
 }
 
 .title {

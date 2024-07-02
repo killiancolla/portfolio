@@ -8,7 +8,8 @@ function About() {
                 <h3 className='top'>My stories and</h3>
                 <h3 className='bottom'>Feelings</h3>
             </div>
-            Petite description + CV
+            <p>Avec [X] années d'expérience dans le développement web, j'ai travaillé sur une variété de projets allant des sites vitrines aux applications web complexes. Apprenez-en plus sur mon parcours et ma passion pour le développement.</p>
+            <button className='mt-20'>Download CV</button>
         </div>
     )
 }

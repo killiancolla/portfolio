@@ -45,7 +45,7 @@ function Portfolio() {
                     {workCards.map((work, index) => (
                         <React.Fragment key={index}>
                             {(index + 1) % 2 === 0 && <p key={`p_${index}`} className={index % 2 === 0 ? 'right' : 'left'}>{work.date}</p>}
-                            <div className={index % 2 === 0 ? 'workCard left' : 'workCard right'}>
+                            <div className={index % 2 === 0 ? 'workCard left' : 'workCard right'} data-aos="fade-right">
                                 <h2>{work.title}</h2>
                                 <h3>{work.position}</h3>
                                 <p>{work.description}</p>

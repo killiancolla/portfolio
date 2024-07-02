@@ -3,3 +3,30 @@
     align-items: center;
     flex-direction: column;
 }
+
+#skills .grid-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+#skills .card {
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    background-color: rgb(63, 63, 63);
+    margin-top: 1.5rem;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#skills .card img {
+    width: 3rem;
+}
+
+#skills .card h3 {
+    margin-left: 1rem;
+    font-weight: 200;
+}
