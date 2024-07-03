@@ -10,9 +10,9 @@ export default function Skills() {
                     Experience
                 </h3>
             </div>
-            <div className="flex justify-center flex-wrap">
+            <div className="flex w-1/2 justify-center flex-wrap">
                 {[...Array(6)].map((_, index) => (
-                    <div className="w-40 bg-card flex items-center mt-4 p-4 m-8 rounded">
+                    <div key={index} className="w-40 bg-card flex items-center mt-4 p-4 m-8 rounded">
                         <Image width={50} height={50} alt="logo" className="w-1/3 object-cover" src='/react.svg' />
                         <h3 className="w-2/3">ReactJS</h3>
                     </div>

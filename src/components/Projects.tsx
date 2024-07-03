@@ -56,10 +56,10 @@ export default function Projects() {
                 </h3>
             </div>
             <ul className='flex gap-7 mb-10'>
-                <li className={`py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>All Projects</li>
-                <li className={`py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
-                <li className={`py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
-                <li className={`py-2 px-8 rounded-sm ${activeItemProj === 'python' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('python')}>Python</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>All Projects</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'python' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('python')}>Python</li>
             </ul>
             <div className="flex gap-6">
                 {columns.map((column, index) => (
