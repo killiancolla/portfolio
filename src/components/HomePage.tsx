@@ -7,7 +7,7 @@ export default function HomePage() {
             <h1 className="text-5xl font-bold">Killian Colla</h1>
             <h2 className="font-bold">Web Developer</h2>
             <p className='text-end my-14'>
-              Je suis Killian, un développeur web passionné par la création d'expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne la technologie et la créativité.
+              Je suis Killian, un développeur web passionné par la création d&apos;expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne la technologie et la créativité.
             </p>
             <Button>Contact me</Button>
           </div>
