@@ -1,0 +1,56 @@
+{
+    "HomePage": {
+        "title": "Développeur Web",
+        "intro": "Je suis Killian, un développeur web passionné par la création d'expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne technologie et créativité.",
+        "contact": "Contactez-moi"
+    },
+    "About": {
+        "about": "À propos",
+        "about_desc": "Avec 5 ans d'expérience en développement web, j'ai travaillé sur une variété de projets allant de sites vitrines à des applications web complexes. En savoir plus sur mon parcours et ma passion pour le développement.",
+        "about-title1": "Mes histoires et",
+        "about-title2": "Sentiments",
+        "cv-download": "Télécharger mon CV"
+    },
+    "NavBar": {
+        "home": "Accueil",
+        "about": "À propos",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "portfolio": "Portfolio",
+        "light": "Clair",
+        "dark": "Sombre",
+        "system": "Système",
+        "toggle": "Changer de thème"
+    },
+    "Portfolio": {
+        "portfolio": "Portfolio",
+        "portfolio_title1": "Mes principales",
+        "portfolio_title2": "Experiences",
+        "portfolio_title3": "Mes principales",
+        "portfolio_title4": "Formations",
+        "unicancer_position": "Développeur FullStack",
+        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_position": "Développeur FullStack",
+        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_position": "Développeur FullStack",
+        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevryschool_position": "Développeur FullStack",
+        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+    },
+    "Projects": {
+        "projects": "Projets",
+        "project": "Projet",
+        "pomodoro_desc": "Site web utilisant la technique de travail Pomodoro, avec musique, gestion du timer, liste de tâches, gestion du thème et statistiques de travail.",
+        "socnet_desc": "Reproduction d'un réseau social fictif avec gestion des relations, publications, commentaires, likes et gestion des comptes.",
+        "wip_status": "Travail en cours",
+        "projects_title1": "Mes Travaux",
+        "projects_title2": "Créatifs",
+        "all_projects": "Tous les Projets",
+        "see_project": "Voir le projet"
+    },
+    "Skills": {
+        "skills": "Compétences",
+        "skills_title1": "Compétences et",
+        "skills_title2": "Aptitudes"
+    }
+}

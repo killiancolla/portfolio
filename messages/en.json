@@ -1,0 +1,56 @@
+{
+    "HomePage": {
+        "title": "Web Developer",
+        "intro": "I'm Killian, a web developer passionate about creating innovative online experiences. Explore my portfolio to see how I merge technology and creativity.",
+        "contact": "Contact me"
+    },
+    "About": {
+        "about": "About",
+        "about_desc": "With 5 years of experience in web development, I have worked on a variety of projects ranging from showcase sites to complex web applications. Learn more about my background and my passion for development.",
+        "about-title1": "My Stories and",
+        "about-title2": "Feelings",
+        "cv-download": "Download CV"
+    },
+    "NavBar": {
+        "home": "Home",
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "portfolio": "Portfolio",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System",
+        "toggle": "Toggle Theme"
+    },
+    "Portfolio": {
+        "portfolio": "Portfolio",
+        "portfolio_title1": "Most Important",
+        "portfolio_title2": "Experience",
+        "portfolio_title3": "Most Important",
+        "portfolio_title4": "Education",
+        "unicancer_position": "FullStack Developer",
+        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_position": "FullStack Developer",
+        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_position": "FullStack Developer",
+        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevryschool_position": "FullStack Developer",
+        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+    },
+    "Projects": {
+        "projects": "Projects",
+        "project": "Project",
+        "pomodoro_desc": "Website using the Pomodoro work technique, with music, timer management, a to-do list, theme management, and work statistics.",
+        "socnet_desc": "Reproduction of a fictional social network with management of relationships, posts, comments, likes, and account management.",
+        "wip_status": "Work In Progress",
+        "projects_title1": "My Creative",
+        "projects_title2": "Works",
+        "all_projects": "All Projects",
+        "see_project": "See Project"
+    },
+    "Skills": {
+        "skills": "Skills",
+        "skills_title1": "Skills and",
+        "skills_title2": "Competencies"
+    }
+}

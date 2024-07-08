@@ -1,33 +1,32 @@
 import React from "react";
+import { useTranslations } from 'next-intl';
 
 export default function Portfolio() {
 
+    const t = useTranslations('Portfolio')
+
     const workCards = [
         {
+            code: "unicancer",
             title: 'Unicancer',
-            position: 'FullStack Developer',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloremque deleniti nemo beatae debitis suscipit sapiente dolorum voluptatum. Incidunt, possimus illum iure ducimus natus eum pariatur repudiandae eaque dicta fuga.',
             date: '2022 - 2024'
         },
         {
+            code: "univevry",
             title: "Université d'Evry Val d'Essonne",
-            position: 'FullStack Developer',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloremque deleniti nemo beatae debitis suscipit sapiente dolorum voluptatum. Incidunt, possimus illum iure ducimus natus eum pariatur repudiandae eaque dicta fuga.',
             date: '2021 - 2022'
         }
     ];
 
     const educationCards = [
         {
-            title: 'Unicancer',
-            position: 'FullStack Developer',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloremque deleniti nemo beatae debitis suscipit sapiente dolorum voluptatum. Incidunt, possimus illum iure ducimus natus eum pariatur repudiandae eaque dicta fuga.',
+            code: "ipssi",
+            title: 'IPSSI',
             date: '2022 - 2024'
         },
         {
+            code: "univevryschool",
             title: "Université d'Evry Val d'Essonne",
-            position: 'FullStack Developer',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam doloremque deleniti nemo beatae debitis suscipit sapiente dolorum voluptatum. Incidunt, possimus illum iure ducimus natus eum pariatur repudiandae eaque dicta fuga.',
             date: '2021 - 2022'
         }
     ];
@@ -35,10 +34,10 @@ export default function Portfolio() {
     return (
         <div id='portfolio' className="part flex items-center flex-col text-center w-4/5 pt-20">
             <div className='mb-16'>
-                <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">Portfolio</p>
-                <h3 className='text-xs font-bold text-primary'>Most Important</h3>
+                <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('portfolio')}</p>
+                <h3 className='text-xs font-bold text-primary'>{t('portfolio_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
-                    Experience
+                    {t('portfolio_title2')}
                 </h3>
             </div>
             <div className='relative'>
@@ -51,8 +50,8 @@ export default function Portfolio() {
                             {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{work.date}</p>}
                             <div className={`relative border-2 border-primary p-6 rounded-sm ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                                 <h2 className="text-2xl font-bold text-primary">{work.title}</h2>
-                                <h3 className="font-bold mb-4">{work.position}</h3>
-                                <p className="leading-7">{work.description}</p>
+                                <h3 className="font-bold mb-4">{t(work.code + '_position')}</h3>
+                                <p className="leading-7">{t(work.code + '_description')}</p>
                                 <div className={`absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
                             </div>
                             {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='flex items-center justify-start'>{work.date}</p>}
@@ -62,9 +61,9 @@ export default function Portfolio() {
             </div>
 
             <div className='mb-16 pt-10'>
-                <h3 className='text-xs font-bold text-primary'>Most Important</h3>
+                <h3 className='text-xs font-bold text-primary'>{t('portfolio_title3')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
-                    Education
+                    {t('portfolio_title4')}
                 </h3>
             </div>
             <div className='relative'>
@@ -77,8 +76,8 @@ export default function Portfolio() {
                             {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{education.date}</p>}
                             <div className={`relative border-2 border-primary p-6 rounded-sm ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                                 <h2 className="text-2xl font-bold text-primary">{education.title}</h2>
-                                <h3 className="font-bold mb-4">{education.position}</h3>
-                                <p className="leading-7">{education.description}</p>
+                                <h3 className="font-bold mb-4">{t(education.code + '_position')}</h3>
+                                <p className="leading-7">{t(education.code + '_description')}</p>
                                 <div className={`absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
                             </div>
                             {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='flex items-center justify-start'>{education.date}</p>}

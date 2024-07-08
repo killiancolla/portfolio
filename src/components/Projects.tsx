@@ -8,27 +8,30 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
+import { useTranslations } from 'next-intl';
 
 export default function Projects() {
 
+    const t = useTranslations('Projects')
+
     const projects = [
         {
+            code: 'pomodoro',
             title: 'Pomodoro',
             image: 'project1.png',
             techno: ["ReactJS", "NodeJS"],
-            description: "Website using the Pomodoro work technique, with music, timer management, a to-do list, theme management and work statistics.",
             date: '2020',
-            status: 'Work in progress.',
+            status: 'wip_status',
             people: 1,
             link: "https://pomodoro-seven-lemon.vercel.app/"
         },
         {
+            code: "socnet",
             title: 'Social Network',
             image: 'project2.jpg',
             techno: ["NextJS", "FireBase", "TailWind CSS"],
-            description: "Reproduction of a fictional social network with management of relationships, publications, comments, likes, account management.",
             date: '2020',
-            status: 'Work in progress.',
+            status: 'wip_status',
             people: 1,
             link: "https://socialnetwork-six.vercel.app/"
         }
@@ -62,14 +65,14 @@ export default function Projects() {
     return (
         <div id='projects' className="part flex flex-col text-center pt-20 w-4/5">
             <div className='mb-10'>
-                <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">Projects</p>
-                <h3 className='text-xs font-bold text-primary'>My Creative</h3>
+                <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('projects')}</p>
+                <h3 className='text-xs font-bold text-primary'>{t('projects_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
-                    Works
+                    {t('projects_title2')}
                 </h3>
             </div>
             <ul className='flex gap-7 mb-10'>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>All Projects</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>{t('all_projects')}</li>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'python' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('python')}>Python</li>
@@ -94,7 +97,7 @@ export default function Projects() {
                                         transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center justify-center
                                         `}
                                     >
-                                        {isClicked ? <LoaderCircle className="animate-spin" /> : 'See project'}
+                                        {isClicked ? <LoaderCircle className="animate-spin" /> : t('see_project')}
                                     </Button>
                                 </div>
                                 <HoverCard>
@@ -103,16 +106,16 @@ export default function Projects() {
                                     </HoverCardTrigger>
                                     <HoverCardContent className="flex justify-between space-x-4">
                                         <div className="space-y-1">
-                                            <h4 className="text-sm font-semibold">{project.title} Project</h4>
+                                            <h4 className="text-sm font-semibold">{project.title} {t('project')}</h4>
                                             <p className="text-sm">
-                                                {project.description}
+                                                {t(project.code + '_desc')}
                                             </p>
                                             <div className="flex flex-col items-start pt-2 gap-1">
                                                 <span className="text-xs text-muted-foreground flex justify-center items-center">
                                                     <Calendar className="mr-2" />Created in {project.date}
                                                 </span>
                                                 <span className="text-xs text-muted-foreground flex justify-center items-center">
-                                                    <WorkflowIcon className="mr-2 " />{project.status}
+                                                    <WorkflowIcon className="mr-2 " />{t(project.status)}
                                                 </span>
                                                 <span className="text-xs text-muted-foreground flex justify-center items-center">
                                                     <Users className="mr-2 " />{project.people}

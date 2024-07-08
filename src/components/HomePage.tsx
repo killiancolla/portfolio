@@ -1,17 +1,20 @@
 import { Button } from "./ui/button"
 import { Avatar } from '@readyplayerme/visage';
+import { useTranslations } from 'next-intl';
 
 export default function HomePage() {
+
+  const t = useTranslations('HomePage')
 
   return (
     <div id='home' className='part min-h-screen w-full flex items-center justify-center'>
       <div className='pl-24 w-1/2 flex flex-col items-end'>
         <h1 className="text-5xl font-bold">Killian Colla</h1>
-        <h2 className="font-bold">Web Developer</h2>
+        <h2 className="font-bold">{t('title')}</h2>
         <p className='text-end my-14'>
-          Je suis Killian, un développeur web passionné par la création d&apos;expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne la technologie et la créativité.
+          {t('intro')}
         </p>
-        <Button>Contact me</Button>
+        <Button>{t('contact')}</Button>
       </div>
       <div className="relative w-1/2 h-screen overflow-hidden flex justify-center items-center">
         <Avatar
@@ -47,7 +50,6 @@ export default function HomePage() {
           style={{}}
         />
       </div>
-
     </div>
   )
 }

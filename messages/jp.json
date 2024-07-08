@@ -1,0 +1,56 @@
+{
+    "HomePage": {
+        "title": "ウェブ開発者",
+        "intro": "私はKillianです。革新的なオンライン体験を作り出すことに情熱を注いでいるウェブ開発者です。私のポートフォリオを見て、技術と創造性をどのように融合させているかをご覧ください。",
+        "contact": "お問い合わせ"
+    },
+    "About": {
+        "about": "概要",
+        "about_desc": "ウェブ開発の経験が5年あり、ショーケースサイトから複雑なウェブアプリケーションまで、さまざまなプロジェクトに取り組んできました。私の経歴と開発への情熱について詳しく知ってください。",
+        "about-title1": "私の物語と",
+        "about-title2": "感情",
+        "cv-download": "履歴書をダウンロード"
+    },
+    "NavBar": {
+        "home": "ホーム",
+        "about": "概要",
+        "skills": "スキル",
+        "projects": "プロジェクト",
+        "portfolio": "ポートフォリオ",
+        "light": "ライト",
+        "dark": "ダーク",
+        "system": "システム",
+        "toggle": "テーマを切り替える"
+    },
+    "Portfolio": {
+        "portfolio": "ポートフォリオ",
+        "portfolio_title1": "主な",
+        "portfolio_title2": "経験",
+        "portfolio_title3": "主な",
+        "portfolio_title4": "学歴",
+        "unicancer_position": "フルスタック開発者",
+        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_position": "フルスタック開発者",
+        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_position": "フルスタック開発者",
+        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevryschool_position": "フルスタック開発者",
+        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+    },
+    "Projects": {
+        "projects": "プロジェクト",
+        "project": "プロジェクト",
+        "pomodoro_desc": "音楽、タイマー管理、タスクリスト、テーマ管理、作業統計を備えたポモドーロ作業技術を使用するウェブサイト。",
+        "socnet_desc": "関係管理、投稿、コメント、いいね、およびアカウント管理を備えた架空のソーシャルネットワークの再現。",
+        "wip_status": "作業中",
+        "projects_title1": "私の創造的な",
+        "projects_title2": "作品",
+        "all_projects": "すべてのプロジェクト",
+        "see_project": "プロジェクトを見る"
+    },
+    "Skills": {
+        "skills": "スキル",
+        "skills_title1": "スキルと",
+        "skills_title2": "能力"
+    }
+}
