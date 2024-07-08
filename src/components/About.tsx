@@ -10,7 +10,7 @@ export default function About() {
                     Feelings
                 </h3>
             </div>
-            <p className="w-2/5 italic font-thin leading-7 mb-5">Avec [X] années d'expérience dans le développement web, j'ai travaillé sur une variété de projets allant des sites vitrines aux applications web complexes. Apprenez-en plus sur mon parcours et ma passion pour le développement.</p>
+            <p className="w-2/5 italic font-thin leading-7 mb-5">Avec [X] années d&apos;expérience dans le développement web, j&apos;ai travaillé sur une variété de projets allant des sites vitrines aux applications web complexes. Apprenez-en plus sur mon parcours et ma passion pour le développement.</p>
             <Button className=''>Download CV</Button>
         </div>
     )
