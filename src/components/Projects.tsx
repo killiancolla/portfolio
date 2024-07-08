@@ -2,7 +2,12 @@ import { useState } from "react";
 import Image from 'next/image';
 import React from "react";
 import { Button } from "./ui/button";
-import { LoaderCircle } from 'lucide-react';
+import { Calendar, LoaderCircle, Users, WorkflowIcon } from 'lucide-react';
+import {
+    HoverCard,
+    HoverCardContent,
+    HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 export default function Projects() {
 
@@ -11,12 +16,20 @@ export default function Projects() {
             title: 'Pomodoro',
             image: 'project1.png',
             techno: ["ReactJS", "NodeJS"],
+            description: "Website using the Pomodoro work technique, with music, timer management, a to-do list, theme management and work statistics.",
+            date: '2020',
+            status: 'Work in progress.',
+            people: 1,
             link: "https://pomodoro-seven-lemon.vercel.app/"
         },
         {
             title: 'Social Network',
             image: 'project2.jpg',
-            techno: ["NextJS", "FireBase"],
+            techno: ["NextJS", "FireBase", "TailWind CSS"],
+            description: "Reproduction of a fictional social network with management of relationships, publications, comments, likes, account management.",
+            date: '2020',
+            status: 'Work in progress.',
+            people: 1,
             link: "https://socialnetwork-six.vercel.app/"
         }
     ];
@@ -68,7 +81,7 @@ export default function Projects() {
                             <div key={'proj' + index} className="">
                                 <div className="group w-full relative">
                                     <Image
-                                        className="transition-all duration-300 group-hover:brightness-50 w-full"
+                                        className="rounded-sm transition-all duration-300 group-hover:brightness-50 w-full"
                                         width={500}
                                         height={500}
                                         src={`/${project.image}`}
@@ -84,7 +97,30 @@ export default function Projects() {
                                         {isClicked ? <LoaderCircle className="animate-spin" /> : 'See project'}
                                     </Button>
                                 </div>
-                                <h2 className="font-semibold text-xl mt-1">{project.title}</h2>
+                                <HoverCard>
+                                    <HoverCardTrigger>
+                                        <h2 className="font-semibold text-xl mt-1 hover:underline">{project.title}</h2>
+                                    </HoverCardTrigger>
+                                    <HoverCardContent className="flex justify-between space-x-4">
+                                        <div className="space-y-1">
+                                            <h4 className="text-sm font-semibold">{project.title} Project</h4>
+                                            <p className="text-sm">
+                                                {project.description}
+                                            </p>
+                                            <div className="flex flex-col items-start pt-2 gap-1">
+                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
+                                                    <Calendar className="mr-2" />Created in {project.date}
+                                                </span>
+                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
+                                                    <WorkflowIcon className="mr-2 " />{project.status}
+                                                </span>
+                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
+                                                    <Users className="mr-2 " />{project.people}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </HoverCardContent>
+                                </HoverCard>
                                 <h3 className="text-primary font-thin text-lg">
                                     {project.techno.map((tech, index) => (
                                         <React.Fragment key={index}>

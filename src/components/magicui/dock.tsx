@@ -75,7 +75,7 @@ const DockIcon = ({
     mouseX,
     className,
     children,
-    onClick, // Ajout de onClick
+    onClick,
     ...props
 }: DockIconProps) => {
     const ref = useRef<HTMLDivElement>(null);
@@ -106,7 +106,7 @@ const DockIcon = ({
                 "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40",
                 className,
             )}
-            onClick={onClick} // Ajout de onClick
+            onClick={onClick}
             {...props}
         >
             {children}
