@@ -1,8 +1,13 @@
 import { Button } from "./ui/button"
 import { Avatar } from '@readyplayerme/visage';
 import { useTranslations } from 'next-intl';
+import { useRouter, useParams } from "next/navigation";
+
 
 export default function HomePage() {
+
+  const router = useRouter();
+  const params = useParams()
 
   const t = useTranslations('HomePage')
 
@@ -14,7 +19,7 @@ export default function HomePage() {
         <p className='text-end my-14'>
           {t('intro')}
         </p>
-        <Button>{t('contact')}</Button>
+        <Button onClick={() => router.push('/' + params.locale + '/contact')}>{t('contact')}</Button>
       </div>
       <div className="relative w-1/2 h-screen overflow-hidden flex justify-center items-center">
         <Avatar

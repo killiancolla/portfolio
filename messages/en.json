@@ -51,6 +51,7 @@
     "Skills": {
         "skills": "Skills",
         "skills_title1": "Skills and",
-        "skills_title2": "Competencies"
+        "skills_title2": "Competencies",
+        "show_list": "Show skills list"
     }
 }
