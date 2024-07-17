@@ -48,8 +48,8 @@ export default function Skills() {
             </div>
             {showList ? (
                 <div className="flex flex-wrap justify-center items-center w-full gap-2 mt-10">
-                    {skillsFromSlugs.map((slug) => (
-                        <div className="flex flex-row px-10 py-4 rounded-sm bg-card w-48 h-16 justify-center items-center gap-4 border">
+                    {skillsFromSlugs.map((slug, index) => (
+                        <div key={index} className="flex flex-row px-10 py-4 rounded-sm bg-card w-48 h-16 justify-center items-center gap-4 border">
                             <img className="w-1/3" alt="logo" src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`} />
                             <p className="w-2/3 text-left">{slug.name}</p>
                         </div>

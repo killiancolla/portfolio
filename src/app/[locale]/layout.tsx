@@ -32,7 +32,7 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <ClientLayout children={children} />
+            <ClientLayout>{children}</ClientLayout>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
