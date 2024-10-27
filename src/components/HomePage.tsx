@@ -28,6 +28,7 @@ export default function HomePage() {
         >
           {t('hello')}
         </span>
+        <p>Coucou</p>
         <h2 className="font-bold text-5xl">{t('title')}</h2>
         <p className='w-1/2 text-center'>
           {t('intro')}
