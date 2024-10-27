@@ -2,7 +2,8 @@
     "HomePage": {
         "title": "ウェブ開発者",
         "intro": "私はKillianです。革新的なオンライン体験を作り出すことに情熱を注いでいるウェブ開発者です。私のポートフォリオを見て、技術と創造性をどのように融合させているかをご覧ください。",
-        "contact": "お問い合わせ"
+        "contact": "お問い合わせ",
+        "hello": "こんにちは、キリアンです"
     },
     "About": {
         "about": "概要",
@@ -29,13 +30,13 @@
         "portfolio_title3": "主な",
         "portfolio_title4": "学歴",
         "unicancer_position": "フルスタック開発者",
-        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "unicancer_description": "PHP/Symfony、JavaScript、SQLを用いて革新的なソリューションを設計および導入する約10名のチームに所属するWebアプリケーション開発プロジェクトマネージャー。",
         "univevry_position": "フルスタック開発者",
-        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_description": "PHP、Joomla、JavaScript、MySQLを用いて大学の学生および職員向けのイントラネットツールを再設計し、内部リソースのアクセス性と効率性を最適化するプロジェクトマネージャー。",
         "ipssi_position": "フルスタック開発者",
-        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_description": "機械学習や深層学習を含む人工知能技術の高度なトレーニングを行い、Next.js、React.js、Django、Flaskなどの複数のフレームワーク、およびDevOps技術（Docker、Kubernetes）を学習しました。言語学習における人工知能の応用に関する専門的な論文を防衛し、承認されました。",
         "univevryschool_position": "フルスタック開発者",
-        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+        "univevryschool_description": "DevOps技術、コンピュータネットワーク、フレームワーク（Symfony、React.js）、CMS（WordPress、Joomla）、およびFlutterを使用したモバイル開発技術の基礎知識を習得しました。"
     },
     "Projects": {
         "projects": "プロジェクト",
@@ -46,11 +47,16 @@
         "projects_title1": "私の創造的な",
         "projects_title2": "作品",
         "all_projects": "すべてのプロジェクト",
-        "see_project": "プロジェクトを見る"
+        "see_project": "プロジェクトを見る",
+        "hover_project": "プロジェクト名にカーソルを合わせると、詳細が表示されます。",
+        "youbotbuster_desc": "YouTube動画の不要なボットコメントを自動で削除するツールを作成するSaaSプロジェクトです。このプロジェクトは、メッセージの出所を判断するためにAIを使用しています。",
+        "end_status": "完了",
+        "created_in": "作成日 "
     },
     "Skills": {
         "skills": "スキル",
         "skills_title1": "スキルと",
-        "skills_title2": "能力"
+        "skills_title2": "能力",
+        "show_list": "リストを見る"
     }
 }

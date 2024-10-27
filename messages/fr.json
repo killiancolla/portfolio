@@ -1,5 +1,6 @@
 {
     "HomePage": {
+        "hello": "Bonjour, je suis Killian",
         "title": "Développeur Web",
         "intro": "Je suis Killian, un développeur web passionné par la création d'expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne technologie et créativité.",
         "contact": "Contactez-moi"
@@ -29,13 +30,13 @@
         "portfolio_title3": "Mes principales",
         "portfolio_title4": "Formations",
         "unicancer_position": "Développeur FullStack",
-        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "unicancer_description": "Chef de projet développeur d’applications web au sein d'une équipe d'environ dix personnes, utilisant les technologies PHP/Symfony, JavaScript, et SQL pour concevoir et déployer des solutions innovantes.",
         "univevry_position": "Développeur FullStack",
-        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_description": "Chef de projet chargé de la refonte d'un outil intranet destiné aux étudiants et au personnel de l'université, en utilisant des technologies telles que PHP, Joomla, JavaScript et MySQL pour optimiser l'accessibilité et l’efficacité des ressources internes.",
         "ipssi_position": "Développeur FullStack",
-        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_description": "Formation approfondie aux technologies de l'intelligence artificielle, incluant le Machine Learning et le Deep Learning, et apprentissage de plusieurs frameworks comme Next.js, React.js, Django et Flask, ainsi que des technologies DevOps (Docker, Kubernetes). Soutenance et validation d’un mémoire d’expertise portant sur l’intelligence artificielle appliquée à l’apprentissage des langues.",
         "univevryschool_position": "Développeur FullStack",
-        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+        "univevryschool_description": "Acquisition des fondamentaux des technologies DevOps, des réseaux informatiques, de frameworks (Symfony, React.js), et des CMS (WordPress, Joomla), ainsi que des technologies de développement mobile avec Flutter."
     },
     "Projects": {
         "projects": "Projets",
@@ -46,7 +47,11 @@
         "projects_title1": "Mes Travaux",
         "projects_title2": "Créatifs",
         "all_projects": "Tous les Projets",
-        "see_project": "Voir le projet"
+        "see_project": "Voir le projet",
+        "hover_project": "Survole le nom d'un projet pour en savoir plus.",
+        "youbotbuster_desc": "Projet SaaS consistant en la création d'un outil automatisant la suppression des commentaires de robots indésirables sous les vidéos YouTube. Ce projet utilise l'intelligence artificielle afin de determiner l'origine du message.",
+        "end_status": "Terminé",
+        "created_in": "Créé en "
     },
     "Skills": {
         "skills": "Compétences",

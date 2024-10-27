@@ -16,24 +16,34 @@ export default function Projects() {
 
     const projects = [
         {
+            code: "youbotbuster",
+            title: 'YouBotBuster',
+            image: 'youbotbuster.png',
+            techno: ["SaaS", "IA", "YouTube API", "Stripe API"],
+            date: '2024',
+            status: 'end_status',
+            people: 2,
+            link: "https://socialnetwork-six.vercel.app/"
+        },
+        {
+            code: "socnet",
+            title: 'Social Network',
+            image: 'socialnewtork.png',
+            techno: ["NextJS", "FireBase", "TailWind"],
+            date: '2020',
+            status: 'wip_status',
+            people: 1,
+            link: "https://socialnetwork-six.vercel.app/"
+        },
+        {
             code: 'pomodoro',
             title: 'Pomodoro',
-            image: 'project1.png',
+            image: 'pomodoro.png',
             techno: ["ReactJS", "NodeJS"],
             date: '2020',
             status: 'wip_status',
             people: 1,
             link: "https://pomodoro-seven-lemon.vercel.app/"
-        },
-        {
-            code: "socnet",
-            title: 'Social Network',
-            image: 'project2.jpg',
-            techno: ["NextJS", "FireBase", "TailWind CSS"],
-            date: '2020',
-            status: 'wip_status',
-            people: 1,
-            link: "https://socialnetwork-six.vercel.app/"
         }
     ];
 
@@ -71,12 +81,13 @@ export default function Projects() {
                     {t('projects_title2')}
                 </h3>
             </div>
-            <ul className='flex gap-7 mb-10'>
+            <ul className='flex gap-7'>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>{t('all_projects')}</li>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
                 <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'python' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('python')}>Python</li>
+                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
             </ul>
+            <p className="text-left font-thin italic text-sm mb-10 mt-2">{t('hover_project')}</p>
             <div className="flex gap-6">
                 {columns.map((column, index) => (
                     <div key={'col' + index} className="w-1/3 text-left">
@@ -112,7 +123,7 @@ export default function Projects() {
                                             </p>
                                             <div className="flex flex-col items-start pt-2 gap-1">
                                                 <span className="text-xs text-muted-foreground flex justify-center items-center">
-                                                    <Calendar className="mr-2" />Created in {project.date}
+                                                    <Calendar className="mr-2" />{t('created_in') + project.date}
                                                 </span>
                                                 <span className="text-xs text-muted-foreground flex justify-center items-center">
                                                     <WorkflowIcon className="mr-2 " />{t(project.status)}

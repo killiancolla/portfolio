@@ -1,3 +1,4 @@
+import { ArrowDownFromLine } from "lucide-react";
 import { Button } from "./ui/button"
 import { useTranslations } from 'next-intl';
 
@@ -15,7 +16,7 @@ export default function About() {
                 </h3>
             </div>
             <p className="w-2/5 italic font-thin leading-7 mb-5">{t('about_desc')}</p>
-            <Button className=''>{t('cv-download')}</Button>
+            <Button className=''>{t('cv-download')}<ArrowDownFromLine className="py-1" /></Button>
         </div>
     )
 }

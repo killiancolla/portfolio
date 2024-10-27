@@ -1,5 +1,6 @@
 {
     "HomePage": {
+        "hello": "Hello, I'm Killian",
         "title": "Web Developer",
         "intro": "I'm Killian, a web developer passionate about creating innovative online experiences. Explore my portfolio to see how I merge technology and creativity.",
         "contact": "Contact me"
@@ -29,13 +30,13 @@
         "portfolio_title3": "Most Important",
         "portfolio_title4": "Education",
         "unicancer_position": "FullStack Developer",
-        "unicancer_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "unicancer_description": "Project manager and web application developer in a team of about ten people, utilizing PHP/Symfony, JavaScript, and SQL technologies to design and implement innovative solutions.",
         "univevry_position": "FullStack Developer",
-        "univevry_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "univevry_description": "Project manager in charge of redesigning an intranet tool for university students and staff, using PHP, Joomla, JavaScript, and MySQL technologies to enhance internal accessibility and efficiency.",
         "ipssi_position": "FullStack Developer",
-        "ipssi_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur.",
+        "ipssi_description": "Advanced training in artificial intelligence technologies, including Machine Learning and Deep Learning, and learning various frameworks such as Next.js, React.js, Django, and Flask, as well as DevOps technologies (Docker, Kubernetes). Defense and validation of an expert dissertation on artificial intelligence applied to language learning.",
         "univevryschool_position": "FullStack Developer",
-        "univevryschool_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ac sem pulvinar, tristique nisi vitae, eleifend velit. Duis volutpat elit in velit feugiat accumsan. Sed posuere risus ornare lacus finibus tempor. Donec congue urna sit amet turpis suscipit, et fermentum lectus efficitur."
+        "univevryschool_description": "Acquired foundational knowledge in DevOps technologies, computer networks, frameworks (Symfony, React.js), CMS (WordPress, Joomla), and mobile development technologies with Flutter."
     },
     "Projects": {
         "projects": "Projects",
@@ -46,7 +47,11 @@
         "projects_title1": "My Creative",
         "projects_title2": "Works",
         "all_projects": "All Projects",
-        "see_project": "See Project"
+        "see_project": "See Project",
+        "hover_project": "Hover over a project name to learn more.",
+        "youbotbuster_desc": "SaaS project creating a tool that automates the removal of unwanted bot comments under YouTube videos. This project uses artificial intelligence to determine the origin of the message.",
+        "end_status": "Completed",
+        "created_in": "Created in "
     },
     "Skills": {
         "skills": "Skills",
