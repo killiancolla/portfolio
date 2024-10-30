@@ -16,7 +16,9 @@ export default function About() {
                 </h3>
             </div>
             <p className="w-2/5 italic font-thin leading-7 mb-5">{t('about_desc')}</p>
-            <Button className=''>{t('cv-download')}<ArrowDownFromLine className="py-1" /></Button>
+            <a href="CV_2024-10-23_Killian_Colla.pdf" target="_blank" rel="noopener noreferrer">
+                <Button className=''>{t('cv-download')}<ArrowDownFromLine className="py-1" /></Button>
+            </a>
         </div>
     )
 }
