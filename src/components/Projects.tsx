@@ -23,7 +23,7 @@ export default function Projects() {
             date: '2024',
             status: 'end_status',
             people: 2,
-            link: "https://socialnetwork-six.vercel.app/"
+            link: "https://youbotbuster.com"
         },
         {
             code: "socnet",
