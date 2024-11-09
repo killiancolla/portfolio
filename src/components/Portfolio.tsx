@@ -32,7 +32,7 @@ export default function Portfolio() {
     ];
 
     return (
-        <div id='portfolio' className="part flex items-center flex-col text-center w-4/5 pt-20">
+        <div id='portfolio' className="part flex items-center flex-col text-center w-4/5 pt-20 mb-10">
             <div className='mb-16'>
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('portfolio')}</p>
                 <h3 className='text-xs font-bold text-primary'>{t('portfolio_title1')}</h3>
@@ -48,7 +48,7 @@ export default function Portfolio() {
                     {workCards.map((work, index) => (
                         <React.Fragment key={index}>
                             {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{work.date}</p>}
-                            <div className={`relative border-2 border-primary p-6 rounded-sm ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                            <div className={`relative border-2 border-primary p-6 rounded-sm text-left`}>
                                 <h2 className="text-2xl font-bold text-primary">{work.title}</h2>
                                 <h3 className="font-bold mb-4">{t(work.code + '_position')}</h3>
                                 <p className="leading-7">{t(work.code + '_description')}</p>
@@ -74,7 +74,7 @@ export default function Portfolio() {
                     {educationCards.map((education, index) => (
                         <React.Fragment key={index}>
                             {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{education.date}</p>}
-                            <div className={`relative border-2 border-primary p-6 rounded-sm ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                            <div className={`relative border-2 border-primary p-6 rounded-sm text-left`}>
                                 <h2 className="text-2xl font-bold text-primary">{education.title}</h2>
                                 <h3 className="font-bold mb-4">{t(education.code + '_position')}</h3>
                                 <p className="leading-7">{t(education.code + '_description')}</p>

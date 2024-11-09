@@ -19,7 +19,6 @@ export default function Home() {
       <Skills />
       <Projects />
       <Portfolio />
-      {/* <Contact /> */}
     </div >
   );
 }
