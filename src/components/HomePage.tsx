@@ -20,7 +20,7 @@ export default function HomePage() {
         <path fill="blue" d="M36.5,-1.2C36.5,22.7,18.2,45.4,-6.9,45.4C-32,45.4,-64,22.7,-64,-1.2C-64,-25.2,-32,-50.3,-6.9,-50.3C18.2,-50.3,36.5,-25.2,36.5,-1.2Z" transform="translate(100 100)" />
       </svg> */}
       <div id='home' className='part min-h-screen w-full flex flex-col items-center justify-center gap-4'>
-        <Image className="w-32 rounded-full bg-white aspect-square object-cover object-center" src={"/me.jpg"} alt="picture of me" width={1000} height={1000} />
+        <Image className="w-32 rounded-full bg-white aspect-square object-cover object-center" src={"/me.jpg"} alt="picture of me" width={200} height={200} />
         <span
           className={cn(
             `inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`,
