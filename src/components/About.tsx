@@ -15,7 +15,7 @@ export default function About() {
                     {t('about-title2')}
                 </h3>
             </div>
-            <p className="w-2/5 italic font-thin leading-7 mb-5">{t('about_desc')}</p>
+            <p className="sm:w-2/5 max-sm:w-5/6 italic font-thin leading-7 mb-5">{t('about_desc')}</p>
             <a href="CV_2024-10-23_Killian_Colla.pdf" target="_blank" rel="noopener noreferrer">
                 <Button className=''>{t('cv-download')}<ArrowDownFromLine className="py-1" /></Button>
             </a>

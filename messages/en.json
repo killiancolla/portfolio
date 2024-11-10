@@ -46,7 +46,7 @@
         "wip_status": "Work In Progress",
         "projects_title1": "My Creative",
         "projects_title2": "Works",
-        "all_projects": "All Projects",
+        "all_projects": "All",
         "see_project": "See Project",
         "hover_project": "Hover over a project name to learn more.",
         "youbotbuster_desc": "SaaS project creating a tool that automates the removal of unwanted bot comments under YouTube videos. This project uses artificial intelligence to determine the origin of the message.",

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from 'next/image';
 import React from "react";
 import { Button } from "./ui/button";
@@ -49,11 +49,26 @@ export default function Projects() {
 
     const [activeItemProj, setActiveItemProj] = useState('all');
     const [isClicked, setIsClicked] = useState(false);
+    const [columnCount, setColumnCount] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 640) {
+                setColumnCount(2);
+            } else {
+                setColumnCount(3);
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const filtered_projects = projects.filter(project => {
         return activeItemProj == "all" || project.techno.some(tech => tech.toLowerCase() === activeItemProj.toLowerCase());
     })
-    const columnCount = 3;
     const projectsPerColumn = Math.ceil(filtered_projects.length / columnCount);
 
     const columns = [];
@@ -81,16 +96,16 @@ export default function Projects() {
                     {t('projects_title2')}
                 </h3>
             </div>
-            <ul className='flex gap-7'>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>{t('all_projects')}</li>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
-                <li className={`cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
+            <ul className='flex max-sm:flex-col max-sm:gap-2 sm:gap-4 flex-wrap'>
+                <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>{t('all_projects')}</li>
+                <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
+                <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
+                <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
             </ul>
             <p className="text-left font-thin italic text-sm mb-10 mt-2">{t('hover_project')}</p>
             <div className="flex gap-6">
                 {columns.map((column, index) => (
-                    <div key={'col' + index} className="w-1/3 text-left">
+                    <div key={'col' + index} className="max-sm:w-1/2 sm:w-1/3 text-left">
                         {column.map((project, index) => (
                             <div key={'proj' + index} className="">
                                 <div className="group w-full relative">
@@ -103,7 +118,7 @@ export default function Projects() {
                                     />
                                     <Button
                                         onClick={() => handleRedirect(project.link)}
-                                        className={`${isClicked ? 'w-10 h-10 rounded-full p-0' : 'w-1/2'}
+                                        className={`${isClicked ? 'w-10 h-10 rounded-full p-0' : 'max-sm:w-2/3 sm:w-1/2'}
                                         absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
                                         transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center justify-center
                                         `}

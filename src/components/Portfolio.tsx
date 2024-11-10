@@ -41,20 +41,20 @@ export default function Portfolio() {
                 </h3>
             </div>
             <div className='relative'>
-                <div className="absolute w-0.5 h-full bg-foreground left-1/2 -translate-x-1/2 top-0
+                <div className="absolute w-0.5 h-full bg-foreground max-sm:left-0 sm:left-1/2 -translate-x-1/2 top-0
                 before:bg-[#FB6423] before:content-[''] before:w-5 before:h-5 before:absolute before:rounded-full before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:-top-4 before:animate-pulse
                 after:border-2 after:border-[#FB6423] after:content-[''] after:w-8 after:h-8 after:absolute after:rounded-full after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:-top-4"></div>
-                <div className='grid grid-cols-2 gap-24'>
+                <div className='max-sm:flex max-sm:gap-4 max-sm:items-center max-sm:flex-col sm:grid sm:grid-cols-2 sm:gap-24'>
                     {workCards.map((work, index) => (
                         <React.Fragment key={index}>
-                            {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{work.date}</p>}
-                            <div className={`relative border-2 border-primary p-6 rounded-sm text-left`}>
+                            {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='max-sm:hidden flex w-full items-center justify-end'>{work.date}</p>}
+                            <div className={`max-sm:w-4/5 relative border-2 border-primary p-6 rounded-sm text-left`}>
                                 <h2 className="text-2xl font-bold text-primary">{work.title}</h2>
                                 <h3 className="font-bold mb-4">{t(work.code + '_position')}</h3>
                                 <p className="leading-7">{t(work.code + '_description')}</p>
-                                <div className={`absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
+                                <div className={`max-sm:hidden absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
                             </div>
-                            {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='flex items-center justify-start'>{work.date}</p>}
+                            {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='max-sm:hidden flex items-center justify-start'>{work.date}</p>}
                         </React.Fragment>
                     ))}
                 </div>
@@ -67,20 +67,20 @@ export default function Portfolio() {
                 </h3>
             </div>
             <div className='relative'>
-                <div className="absolute w-0.5 h-full bg-foreground left-1/2 -translate-x-1/2 top-0
+                <div className="absolute w-0.5 h-full bg-foreground max-sm:left-0 sm:left-1/2 -translate-x-1/2 top-0
           before:bg-[#FB6423] before:content-[''] before:w-5 before:h-5 before:absolute before:rounded-full before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:-top-4
           after:border-2 after:border-[#FB6423] after:content-[''] after:w-8 after:h-8 after:absolute after:rounded-full after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:-top-4 before:animate-pulse"></div>
-                <div className='grid grid-cols-2 gap-24'>
+                <div className='max-sm:flex max-sm:gap-4 max-sm:items-center max-sm:flex-col sm:grid grid-cols-2 gap-24'>
                     {educationCards.map((education, index) => (
                         <React.Fragment key={index}>
-                            {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='flex w-full items-center justify-end'>{education.date}</p>}
-                            <div className={`relative border-2 border-primary p-6 rounded-sm text-left`}>
+                            {(index + 1) % 2 === 0 && <p key={`p_${index}`} className='max-sm:hidden flex w-full items-center justify-end'>{education.date}</p>}
+                            <div className={`max-sm:w-4/5 relative border-2 border-primary p-6 rounded-sm text-left`}>
                                 <h2 className="text-2xl font-bold text-primary">{education.title}</h2>
                                 <h3 className="font-bold mb-4">{t(education.code + '_position')}</h3>
                                 <p className="leading-7">{t(education.code + '_description')}</p>
-                                <div className={`absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
+                                <div className={`max-sm:hidden absolute top-1/2 right-0 w-12 h-px bg-foreground ${(index + 1) % 2 !== 0 ? '-right-px translate-x-full' : '-left-px -translate-x-full'}`}></div>
                             </div>
-                            {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='flex items-center justify-start'>{education.date}</p>}
+                            {(index + 1) % 2 !== 0 && <p key={`p_${index}`} className='max-sm:hidden flex items-center justify-start'>{education.date}</p>}
                         </React.Fragment>
                     ))}
                 </div>

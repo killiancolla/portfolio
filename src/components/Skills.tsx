@@ -49,9 +49,9 @@ export default function Skills() {
             {showList ? (
                 <div className="flex flex-wrap justify-center items-center w-full gap-2 mt-10">
                     {skillsFromSlugs.map((slug, index) => (
-                        <div key={index} className="flex flex-row px-10 py-4 rounded-sm bg-card w-48 h-16 justify-center items-center gap-4 border">
-                            <img className="w-1/3" alt="logo" src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`} />
-                            <p className="w-2/3 text-left">{slug.name}</p>
+                        <div key={index} className="flex max-sm:flex-col max-sm:justify-center max-sm:items-center sm:flex-row sm:px-10 max-sm:py-2 sm:py-4 rounded-sm bg-card max-sm:w-36 sm:w-48 h-16 justify-center items-center sm:gap-4 border">
+                            <img className="max-sm:h-2/3 sm:w-1/3" alt="logo" src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`} />
+                            <p className="max-sm:items-center max-sm:justify-center max-sm:flex max-sm:text-sm sm:w-2/3 sm:text-left">{slug.name}</p>
                         </div>
                     ))}
                 </div>

@@ -8,8 +8,8 @@
     "About": {
         "about": "À propos",
         "about_desc": "Avec 5 ans d'expérience en développement web, j'ai travaillé sur une variété de projets allant de sites vitrines à des applications web complexes. En savoir plus sur mon parcours et ma passion pour le développement.",
-        "about-title1": "Mes histoires et",
-        "about-title2": "Sentiments",
+        "about-title1": "A propos de",
+        "about-title2": "Moi",
         "cv-download": "Télécharger mon CV"
     },
     "NavBar": {
@@ -46,7 +46,7 @@
         "wip_status": "Travail en cours",
         "projects_title1": "Mes Travaux",
         "projects_title2": "Créatifs",
-        "all_projects": "Tous les Projets",
+        "all_projects": "Tous",
         "see_project": "Voir le projet",
         "hover_project": "Survole le nom d'un projet pour en savoir plus.",
         "youbotbuster_desc": "Projet SaaS consistant en la création d'un outil automatisant la suppression des commentaires de robots indésirables sous les vidéos YouTube. Ce projet utilise l'intelligence artificielle afin de determiner l'origine du message.",
