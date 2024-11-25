@@ -12,7 +12,7 @@ export default function About() {
             <div className='mb-4'>
                 <p className="before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">Contactez-moi</p>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center max-sm:flex-col mb-4">
                 <p className="mr-2 text-xl">Vous cherchez à créer un</p>
                 <WordRotate
                     className="text-xl font-bold text-primary dark:text-primary"
@@ -27,7 +27,7 @@ export default function About() {
                     ]}
                 />
             </div>
-            <Card className="">
+            <Card className="w-4/5 max-sm:w-11/12">
                 <CardContent className='flex p-4'>
                     <div className='w-full flex flex-wrap gap-4'>
                         <div className='flex gap-2 w-full'>
