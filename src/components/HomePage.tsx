@@ -5,7 +5,8 @@ import { useRouter, useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-
+import { Github, Linkedin } from "lucide-react";
+import { handleMouseEnter } from "../../utils/handleMouseEnter";
 
 export default function HomePage() {
 
@@ -29,10 +30,12 @@ export default function HomePage() {
         <p className='sm:w-1/2 max-sm:w-5/6 text-center'>
           {t('intro')}
         </p>
-        {/* <Button onClick={() => router.push('/' + params.locale + '/contact')}>{t('contact')}</Button> */}
-        <Link href="mailto:contact@killian-colla.com">
-          <Button>{t('contact')}</Button>
-        </Link>
+        <h2 className="text-primary font-bold">Vous avez un projet ?</h2>
+        <Button onClick={() => handleMouseEnter('contact')}>{t('contact')}</Button>
+        <div className="flex gap-4">
+          <Link href="https://github.com/killiancolla" target="_blank"><Github className="hover:text-primary" /></Link>
+          <Link href="https://www.linkedin.com/in/killian-colla-46b48b207/" target="_blank"><Linkedin className="hover:text-primary" /></Link>
+        </div>
       </div>
     </div>
   )

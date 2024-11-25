@@ -33,9 +33,9 @@
         "unicancer_description": "Project manager and web application developer in a team of about ten people, utilizing PHP/Symfony, JavaScript, and SQL technologies to design and implement innovative solutions.",
         "univevry_position": "FullStack Developer",
         "univevry_description": "Project manager in charge of redesigning an intranet tool for university students and staff, using PHP, Joomla, JavaScript, and MySQL technologies to enhance internal accessibility and efficiency.",
-        "ipssi_position": "FullStack Developer",
+        "ipssi_position": "Master in AI, Big Data & Development",
         "ipssi_description": "Advanced training in artificial intelligence technologies, including Machine Learning and Deep Learning, and learning various frameworks such as Next.js, React.js, Django, and Flask, as well as DevOps technologies (Docker, Kubernetes). Defense and validation of an expert dissertation on artificial intelligence applied to language learning.",
-        "univevryschool_position": "FullStack Developer",
+        "univevryschool_position": "Professional Bachelor's Degree in Web & Mobile Development",
         "univevryschool_description": "Acquired foundational knowledge in DevOps technologies, computer networks, frameworks (Symfony, React.js), CMS (WordPress, Joomla), and mobile development technologies with Flutter."
     },
     "Projects": {
@@ -58,5 +58,34 @@
         "skills_title1": "Skills and",
         "skills_title2": "Competencies",
         "show_list": "Show skills list"
+    },
+    "Services": {
+        "title": "Services",
+        "subtitle": "Services offered",
+        "heading": "provided",
+        "saas": {
+            "title": "SaaS Development",
+            "description": "Transform your ideas into powerful SaaS platforms. Custom solutions to automate and simplify your business operations."
+        },
+        "showcase": {
+            "title": "Showcase Websites",
+            "description": "Showcase your business. Modern websites for restaurants, cafes, or shops, optimized for local visibility."
+        },
+        "ecommerce": {
+            "title": "E-commerce",
+            "description": "Launch your online store with ease. Fast, secure, and ready-to-sell e-commerce solutions."
+        },
+        "customapps": {
+            "title": "Custom Web Applications",
+            "description": "Web tools designed for your business. Intuitive and efficient applications to meet your specific needs."
+        },
+        "optimization": {
+            "title": "Optimization and Maintenance",
+            "description": "Keep your site fast and secure. Audits, optimization, and maintenance for optimal performance."
+        },
+        "consulting": {
+            "title": "Consulting and Support",
+            "description": "Advance confidently in the digital world. Expert advice and tailored support for your projects."
+        }
     }
 }

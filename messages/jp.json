@@ -33,9 +33,9 @@
         "unicancer_description": "PHP/Symfony、JavaScript、SQLを用いて革新的なソリューションを設計および導入する約10名のチームに所属するWebアプリケーション開発プロジェクトマネージャー。",
         "univevry_position": "フルスタック開発者",
         "univevry_description": "PHP、Joomla、JavaScript、MySQLを用いて大学の学生および職員向けのイントラネットツールを再設計し、内部リソースのアクセス性と効率性を最適化するプロジェクトマネージャー。",
-        "ipssi_position": "フルスタック開発者",
+        "ipssi_position": "AI・ビッグデータ・開発修士",
         "ipssi_description": "機械学習や深層学習を含む人工知能技術の高度なトレーニングを行い、Next.js、React.js、Django、Flaskなどの複数のフレームワーク、およびDevOps技術（Docker、Kubernetes）を学習しました。言語学習における人工知能の応用に関する専門的な論文を防衛し、承認されました。",
-        "univevryschool_position": "フルスタック開発者",
+        "univevryschool_position": "ウェブ・モバイル開発の専門学士号",
         "univevryschool_description": "DevOps技術、コンピュータネットワーク、フレームワーク（Symfony、React.js）、CMS（WordPress、Joomla）、およびFlutterを使用したモバイル開発技術の基礎知識を習得しました。"
     },
     "Projects": {
@@ -58,5 +58,34 @@
         "skills_title1": "スキルと",
         "skills_title2": "能力",
         "show_list": "リストを見る"
+    },
+    "Services": {
+        "title": "サービス",
+        "subtitle": "提供するサービス",
+        "heading": "提供される",
+        "saas": {
+            "title": "SaaS開発",
+            "description": "アイデアを強力なSaaSプラットフォームに変換します。ビジネスの自動化と簡素化のためのカスタムソリューションを提供します。"
+        },
+        "showcase": {
+            "title": "ショーケースウェブサイト",
+            "description": "ビジネスを展示します。レストラン、カフェ、ショップ向けの現代的なウェブサイト、ローカルの視認性に最適化されています。"
+        },
+        "ecommerce": {
+            "title": "Eコマース",
+            "description": "オンラインショップを簡単に立ち上げます。迅速で安全、そして販売準備完了のEコマースソリューション。"
+        },
+        "customapps": {
+            "title": "カスタムウェブアプリケーション",
+            "description": "あなたのビジネスに合わせたウェブツール。特定のニーズに対応する直感的で効率的なアプリケーション。"
+        },
+        "optimization": {
+            "title": "最適化とメンテナンス",
+            "description": "サイトを高速で安全に保ちます。監査、最適化、そして最適なパフォーマンスのためのメンテナンス。"
+        },
+        "consulting": {
+            "title": "コンサルティングとサポート",
+            "description": "デジタルの世界で自信を持って前進します。あなたのプロジェクトに合わせた専門的なアドバイスとサポート。"
+        }
     }
 }

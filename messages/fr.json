@@ -12,10 +12,40 @@
         "about-title2": "Moi",
         "cv-download": "Télécharger mon CV"
     },
+    "Services": {
+        "title": "Services",
+        "subtitle": "Des solutions",
+        "heading": "adaptées",
+        "saas": {
+            "title": "Développement SaaS",
+            "description": "Vos idées, transformées en plateformes SaaS performantes. Création de solutions sur mesure pour automatiser et simplifier votre activité."
+        },
+        "showcase": {
+            "title": "Sites vitrines",
+            "description": "Mettez votre activité en lumière. Des sites modernes pour restaurants, cafés ou boutiques, optimisés pour votre visibilité locale."
+        },
+        "ecommerce": {
+            "title": "E-commerce",
+            "description": "Lancez votre boutique en ligne en toute simplicité. Des solutions e-commerce rapides, sécurisées et prêtes à vendre."
+        },
+        "customapps": {
+            "title": "Applications web personnalisées",
+            "description": "Des outils web conçus pour votre métier. Applications intuitives et performantes pour répondre à vos besoins spécifiques."
+        },
+        "optimization": {
+            "title": "Optimisation et maintenance",
+            "description": "Gardez votre site rapide et sécurisé. Audit, optimisation et maintenance pour des performances optimales."
+        },
+        "consulting": {
+            "title": "Conseil et accompagnement",
+            "description": "Avancez avec confiance dans le monde digital. Des conseils techniques et un accompagnement sur mesure pour vos projets."
+        }
+    },
     "NavBar": {
         "home": "Accueil",
         "about": "À propos",
         "skills": "Compétences",
+        "service": "Services",
         "projects": "Projets",
         "portfolio": "Portfolio",
         "light": "Clair",
@@ -33,9 +63,9 @@
         "unicancer_description": "Chef de projet développeur d’applications web au sein d'une équipe d'environ dix personnes, utilisant les technologies PHP/Symfony, JavaScript, et SQL pour concevoir et déployer des solutions innovantes.",
         "univevry_position": "Développeur FullStack",
         "univevry_description": "Chef de projet chargé de la refonte d'un outil intranet destiné aux étudiants et au personnel de l'université, en utilisant des technologies telles que PHP, Joomla, JavaScript et MySQL pour optimiser l'accessibilité et l’efficacité des ressources internes.",
-        "ipssi_position": "Développeur FullStack",
+        "ipssi_position": "Master Développement, IA & Big Data",
         "ipssi_description": "Formation approfondie aux technologies de l'intelligence artificielle, incluant le Machine Learning et le Deep Learning, et apprentissage de plusieurs frameworks comme Next.js, React.js, Django et Flask, ainsi que des technologies DevOps (Docker, Kubernetes). Soutenance et validation d’un mémoire d’expertise portant sur l’intelligence artificielle appliquée à l’apprentissage des langues.",
-        "univevryschool_position": "Développeur FullStack",
+        "univevryschool_position": "Licence professionnelle développement web & mobile",
         "univevryschool_description": "Acquisition des fondamentaux des technologies DevOps, des réseaux informatiques, de frameworks (Symfony, React.js), et des CMS (WordPress, Joomla), ainsi que des technologies de développement mobile avec Flutter."
     },
     "Projects": {

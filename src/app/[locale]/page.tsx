@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Portfolio from "@/components/Portfolio";
 import NavBar from "@/components/NavBar";
 import Contact from "@/components/Contact";
+import Services from "@/components/Services";
 
 export default function Home() {
 
@@ -16,9 +17,11 @@ export default function Home() {
       <NavBar />
       <HomePage />
       <About />
+      <Services />
       <Skills />
       <Projects />
       <Portfolio />
+      <Contact />
     </div >
   );
 }

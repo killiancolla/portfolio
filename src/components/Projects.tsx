@@ -28,7 +28,7 @@ export default function Projects() {
         {
             code: "socnet",
             title: 'Social Network',
-            image: 'socialnewtork.png',
+            image: 'social_network.png',
             techno: ["NextJS", "FireBase", "TailWind"],
             date: '2020',
             status: 'wip_status',
