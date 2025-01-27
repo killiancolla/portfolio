@@ -1,51 +1,20 @@
 import { useEffect, useState } from "react";
 import Image from 'next/image';
 import React from "react";
-import { Button } from "./ui/button";
-import { Calendar, LoaderCircle, Users, WorkflowIcon } from 'lucide-react';
+import { Calendar, LoaderCircle, MoveUpRight, Users, WorkflowIcon } from 'lucide-react';
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import { useTranslations } from 'next-intl';
+import { projects } from '../../data/projects'
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export default function Projects() {
 
     const t = useTranslations('Projects')
-
-    const projects = [
-        {
-            code: "youbotbuster",
-            title: 'YouBotBuster',
-            image: 'youbotbuster.png',
-            techno: ["SaaS", "IA", "YouTube API", "Stripe API"],
-            date: '2024',
-            status: 'end_status',
-            people: 2,
-            link: "https://youbotbuster.com"
-        },
-        {
-            code: "socnet",
-            title: 'Social Network',
-            image: 'social_network.png',
-            techno: ["NextJS", "FireBase", "TailWind"],
-            date: '2020',
-            status: 'wip_status',
-            people: 1,
-            link: "https://socialnetwork-six.vercel.app/"
-        },
-        {
-            code: 'pomodoro',
-            title: 'Pomodoro',
-            image: 'pomodoro.png',
-            techno: ["ReactJS", "NodeJS"],
-            date: '2020',
-            status: 'wip_status',
-            people: 1,
-            link: "https://pomodoro-seven-lemon.vercel.app/"
-        }
-    ];
 
     const [activeItemProj, setActiveItemProj] = useState('all');
     const [isClicked, setIsClicked] = useState(false);
@@ -67,16 +36,26 @@ export default function Projects() {
     }, []);
 
     const filtered_projects = projects.filter(project => {
-        return activeItemProj == "all" || project.techno.some(tech => tech.toLowerCase() === activeItemProj.toLowerCase());
-    })
-    const projectsPerColumn = Math.ceil(filtered_projects.length / columnCount);
+        return activeItemProj === "all" || project.techno.some(tech => tech.toLowerCase() === activeItemProj.toLowerCase());
+    });
 
+    // Nombre total de colonnes et de projets
+    const totalProjects = filtered_projects.length;
     const columns = [];
+    let start = 0;
 
     for (let i = 0; i < columnCount; i++) {
-        const start = i * projectsPerColumn;
-        const end = start + projectsPerColumn;
+        // Calculer le nombre de projets par colonne dynamiquement
+        const remainingColumns = columnCount - i;
+        const projectsLeft = totalProjects - start;
+        const projectsPerCurrentColumn = Math.ceil(projectsLeft / remainingColumns);
+
+        // Découper les projets pour cette colonne
+        const end = start + projectsPerCurrentColumn;
         columns.push(filtered_projects.slice(start, end));
+
+        // Mettre à jour le point de départ pour la prochaine colonne
+        start = end;
     }
 
     const handleRedirect = (link: string) => {
@@ -102,33 +81,34 @@ export default function Projects() {
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
             </ul>
-            <p className="text-left font-thin italic text-sm mb-10 mt-2">{t('hover_project')}</p>
-            <div className="flex gap-6">
+            {/* <p className="text-left font-thin italic text-sm mb-10 mt-2">{t('hover_project')}</p> */}
+            <div className="sm:flex gap-2 mt-5">
                 {columns.map((column, index) => (
-                    <div key={'col' + index} className="max-sm:w-1/2 sm:w-1/3 text-left">
+                    <div key={'col' + index} className="max-sm:w-full sm:w-1/3 text-left">
                         {column.map((project, index) => (
-                            <div key={'proj' + index} className="">
-                                <div className="group w-full relative">
+                            <div key={project.code} className="hover:bg-secondary p-2 group rounded-sm">
+                                <div className="w-full relative rounded-sm overflow-hidden">
+                                    <div className="group-hover:flex flex-col gap-2 hidden w-3/4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10">
+                                        <p className="text-center font-light leading-relaxed mt-2 mb-4">
+                                            {t(project.code + '_desc')}
+                                        </p>
+                                        {project.link && (
+                                            <Link href={project.link} className="flex justify-center items-center">
+                                                <Button variant={'link'}>{t('see_project')}</Button>
+                                            </Link>
+                                        )}
+                                    </div>
                                     <Image
-                                        className="rounded-sm transition-all duration-300 group-hover:brightness-50 w-full"
+                                        className="rounded-sm w-full group-hover:opacity-30 group-hover:scale-105 group-hover:transition-all"
                                         width={500}
                                         height={500}
                                         src={`/${project.image}`}
                                         alt={project.title}
                                     />
-                                    <Button
-                                        onClick={() => handleRedirect(project.link)}
-                                        className={`${isClicked ? 'w-10 h-10 rounded-full p-0' : 'max-sm:w-2/3 sm:w-1/2'}
-                                        absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2
-                                        transition-all duration-300 opacity-0 group-hover:opacity-100 flex items-center justify-center
-                                        `}
-                                    >
-                                        {isClicked ? <LoaderCircle className="animate-spin" /> : t('see_project')}
-                                    </Button>
                                 </div>
                                 <HoverCard>
                                     <HoverCardTrigger>
-                                        <h2 className="font-semibold text-xl mt-1 hover:underline">{project.title}</h2>
+                                        <h2 className="font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}{project.link && (<MoveUpRight className="size-5 group-hover:bg-primary" />)}</h2>
                                     </HoverCardTrigger>
                                     <HoverCardContent className="flex justify-between space-x-4">
                                         <div className="space-y-1">
@@ -163,6 +143,6 @@ export default function Projects() {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }

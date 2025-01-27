@@ -21,7 +21,8 @@
         "light": "Light",
         "dark": "Dark",
         "system": "System",
-        "toggle": "Toggle Theme"
+        "toggle": "Toggle Theme",
+        "service": "Service"
     },
     "Portfolio": {
         "portfolio": "Portfolio",
@@ -50,8 +51,10 @@
         "see_project": "See Project",
         "hover_project": "Hover over a project name to learn more.",
         "youbotbuster_desc": "SaaS project creating a tool that automates the removal of unwanted bot comments under YouTube videos. This project uses artificial intelligence to determine the origin of the message.",
+        "meetsponsors_desc": "Creation of a “For You” algorithm using AI to efficiently connect content creators with sponsors.",
         "end_status": "Completed",
-        "created_in": "Created in "
+        "created_in": "Created in ",
+        "read_more": "Read more"
     },
     "Skills": {
         "skills": "Skills",
