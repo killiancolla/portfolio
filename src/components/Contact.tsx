@@ -6,23 +6,27 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import WordRotate from "./ui/word-rotate";
 import { useState } from "react";
+import { useTranslations } from 'next-intl';
 
 export default function About() {
 
-    const [email, setEmail] = useState("")
-    const [name, setName] = useState("")
-    const [subject, setSubject] = useState("")
-    const [message, setMessage] = useState("")
-    const [back, setBack] = useState("")
+  const t = useTranslations('Contact')
+  const wordsArray = t('words').split(',').map(word => word.trim());
 
-    async function sendEmail() {
-        const response = await fetch('/api/send-mail', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                to: 'contact@killian-colla.com',
-                subject: "[Contact] : " + subject,
-                html: `
+  const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
+  const [subject, setSubject] = useState("")
+  const [message, setMessage] = useState("")
+  const [back, setBack] = useState("")
+
+  async function sendEmail() {
+    const response = await fetch('/api/send-mail', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        to: 'contact@killian-colla.com',
+        subject: "[Contact] : " + subject,
+        html: `
                 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -91,65 +95,57 @@ export default function About() {
   </div>
 </body>
 </html>`
-            }),
-        });
+      }),
+    });
 
-        if (response.ok) {
-            setBack("Merci pour votre message ! Nous vous ferons un retour d'ici 48 heures.")
-        } else {
-            setBack("Une erreur s'est produite lors de l'envoi, merci de réessayer plus tard.")
-        }
+    if (response.ok) {
+      setBack("Merci pour votre message ! Nous vous ferons un retour d'ici 48 heures.")
+    } else {
+      setBack("Une erreur s'est produite lors de l'envoi, merci de réessayer plus tard.")
     }
+  }
 
-    return (
-        <div id='contact' className="part flex flex-col items-center text-center pt-20 w-full mb-20">
-            <div className='mb-4'>
-                <p className="before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">Contactez-moi</p>
+  return (
+    <div id='contact' className="part flex flex-col items-center text-center pt-20 w-full mb-20">
+      <div className='mb-4'>
+        <p className="before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('contact')}</p>
+      </div>
+      <div className="flex justify-center items-center max-sm:flex-col mb-4">
+        <p className="mr-2 text-xl">{t('prompt')}</p>
+        <WordRotate
+          className="text-xl font-bold text-primary dark:text-primary"
+          words={wordsArray}
+        />
+      </div>
+      <Card className="w-4/5 max-sm:w-11/12">
+        <CardContent className='flex p-4'>
+          <div className='w-full flex flex-wrap gap-4'>
+            <div className='flex gap-2 w-full'>
+              <div className='w-1/2'>
+                <Label htmlFor="email">{t('email')}</Label>
+                <Input id='email' type="email" placeholder={t('email')} className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} />
+              </div>
+              <div className='w-1/2'>
+                <Label htmlFor="name">{t('name')}</Label>
+                <Input id='name' type="text" placeholder={t('name')} className='w-full' value={name} onChange={(e) => setName(e.target.value)} />
+              </div>
             </div>
-            <div className="flex justify-center items-center max-sm:flex-col mb-4">
-                <p className="mr-2 text-xl">Vous cherchez à créer un</p>
-                <WordRotate
-                    className="text-xl font-bold text-primary dark:text-primary"
-                    words={[
-                        "site web moderne",
-                        "SaaS",
-                        "site vitrine en ligne pour attirer des clients",
-                        "système de réservation en ligne",
-                        "menu interactif pour votre restaurant",
-                        "site e-commerce en ligne pour vendre vos produits",
-                        "outil de gestion de stock efficace"
-                    ]}
-                />
+            <div className='w-full'>
+              <Label htmlFor="subject">{t('subject')}</Label>
+              <Input id='subject' type="text" placeholder={t('subject')} value={subject} onChange={(e) => setSubject(e.target.value)} />
             </div>
-            <Card className="w-4/5 max-sm:w-11/12">
-                <CardContent className='flex p-4'>
-                    <div className='w-full flex flex-wrap gap-4'>
-                        <div className='flex gap-2 w-full'>
-                            <div className='w-1/2'>
-                                <Label htmlFor="email">Email</Label>
-                                <Input id='email' type="email" placeholder="Email" className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} />
-                            </div>
-                            <div className='w-1/2'>
-                                <Label htmlFor="name">Name</Label>
-                                <Input id='name' type="text" placeholder="Name" className='w-full' value={name} onChange={(e) => setName(e.target.value)} />
-                            </div>
-                        </div>
-                        <div className='w-full'>
-                            <Label htmlFor="subject">Subject</Label>
-                            <Input id='subject' type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
-                        </div>
-                        <div className='w-full'>
-                            <Label htmlFor='message'>Message</Label>
-                            <Textarea id='message' placeholder='Your message here...' value={message} onChange={(e) => setMessage(e.target.value)} />
-                        </div>
-                        <div className='w-full'>
-                            <Button onClick={sendEmail}>Envoyer</Button>
-                        </div>
-                        <p className={`text-center w-full ${back.includes("erreur") ? "text-red-500" : "text-green-500"}`}>{back}</p>
-                    </div>
-                </CardContent>
-            </Card>
-        </div>
+            <div className='w-full'>
+              <Label htmlFor='message'>{t('message')}</Label>
+              <Textarea id='message' placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} />
+            </div>
+            <div className='w-full'>
+              <Button onClick={sendEmail}>{t('send')}</Button>
+            </div>
+            <p className={`text-center w-full ${back.includes("erreur") ? "text-red-500" : "text-green-500"}`}>{back}</p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
 
-    )
+  )
 }

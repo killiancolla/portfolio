@@ -42,7 +42,7 @@
     "Projects": {
         "projects": "Projects",
         "project": "Project",
-        "pomodoro_desc": "Website using the Pomodoro work technique, with music, timer management, a to-do list, theme management, and work statistics.",
+        "pomodoro_desc": "Pomodoro work technique including music, timer management, a to-do list, theme management, and work statistics.",
         "socnet_desc": "Reproduction of a fictional social network with management of relationships, posts, comments, likes, and account management.",
         "wip_status": "Work In Progress",
         "projects_title1": "My Creative",
@@ -50,7 +50,7 @@
         "all_projects": "All",
         "see_project": "See Project",
         "hover_project": "Hover over a project name to learn more.",
-        "youbotbuster_desc": "SaaS project creating a tool that automates the removal of unwanted bot comments under YouTube videos. This project uses artificial intelligence to determine the origin of the message.",
+        "youbotbuster_desc": "SaaS tool using AI to automate the removal of spam comments under YouTube videos.",
         "meetsponsors_desc": "Creation of a “For You” algorithm using AI to efficiently connect content creators with sponsors.",
         "end_status": "Completed",
         "created_in": "Created in ",
@@ -90,5 +90,16 @@
             "title": "Consulting and Support",
             "description": "Advance confidently in the digital world. Expert advice and tailored support for your projects."
         }
+    },
+    "Contact": {
+        "contact": "Contact Me",
+        "email": "Email",
+        "name": "Name",
+        "subject": "Subject",
+        "message": "Message",
+        "message_placeholder": "Enter your message…",
+        "send": "Send",
+        "prompt": "Are you looking to create a",
+        "words": "modern website, SaaS, online showcase site to attract customers, online booking system, interactive menu for your restaurant, online e-commerce site to sell your products, efficient inventory management tool"
     }
 }

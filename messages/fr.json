@@ -79,7 +79,7 @@
         "all_projects": "Tous les Projets",
         "see_project": "Voir le Projet",
         "hover_project": "Survolez un projet pour en savoir plus.",
-        "youbotbuster_desc": "Outil SaaS automatisant la suppression des commentaires indésirables sous les vidéos YouTube.",
+        "youbotbuster_desc": "Outil SaaS utilisant de l'IA pour automatiser la suppression des commentaires indésirables sous les vidéos YouTube.",
         "meetsponsors_desc": "Création d'un algorithme 'For You' avec de l’IA afin de connecter efficacement créateurs de contenu et sponsors.",
         "end_status": "Complété",
         "created_in": "Créé en ",
@@ -90,5 +90,16 @@
         "skills_title1": "Compétences et",
         "skills_title2": "Aptitudes",
         "show_list": "Voir la liste"
+    },
+    "Contact": {
+        "contact": "Contactez-moi",
+        "email": "Email",
+        "name": "Nom",
+        "subject": "Sujet",
+        "message": "Message",
+        "message_placeholder": "Entrez votre message…",
+        "send":"Envoyer",
+        "prompt": "Vous cherchez à créer un",
+        "words": "site web moderne, SaaS, site vitrine en ligne pour attirer des clients, système de réservation en ligne, menu interactif pour votre restaurant, site e-commerce en ligne pour vendre vos produits, outil de gestion de stock efficace"
     }
 }
