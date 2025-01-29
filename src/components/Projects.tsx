@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from 'next/image';
 import React from "react";
-import { Calendar, LoaderCircle, MoveUpRight, Users, WorkflowIcon } from 'lucide-react';
+import { Calendar, MoveUpRight, Users, WorkflowIcon } from 'lucide-react';
 import {
     HoverCard,
     HoverCardContent,
@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { projects } from '../../data/projects'
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { motion } from 'framer-motion'
 
 export default function Projects() {
 
@@ -39,22 +40,18 @@ export default function Projects() {
         return activeItemProj === "all" || project.techno.some(tech => tech.toLowerCase() === activeItemProj.toLowerCase());
     });
 
-    // Nombre total de colonnes et de projets
     const totalProjects = filtered_projects.length;
     const columns = [];
     let start = 0;
 
     for (let i = 0; i < columnCount; i++) {
-        // Calculer le nombre de projets par colonne dynamiquement
         const remainingColumns = columnCount - i;
         const projectsLeft = totalProjects - start;
         const projectsPerCurrentColumn = Math.ceil(projectsLeft / remainingColumns);
 
-        // Découper les projets pour cette colonne
         const end = start + projectsPerCurrentColumn;
         columns.push(filtered_projects.slice(start, end));
 
-        // Mettre à jour le point de départ pour la prochaine colonne
         start = end;
     }
 
@@ -66,15 +63,20 @@ export default function Projects() {
         }, 2000);
     }
 
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
         <div id='projects' className="part flex flex-col text-center pt-20 w-4/5">
-            <div className='mb-10'>
+            <motion.div className='mb-10' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('projects')}</p>
                 <h3 className='text-xs font-bold text-primary'>{t('projects_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('projects_title2')}
                 </h3>
-            </div>
+            </motion.div>
             <ul className='flex max-sm:flex-col max-sm:gap-2 sm:gap-4 flex-wrap'>
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'all' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('all')}>{t('all_projects')}</li>
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'reactjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('reactjs')}>ReactJS</li>
@@ -86,7 +88,8 @@ export default function Projects() {
                 {columns.map((column, index) => (
                     <div key={'col' + index} className="max-sm:w-full sm:w-1/3 text-left">
                         {column.map((project, index) => (
-                            <div key={project.code} className="hover:bg-secondary p-2 group rounded-sm">
+                            <div key={project.code} className="hover:bg-secondary hover:border border-primary p-2 group rounded-sm relative">
+                                <div className="hidden group-hover:flex w-full h-full bg-red-500 absolute top-0 left-0 -z-10 background rounded-full blur-2xl scale-150"></div>
                                 <div className="w-full relative rounded-sm overflow-hidden">
                                     <div className="group-hover:flex flex-col gap-2 hidden w-3/4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10">
                                         <p className="text-center font-light leading-relaxed mt-2 mb-4">

@@ -7,6 +7,7 @@ import { Textarea } from "./ui/textarea";
 import WordRotate from "./ui/word-rotate";
 import { useState } from "react";
 import { useTranslations } from 'next-intl';
+import { BorderBeam } from "./../components/ui/border-beam";
 
 export default function About() {
 
@@ -117,33 +118,34 @@ export default function About() {
           words={wordsArray}
         />
       </div>
-      <Card className="w-4/5 max-sm:w-11/12">
+      <Card className="w-4/5 max-sm:w-11/12 relative">
         <CardContent className='flex p-4'>
           <div className='w-full flex flex-wrap gap-4'>
             <div className='flex gap-2 w-full'>
-              <div className='w-1/2'>
+              <div className='w-1/2 space-y-2'>
                 <Label htmlFor="email">{t('email')}</Label>
                 <Input id='email' type="email" placeholder={t('email')} className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} />
               </div>
-              <div className='w-1/2'>
+              <div className='w-1/2 space-y-2'>
                 <Label htmlFor="name">{t('name')}</Label>
                 <Input id='name' type="text" placeholder={t('name')} className='w-full' value={name} onChange={(e) => setName(e.target.value)} />
               </div>
             </div>
-            <div className='w-full'>
+            <div className='w-full space-y-2'>
               <Label htmlFor="subject">{t('subject')}</Label>
               <Input id='subject' type="text" placeholder={t('subject')} value={subject} onChange={(e) => setSubject(e.target.value)} />
             </div>
-            <div className='w-full'>
+            <div className='w-full space-y-2'>
               <Label htmlFor='message'>{t('message')}</Label>
               <Textarea id='message' placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} />
             </div>
-            <div className='w-full'>
+            <div className='w-full space-y-2'>
               <Button onClick={sendEmail}>{t('send')}</Button>
             </div>
             <p className={`text-center w-full ${back.includes("erreur") ? "text-red-500" : "text-green-500"}`}>{back}</p>
           </div>
         </CardContent>
+        <BorderBeam size={250} duration={12} delay={9} colorFrom="orange" colorTo="#ffffff" />
       </Card>
     </div>
 

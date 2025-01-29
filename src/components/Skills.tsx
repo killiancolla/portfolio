@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import { Switch } from "./ui/switch"
 import { Label } from "./ui/label";
 import { useState } from "react";
+import { motion } from 'framer-motion'
 
 export default function Skills() {
 
@@ -33,15 +34,20 @@ export default function Skills() {
 
     const slugs = skillsFromSlugs.map(skill => skill.image);
 
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
         <div id='skills' className="part flex flex-col items-center text-center pt-20 w-4/5">
-            <div className='mb-10'>
+            <motion.div className='mb-10' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('skills')}</p>
                 <h3 className='text-xs font-bold text-primary'>{t('skills_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('skills_title2')}
                 </h3>
-            </div>
+            </motion.div>
             <div className="flex items-center space-x-2">
                 <Switch checked={showList} onCheckedChange={() => setShowList(show => !show)} id="list-mode" />
                 <Label htmlFor="list-mode">{t('show_list')}</Label>

@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import { Cloud, Code, MessageCircle, Monitor, Settings, ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { motion } from 'framer-motion';
 
 export default function Services() {
     const t = useTranslations('Services');
@@ -38,9 +39,19 @@ export default function Services() {
         },
     ];
 
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    };
+
     return (
         <div id="services" className="part flex flex-col items-center text-center pt-20 w-4/5">
-            <div className="mb-10">
+            <motion.div variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible" className="mb-10">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">
                     {t('title')}
                 </p>
@@ -48,20 +59,32 @@ export default function Services() {
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('heading')}
                 </h3>
-            </div>
+            </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
-                    <Card key={index} className="transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_4px_6px_hsl(200,15%,30%)]">
-                        <CardHeader>
-                            <CardTitle className="flex flex-col items-center text-center">
-                                {service.icon}
-                                {service.title}
-                            </CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <CardDescription className="text-center">{service.description}</CardDescription>
-                        </CardContent>
-                    </Card>
+                    <motion.div
+                        key={index}
+                        className="transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_4px_6px_hsl(200,15%,30%)] rounded-md"
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{
+                            once: true,
+                            margin: `-${75 * (index + 1)}px 0px`
+                        }}
+                        variants={cardVariants}
+                    >
+                        <Card className='w-full h-full'>
+                            <CardHeader>
+                                <CardTitle className="flex flex-col items-center text-center">
+                                    {service.icon}
+                                    {service.title}
+                                </CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                                <CardDescription className="text-center">{service.description}</CardDescription>
+                            </CardContent>
+                        </Card>
+                    </motion.div>
                 ))}
             </div>
         </div>
