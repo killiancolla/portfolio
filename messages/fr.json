@@ -3,7 +3,8 @@
         "hello": "Bonjour, je suis Killian",
         "title": "Développeur Web",
         "intro": "Je suis Killian, un développeur web passionné par la création d'expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne technologie et créativité.",
-        "contact": "Contactez-moi"
+        "contact": "Contactez-moi",
+        "question": "Vous avez un projet ?"
     },
     "About": {
         "about": "À propos",
@@ -98,7 +99,7 @@
         "subject": "Sujet",
         "message": "Message",
         "message_placeholder": "Entrez votre message…",
-        "send":"Envoyer",
+        "send": "Envoyer",
         "prompt": "Vous cherchez à créer un",
         "words": "site web moderne, SaaS, site vitrine en ligne pour attirer des clients, système de réservation en ligne, menu interactif pour votre restaurant, site e-commerce en ligne pour vendre vos produits, outil de gestion de stock efficace"
     }

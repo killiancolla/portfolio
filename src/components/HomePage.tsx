@@ -66,7 +66,7 @@ export default function HomePage() {
 
         <motion.div variants={itemVariants} className="flex flex-col items-center gap-3">
           <h2 className="text-primary font-bold">
-            Vous avez un projet ?
+            {t("question")}
           </h2>
           <div>
             <Button>{t("contact")}</Button>
@@ -79,7 +79,7 @@ export default function HomePage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <Link href="https://github.com/killiancolla" target="_blank">
+            <Link href="https://github.com/killiancolla" target="_blank" aria-label="Visit my GitHub profile">
               <Github className="hover:text-primary" />
             </Link>
           </motion.div>
@@ -91,6 +91,7 @@ export default function HomePage() {
             <Link
               href="https://www.linkedin.com/in/killian-colla-46b48b207/"
               target="_blank"
+              aria-label="Visit my LinkedIn profile"
             >
               <Linkedin className="hover:text-primary" />
             </Link>

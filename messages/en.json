@@ -3,7 +3,8 @@
         "hello": "Hello, I'm Killian",
         "title": "Web Developer",
         "intro": "I'm Killian, a web developer passionate about creating innovative online experiences. Explore my portfolio to see how I merge technology and creativity.",
-        "contact": "Contact me"
+        "contact": "Contact me",
+        "question": "Do you have a project?"
     },
     "About": {
         "about": "About",

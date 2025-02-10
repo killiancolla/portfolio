@@ -19,7 +19,7 @@ export default function ModeBar() {
         <div className='flex flex-col gap-2 fixed top-2 right-2 z-10'>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild className=''>
-                    <Button variant="outline" size="icon">
+                    <Button aria-label="Language toggle" variant="outline" size="icon">
                         <Flag className="h-[1.2rem] w-[1.2rem]" />
                     </Button>
                 </DropdownMenuTrigger>
@@ -30,14 +30,14 @@ export default function ModeBar() {
                     <DropdownMenuItem onClick={() => router.push('/en/' + currentPath)}>
                         English
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => router.push('/jp/' + currentPath)}>
+                    <DropdownMenuItem onClick={() => router.push('/ja/' + currentPath)}>
                         日本語
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild className=''>
-                    <Button variant="outline" size="icon">
+                    <Button variant="outline" size="icon" aria-label="Theme toggle">
                         <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
                         <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
                         <span className="sr-only">{t('toggle')}</span>
