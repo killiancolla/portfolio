@@ -13,7 +13,7 @@ import Services from "@/components/Services";
 export default function Home() {
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center max-w-screen-2xl m-auto">
       <NavBar />
       <HomePage />
       <About />
