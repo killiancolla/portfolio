@@ -109,30 +109,7 @@ export default function Projects() {
                                         alt={project.title}
                                     />
                                 </div>
-                                <HoverCard>
-                                    <HoverCardTrigger>
-                                        <h2 className="font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}{project.link && (<MoveUpRight className="size-5 group-hover:bg-primary" />)}</h2>
-                                    </HoverCardTrigger>
-                                    <HoverCardContent className="flex justify-between space-x-4">
-                                        <div className="space-y-1">
-                                            <h4 className="text-sm font-semibold">{project.title} {t('project')}</h4>
-                                            <p className="text-sm">
-                                                {t(project.code + '_desc')}
-                                            </p>
-                                            <div className="flex flex-col items-start pt-2 gap-1">
-                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
-                                                    <Calendar className="mr-2" />{t('created_in') + project.date}
-                                                </span>
-                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
-                                                    <WorkflowIcon className="mr-2 " />{t(project.status)}
-                                                </span>
-                                                <span className="text-xs text-muted-foreground flex justify-center items-center">
-                                                    <Users className="mr-2 " />{project.people}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </HoverCardContent>
-                                </HoverCard>
+                                <h2 className="font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}{project.link && (<MoveUpRight className="size-5 group-hover:bg-primary" />)}</h2>
                                 <h3 className="text-primary font-thin text-lg">
                                     {project.techno.map((tech, index) => (
                                         <React.Fragment key={index}>
