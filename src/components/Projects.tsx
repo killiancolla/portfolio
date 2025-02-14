@@ -88,7 +88,7 @@ export default function Projects() {
                 {columns.map((column, index) => (
                     <div key={'col' + index} className="max-sm:w-full sm:w-1/3 text-left">
                         {column.map((project, index) => (
-                            <div key={project.code} className="hover:bg-secondary hover:border border-primary p-2 group rounded-sm relative">
+                            <div key={project.code} className="hover:bg-card hover:border border-primary p-2 group rounded-sm relative">
                                 <div className="hidden group-hover:flex w-full h-full bg-red-500 absolute top-0 left-0 -z-10 background rounded-full blur-2xl scale-150"></div>
                                 <div className="w-full relative rounded-sm overflow-hidden">
                                     <div className="group-hover:flex flex-col gap-2 hidden w-3/4 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-10">
