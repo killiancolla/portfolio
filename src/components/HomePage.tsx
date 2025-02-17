@@ -65,7 +65,7 @@ export default function HomePage() {
             {t("hello")}
           </span>
 
-          <h2 className="font-bold sm:text-5xl max-sm:text-4xl relative border border-primary px-7 py-3 flex gap-2">
+          <h2 className="font-bold sm:text-5xl max-sm:text-xl text-center relative border border-primary px-7 py-3 flex gap-2 mx-10">
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

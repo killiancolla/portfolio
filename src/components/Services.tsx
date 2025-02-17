@@ -70,8 +70,8 @@ export default function Services() {
                         initial="hidden"
                         whileInView="visible"
                         viewport={{
-                            once: true,
-                            margin: `-${75 * (index + 1)}px 0px`
+                            once: false,
+                            margin: `-50px 0px`
                         }}
                         variants={cardVariants}
                     >

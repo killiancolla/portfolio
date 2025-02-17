@@ -5,7 +5,18 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['static.vecteezy.com']
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'cdn.simpleicons.org',
+            },
+            {
+                protocol: 'https',
+                hostname: 'static.vecteezy.com'
+            }
+        ],
+        dangerouslyAllowSVG: true,
+        contentSecurityPolicy: "default-src 'self'; img-src * data: blob:;"
     }
 };
 
