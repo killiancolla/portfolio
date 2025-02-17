@@ -43,7 +43,7 @@ export default function Skills() {
         <div id='skills' className="part flex flex-col items-center text-center pt-20 w-4/5">
             <motion.div className='mb-10' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('skills')}</p>
-                <h3 className='text-xs font-bold text-primary'>{t('skills_title1')}</h3>
+                <h3 className='text-sm font-bold text-primary'>{t('skills_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('skills_title2')}
                 </h3>
@@ -57,7 +57,7 @@ export default function Skills() {
                     {skillsFromSlugs.map((slug, index) => (
                         <div key={index} className="flex max-sm:flex-col max-sm:justify-center max-sm:items-center sm:flex-row sm:px-10 max-sm:py-2 sm:py-4 rounded-sm bg-card max-sm:w-36 sm:w-48 h-16 justify-center items-center sm:gap-4 border">
                             <img className="max-sm:h-2/3 sm:w-1/3" alt="logo" src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`} />
-                            <p className="max-sm:items-center max-sm:justify-center max-sm:flex max-sm:text-sm sm:w-2/3 sm:text-left">{slug.name}</p>
+                            <p className="max-sm:items-center max-sm:justify-center max-sm:flex max-sm:text-base sm:w-2/3 sm:text-left">{slug.name}</p>
                         </div>
                     ))}
                 </div>

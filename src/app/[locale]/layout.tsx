@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import ClientLayout from "@/components/ClientLayout";
+import NavBar from "@/components/NavBar";
+import { Poppins } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
 export const metadata: Metadata = {
   title: "Killian Colla - Développeur Web",
@@ -23,7 +24,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <head>
         {/* Google Tag Manager */}
         <script
@@ -39,7 +40,7 @@ export default async function LocaleLayout({
         />
         {/* End Google Tag Manager */}
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${poppins.className}`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -58,7 +59,10 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <ClientLayout>{children}</ClientLayout>
+            <ClientLayout>
+              <NavBar />
+              {children}
+            </ClientLayout>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

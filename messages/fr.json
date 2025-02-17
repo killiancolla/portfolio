@@ -17,6 +17,7 @@
         "title": "Services",
         "subtitle": "Des solutions",
         "heading": "adaptées",
+        "call": "Reserver un appel",
         "saas": {
             "title": "Développement SaaS",
             "description": "Vos idées, transformées en plateformes SaaS performantes. Création de solutions sur mesure pour automatiser et simplifier votre activité."
@@ -93,14 +94,19 @@
         "show_list": "Voir la liste"
     },
     "Contact": {
+        "contact-button": "Me contacter",
         "contact": "Contactez-moi",
         "email": "Email",
         "name": "Nom",
         "subject": "Sujet",
         "message": "Message",
-        "message_placeholder": "Entrez votre message…",
+        "message_placeholder": "Message",
         "send": "Envoyer",
         "prompt": "Vous cherchez à créer un",
-        "words": "site web moderne, SaaS, site vitrine en ligne pour attirer des clients, système de réservation en ligne, menu interactif pour votre restaurant, site e-commerce en ligne pour vendre vos produits, outil de gestion de stock efficace"
+        "words": "site web moderne, SaaS, site vitrine en ligne pour attirer des clients, système de réservation en ligne, menu interactif pour votre restaurant, site e-commerce en ligne pour vendre vos produits, outil de gestion de stock efficace",
+        "discuss": "Discutons de votre projet",
+        "text": "Vous avez un projet en tête, une idée à développer, une marque à lancer ? Discutons-en ! Contactez-moi et voyons comment je vous aider.",
+        "link": "Liens utiles / Réseaux Sociaux",
+        "portfolio": "Voir mon portfolio"
     }
 }

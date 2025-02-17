@@ -1,7 +1,9 @@
 import { useTranslations } from 'next-intl';
-import { Cloud, Code, MessageCircle, Monitor, Settings, ShoppingCart } from "lucide-react";
+import { Cloud, Code, MessageCircle, Monitor, Phone, Settings, ShoppingCart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { motion } from 'framer-motion';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 export default function Services() {
     const t = useTranslations('Services');
@@ -50,12 +52,12 @@ export default function Services() {
     };
 
     return (
-        <div id="services" className="part flex flex-col items-center text-center pt-20 w-4/5">
+        <div id="services" className="part flex flex-col items-center text-center pt-20 w-4/5 gap-6">
             <motion.div variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible" className="mb-10">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">
                     {t('title')}
                 </p>
-                <h3 className="text-xs font-bold text-primary">{t('subtitle')}</h3>
+                <h3 className="text-sm font-bold text-primary">{t('subtitle')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('heading')}
                 </h3>
@@ -81,12 +83,21 @@ export default function Services() {
                                 </CardTitle>
                             </CardHeader>
                             <CardContent>
-                                <CardDescription className="text-center">{service.description}</CardDescription>
+                                <CardDescription className="text-center text-base">{service.description}</CardDescription>
                             </CardContent>
                         </Card>
                     </motion.div>
                 ))}
             </div>
+            <Link href={'https://cal.com/killian-colla-cahhc2/30min'} target='_blank'>
+                <Button className='overflow-hidden relative group'>
+                    <div className='flex justify-center items-center group-hover:translate-x-[150%] transition-all'>
+                        <Phone className='mr-4' />
+                        <p className='transition-all'>{t('call')}</p>
+                    </div>
+                    <Phone className='absolute top-1/2 -left-10 -translate-x-1/2 -translate-y-1/2 group-hover:left-1/2 transition-all' />
+                </Button>
+            </Link>
         </div>
     );
 }

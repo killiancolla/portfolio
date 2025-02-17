@@ -26,7 +26,7 @@ export default function About() {
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">
                     {t("about")}
                 </p>
-                <h3 className="text-xs font-bold text-primary">{t("about-title1")}</h3>
+                <h3 className="text-sm font-bold text-primary">{t("about-title1")}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t("about-title2")}
                 </h3>

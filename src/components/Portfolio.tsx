@@ -51,7 +51,7 @@ export default function Portfolio() {
         <div id='portfolio' className="part flex items-center flex-col text-center w-4/5 pt-20 mb-10">
             <motion.div className='mb-16' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('portfolio')}</p>
-                <h3 className='text-xs font-bold text-primary'>{t('portfolio_title1')}</h3>
+                <h3 className='text-sm font-bold text-primary'>{t('portfolio_title1')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('portfolio_title2')}
                 </h3>
@@ -77,7 +77,7 @@ export default function Portfolio() {
             </div>
 
             <motion.div className='mb-16 pt-10' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
-                <h3 className='text-xs font-bold text-primary'>{t('portfolio_title3')}</h3>
+                <h3 className='text-sm font-bold text-primary'>{t('portfolio_title3')}</h3>
                 <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('portfolio_title4')}
                 </h3>

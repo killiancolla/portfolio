@@ -10,7 +10,7 @@
       --muted-foreground: 233 11% 29%;
       --popover: 53 39% 99%;
       --popover-foreground: 53 74% 3%;
-      --card: 0 0% 99%;
+      --card: 22 3% 93%;
       --card-foreground: 53 74% 3%;
       --border: 53 4% 94%;
       --input: 194, 1%, 90%;
@@ -62,4 +62,40 @@
 
 .background {
   background: conic-gradient(from 7deg at 67% 9%,rgba(125, 125, 125, 0) 108deg,rgb(255,111,0) 360deg);
+}
+
+@keyframes slideDown {
+  0% {
+      transform: translateY(-100%);
+  }
+  100% {
+      transform: translateY(0%);
+  }
+}
+
+.animated-image {
+  animation: slideDown 5s linear infinite;
+  transform: rotateX(35deg);
+}
+
+.grid-auto-rows {
+  grid-auto-rows: 1fr;
+}
+
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.blinking-bar {
+  animation: blink 1s infinite;
+}
+
+* {
+  user-select: none;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
 }

@@ -67,6 +67,7 @@
         "title": "Services",
         "subtitle": "Services offered",
         "heading": "provided",
+        "call": "Book a call",
         "saas": {
             "title": "SaaS Development",
             "description": "Transform your ideas into powerful SaaS platforms. Custom solutions to automate and simplify your business operations."
@@ -93,14 +94,19 @@
         }
     },
     "Contact": {
+        "contact-button": "Contact",
         "contact": "Contact Me",
         "email": "Email",
         "name": "Name",
         "subject": "Subject",
         "message": "Message",
-        "message_placeholder": "Enter your message…",
+        "message_placeholder": "Message",
         "send": "Send",
         "prompt": "Are you looking to create a",
-        "words": "modern website, SaaS, online showcase site to attract customers, online booking system, interactive menu for your restaurant, online e-commerce site to sell your products, efficient inventory management tool"
+        "words": "modern website, SaaS, online showcase site to attract customers, online booking system, interactive menu for your restaurant, online e-commerce site to sell your products, efficient inventory management tool",
+        "discuss": "Let's discuss your project",
+        "text": "Do you have a project in mind, an idea to develop, or a brand to launch? Let's talk! Contact me and let's see how I can help you.",
+        "link": "Useful links / Social Networks",
+        "portfolio": "View my portfolio"
     }
 }

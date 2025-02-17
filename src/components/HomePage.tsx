@@ -1,10 +1,11 @@
 import { Button } from "./ui/button"
 import { useTranslations } from 'next-intl';
-import { useRouter, useParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, PencilIcon, PencilLine, Phone } from "lucide-react";
 import { motion } from 'framer-motion'
+import { useEffect, useState } from "react";
 
 export default function HomePage() {
 
@@ -22,10 +23,22 @@ export default function HomePage() {
     },
   };
 
-  const router = useRouter();
-  const params = useParams()
+  const pathName = usePathname();
 
   const t = useTranslations('HomePage')
+
+  const [visibleText, setVisibleText] = useState("");
+
+  useEffect(() => {
+    let i = 0;
+    const interval = setInterval(() => {
+      setVisibleText(t('title').substring(0, i + 1));
+      i++;
+      if (i === t('title').length) clearInterval(interval);
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, [t]);
 
   return (
     <div className="relative">
@@ -39,7 +52,7 @@ export default function HomePage() {
       >
         <motion.div variants={itemVariants} className="flex flex-col items-center gap-2">
           <Image
-            className="w-32 rounded-full bg-white aspect-square object-cover object-center"
+            className="w-32 rounded-full bg-white aspect-square object-cover object-center hover:-translate-y-2 hover:rotate-12 transition-all border-primary hover:border"
             src={"/me.jpg"}
             alt="picture of me"
             width={200}
@@ -52,10 +65,18 @@ export default function HomePage() {
             {t("hello")}
           </span>
 
-          <h2
-            className="font-bold sm:text-5xl max-sm:text-4xl"
-          >
-            {t("title")}
+          <h2 className="font-bold sm:text-5xl max-sm:text-4xl relative border border-primary px-7 py-3 flex gap-2">
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {visibleText}
+            </motion.p>
+            <div className="w-2 bg-white blinking-bar"></div>
+            <div className="w-5 h-5 absolute top-0 right-0 bg-primary flex justify-center items-center">
+              <PencilLine className="w-2/3 h-2/3" />
+            </div>
           </h2>
 
 
@@ -69,7 +90,9 @@ export default function HomePage() {
             {t("question")}
           </h2>
           <div>
-            <Button>{t("contact")}</Button>
+            <Link className="relative group" href={`${pathName}/contact`}>
+              <Button className="">{t("contact")}</Button>
+            </Link>
           </div>
 
         </motion.div>

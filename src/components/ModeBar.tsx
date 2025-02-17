@@ -16,7 +16,7 @@ export default function ModeBar() {
 
 
     return (
-        <div className='flex flex-col gap-2 fixed top-2 right-2 z-10'>
+        <div className='flex flex-col gap-2 fixed bottom-4 right-4 z-10 items-end'>
             <DropdownMenu>
                 <DropdownMenuTrigger asChild className=''>
                     <Button aria-label="Language toggle" variant="outline" size="icon">
