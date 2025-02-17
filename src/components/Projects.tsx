@@ -110,7 +110,7 @@ export default function Projects() {
             <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 grid-auto-rows gap-4 mt-4">
                 {projects.map((project, index) => (
                     project.link ? (
-                        <Link href={project.link ?? '#'} target="_blank">
+                        <Link key={index} href={project.link ?? '#'} target="_blank">
                             <div
                                 key={project.code}
                                 className="bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
@@ -148,7 +148,7 @@ export default function Projects() {
                         </Link>
                     ) : (
                         <div
-                            key={project.code}
+                            key={index}
                             className="bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
                             style={{ transform: `rotate(${rotations[index] || 0}deg)`, transition: "transform 0.3s ease-in-out" }}
                             onMouseEnter={() => handleMouseEnter(index)}
