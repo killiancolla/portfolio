@@ -27,10 +27,14 @@ export default function Contact() {
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
   const [back, setBack] = useState("")
+  const [loading, setLoading] = useState(false)
 
   const pathName = usePathname();
 
   async function sendEmail() {
+
+    setLoading(true)
+
     const response = await fetch('/api/send-mail', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -109,6 +113,8 @@ export default function Contact() {
       }),
     });
 
+    setLoading(false)
+
     if (response.ok) {
       setBack("Merci pour votre message ! Nous vous ferons un retour d'ici 48 heures.")
     } else {
@@ -185,8 +191,14 @@ export default function Contact() {
                 <Textarea id='message' placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} />
               </div>
               <div className='w-full'>
-                <Button className='w-full' onClick={sendEmail}>{t('send')}</Button>
+                <Button className='w-full' onClick={sendEmail}>{loading ?
+                  <div className='h-full'>
+                    <Image className='dark:hidden h-full' src={'/loader_light.svg'} width={100} height={100} alt='Loader' />
+                    <Image className='dark:flex hidden h-full' src={'/loader_dark.svg'} width={100} height={100} alt='Loader' />
+                  </div>
+                  : t('send')}</Button>
               </div>
+              <p className={back.includes('erreur') ? 'text-red-400' : 'text-green-400'}>{back}</p>
             </div>
           </div>
         </CardContent>
