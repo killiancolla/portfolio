@@ -27,6 +27,7 @@ export default async function LocaleLayout({
   return (
     <html lang="en" className="">
       <GoogleTagManager gtmId="GTM-52DG8CCK" />
+      <GoogleTagManager gtmId="G-LDVMHZZR03" />
       <body className={`${poppins.className}`}>
         <ThemeProvider
           attribute="class"
