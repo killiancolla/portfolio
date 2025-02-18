@@ -6,6 +6,7 @@ import { getMessages } from 'next-intl/server';
 import ClientLayout from "@/components/ClientLayout";
 import NavBar from "@/components/NavBar";
 import { Poppins } from "next/font/google";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
@@ -25,9 +26,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang="en" className="">
-      <head>
-
-      </head>
+      <GoogleTagManager gtmId="GTM-52DG8CCK" />
       <body className={`${poppins.className}`}>
         <ThemeProvider
           attribute="class"
