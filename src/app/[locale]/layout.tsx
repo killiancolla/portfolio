@@ -27,7 +27,7 @@ export default async function LocaleLayout({
   return (
     <html lang="en" className="">
       <GoogleTagManager gtmId="GTM-52DG8CCK" />
-      <GoogleAnalytics gaId={"G-LDVMHZZR03"} />
+      <GoogleAnalytics gaId="G-LDVMHZZR03" />
 
       <body className={`${poppins.className}`}>
         <ThemeProvider
