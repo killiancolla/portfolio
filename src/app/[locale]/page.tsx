@@ -19,7 +19,6 @@ export default function Home() {
       <Skills />
       <Projects />
       <Portfolio />
-      <Footer className="w-1/2 text-center" />
     </div >
   );
 }

@@ -5,6 +5,7 @@ import { Switch } from "./ui/switch"
 import { Label } from "./ui/label";
 import { useState } from "react";
 import { motion } from 'framer-motion'
+import { OrbitingCircles } from "./magicui/orbiting-circles";
 
 export default function Skills() {
 
@@ -62,9 +63,58 @@ export default function Skills() {
                     ))}
                 </div>
             ) : (
-                <div className="flex justify-center flex-wrap">
-                    <IconCloud iconSlugs={slugs} />
-                </div>
+                <>
+                    <div className="max-sm:hidden relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
+                        <OrbitingCircles iconSize={60} radius={180}>
+                            {skillsFromSlugs.slice(0, 10).map((slug, index) => (
+                                <Image
+                                    key={index}
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                />
+                            ))}
+                        </OrbitingCircles>
+
+                        <OrbitingCircles iconSize={50} radius={110} reverse>
+                            {skillsFromSlugs.slice(10, 18).map((slug, index) => (
+                                <Image
+                                    key={index + 10}
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                />
+                            ))}
+                        </OrbitingCircles>
+                    </div>
+                    <div className="sm:hidden relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden">
+                        <OrbitingCircles iconSize={40} radius={130}>
+                            {skillsFromSlugs.slice(0, 10).map((slug, index) => (
+                                <Image
+                                    key={index}
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                />
+                            ))}
+                        </OrbitingCircles>
+
+                        <OrbitingCircles iconSize={40} radius={80} reverse>
+                            {skillsFromSlugs.slice(10, 18).map((slug, index) => (
+                                <Image
+                                    key={index + 10}
+                                    width={100}
+                                    height={100}
+                                    alt="logo"
+                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                />
+                            ))}
+                        </OrbitingCircles>
+                    </div>
+                </>
             )
             }
         </div >

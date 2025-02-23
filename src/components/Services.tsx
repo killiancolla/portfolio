@@ -62,18 +62,19 @@ export default function Services() {
                     {t('heading')}
                 </h3>
             </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{
+                    once: false,
+                    margin: `-50px 0px`
+                }}
+                variants={cardVariants}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {services.map((service, index) => (
-                    <motion.div
+                    <div
                         key={index}
                         className="transition-all duration-300 hover:shadow-lg dark:hover:shadow-[0_4px_6px_hsl(200,15%,30%)] rounded-md"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{
-                            once: false,
-                            margin: `-50px 0px`
-                        }}
-                        variants={cardVariants}
                     >
                         <Card className='w-full h-full'>
                             <CardHeader>
@@ -86,9 +87,9 @@ export default function Services() {
                                 <CardDescription className="text-center text-base">{service.description}</CardDescription>
                             </CardContent>
                         </Card>
-                    </motion.div>
+                    </div>
                 ))}
-            </div>
+            </motion.div>
             <Link href={'https://cal.com/killian-colla-cahhc2/30min'} target='_blank'>
                 <Button className='overflow-hidden relative group'>
                     <div className='flex justify-center items-center group-hover:translate-x-[150%] transition-all'>
@@ -98,6 +99,6 @@ export default function Services() {
                     <Phone className='absolute top-1/2 -left-10 -translate-x-1/2 -translate-y-1/2 group-hover:left-1/2 transition-all' />
                 </Button>
             </Link>
-        </div>
+        </div >
     );
 }
