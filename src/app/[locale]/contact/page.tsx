@@ -3,19 +3,14 @@
 import { useTranslations } from 'next-intl';
 import WordRotate from '@/components/ui/word-rotate';
 import { Card, CardContent } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { BorderBeam } from '@/components/ui/border-beam';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, MailCheck, MailCheckIcon, MailIcon, Twitter, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import path from 'path';
-import NavBar from '@/components/NavBar';
-import Footer from '@/components/Footer';
 
 export default function Contact() {
 
@@ -31,7 +26,8 @@ export default function Contact() {
 
   const pathName = usePathname();
 
-  async function sendEmail() {
+  async function sendEmail(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault()
 
     setLoading(true)
 
@@ -176,10 +172,10 @@ export default function Contact() {
                 </Link>
               </div>
             </div>
-            <div className='max-sm:w-full w-1/2 flex flex-col my-auto gap-5'>
+            <form className='max-sm:w-full w-1/2 flex flex-col my-auto gap-5' onSubmit={(e) => sendEmail(e)}>
               <p className='font-bold text-xl text-left'>Formulaire de contact</p>
               <div className='w-full'>
-                <Input id='email' type="email" placeholder={t('email')} className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <Input id='email' type="email" placeholder={`${t('email')}*`} className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
               <div className='w-full'>
                 <Input id='name' type="text" placeholder={t('name')} className='w-full' value={name} onChange={(e) => setName(e.target.value)} />
@@ -191,7 +187,7 @@ export default function Contact() {
                 <Textarea id='message' placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} />
               </div>
               <div className='w-full'>
-                <Button className='w-full' onClick={sendEmail}>{loading ?
+                <Button className='w-full'>{loading ?
                   <div className='h-full'>
                     <Image className='dark:hidden h-full' src={'/loader_light.svg'} width={100} height={100} alt='Loader' />
                     <Image className='dark:flex hidden h-full' src={'/loader_dark.svg'} width={100} height={100} alt='Loader' />
@@ -199,7 +195,7 @@ export default function Contact() {
                   : t('send')}</Button>
               </div>
               <p className={back.includes('erreur') ? 'text-red-400' : 'text-green-400'}>{back}</p>
-            </div>
+            </form>
           </div>
         </CardContent>
         <BorderBeam size={250} duration={12} delay={9} colorFrom="orange" colorTo="#ffffff" />
