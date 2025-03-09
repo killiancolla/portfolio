@@ -1,9 +1,16 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import { ArrowDownFromLine } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 
 export default function About() {
+
+    const params = useParams();
+    const locale = params?.locale || "fr";
+
     const t = useTranslations("About");
 
     const variants = {
@@ -32,7 +39,7 @@ export default function About() {
                 </h3>
             </div>
             <p className="sm:w-2/5 max-sm:w-5/6 italic font-thin leading-7 mb-5">{t("about_desc")}</p>
-            <a href="CV_FR_Killian_Colla.pdf" target="_blank" rel="noopener noreferrer">
+            <a href={locale == 'fr' ? "CV_FR_Killian_Colla.pdf" : "CV_EN_Killian_Colla.pdf"} target="_blank" rel="noopener noreferrer">
                 <Button aria-label="Download CV" className="">{t("cv-download")}<ArrowDownFromLine className="py-1" /></Button>
             </a>
         </motion.div>

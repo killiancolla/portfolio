@@ -22,7 +22,6 @@ export default async function LocaleLayout(props: {
 }) {
   const { children } = props;
 
-  // Attendre params avant d'accéder à locale
   const { locale } = await props.params;
   const messages = await getMessages({ locale });
 

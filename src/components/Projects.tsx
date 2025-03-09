@@ -107,13 +107,13 @@ export default function Projects() {
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
             </ul> */}
-            <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 grid-auto-rows gap-4 mt-4">
+            <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 sm:grid-auto-rows gap-4 mt-4">
                 {projects.map((project, index) => (
                     project.link ? (
                         <Link key={index} href={project.link ?? '#'} target="_blank">
                             <div
                                 key={project.code}
-                                className="bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
+                                className="h-full bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
                                 style={{ transform: `rotate(${rotations[index] || 0}deg)`, transition: "transform 0.3s ease-in-out" }}
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}
@@ -149,7 +149,7 @@ export default function Projects() {
                     ) : (
                         <div
                             key={index}
-                            className="bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
+                            className="h-full bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
                             style={{ transform: `rotate(${rotations[index] || 0}deg)`, transition: "transform 0.3s ease-in-out" }}
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={() => handleMouseLeave(index)}
