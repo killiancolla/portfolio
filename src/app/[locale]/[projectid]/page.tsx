@@ -7,26 +7,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Calendar, Users } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
 export default function ProjectPage() {
     const { projectid } = useParams();
     const t = useTranslations('Projects');
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => {
-        setMounted(true);
-    }, []);
 
     const project = projects.find(p => p.code === projectid);
-
-    if (!mounted) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-            </div>
-        );
-    }
 
     if (!project) {
         return (
