@@ -52,7 +52,8 @@
         "see_project": "See Project",
         "hover_project": "Hover over a project name to learn more.",
         "youbotbuster_desc": "SaaS tool using AI to automate the removal of spam comments under YouTube videos.",
-        "meetsponsors_desc": "Creation of a “For You” algorithm using AI to efficiently connect content creators with sponsors.",
+        "meetsponsors_desc": "Creation of a 'For You' algorithm using AI to efficiently connect content creators with sponsors.",
+        "qovery_desc": "AI-powered DevOps platform that automates infrastructure management and deployments. Development of intelligent AI agents to provision, deploy, observe, secure and optimize cloud costs.",
         "end_status": "Completed",
         "created_in": "Created in ",
         "read_more": "Read more"

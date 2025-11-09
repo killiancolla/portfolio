@@ -2,7 +2,7 @@
     "HomePage": {
         "hello": "Bonjour, je suis Killian",
         "title": "Développeur Web",
-        "intro": "Je suis Killian, un développeur web passionné par la création d'expériences en ligne innovantes. Explorez mon portfolio pour voir comment je fusionne technologie et créativité.",
+        "intro": "Je suis Killian Colla, développeur web freelance, spécialisé dans la création de sites internet modernes et performants. J’accompagne entreprises et indépendants pour concevoir des sites web sur mesure, optimisés pour le référencement (SEO) et l’expérience utilisateur.",
         "contact": "Contactez-moi",
         "question": "Vous avez un projet ?"
     },
@@ -82,7 +82,8 @@
         "see_project": "Voir le Projet",
         "hover_project": "Survolez un projet pour en savoir plus.",
         "youbotbuster_desc": "Outil SaaS utilisant de l'IA pour  suppression des commentaires indésirables sous les vidéos YouTube.",
-        "meetsponsors_desc": "Création d'un algorithme 'For You' avec de l’IA afin de connecter efficacement créateurs de contenu et sponsors.",
+        "meetsponsors_desc": "Création d'un algorithme 'For You' avec de l'IA afin de connecter efficacement créateurs de contenu et sponsors.",
+        "qovery_desc": "Plateforme DevOps alimentée par l'IA qui automatise la gestion d'infrastructure et les déploiements. Développement d'agents IA intelligents pour provisionner, déployer, observer, sécuriser et optimiser les coûts cloud.",
         "end_status": "Complété",
         "created_in": "Créé en ",
         "read_more": "Lire la suite"

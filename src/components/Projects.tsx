@@ -1,67 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from 'next/image';
 import React from "react";
-import { Calendar, MoveUpRight, Users, WorkflowIcon } from 'lucide-react';
-import {
-    HoverCard,
-    HoverCardContent,
-    HoverCardTrigger,
-} from "@/components/ui/hover-card"
 import { useTranslations } from 'next-intl';
 import { projects } from '../../data/projects'
-import { Button } from "./ui/button";
 import Link from "next/link";
+import { useLocale } from 'next-intl';
 import { motion } from 'framer-motion'
 
 export default function Projects() {
 
     const t = useTranslations('Projects')
+    const locale = useLocale()
 
-    const [activeItemProj, setActiveItemProj] = useState('all');
-    const [isClicked, setIsClicked] = useState(false);
-    const [columnCount, setColumnCount] = useState(3);
-
-    useEffect(() => {
-        const handleResize = () => {
-            if (window.innerWidth < 640) {
-                setColumnCount(2);
-            } else {
-                setColumnCount(3);
-            }
-        };
-
-        handleResize();
-        window.addEventListener('resize', handleResize);
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
-
-    const filtered_projects = projects.filter(project => {
-        return activeItemProj === "all" || project.techno.some(tech => tech.toLowerCase() === activeItemProj.toLowerCase());
-    });
-
-    const totalProjects = filtered_projects.length;
-    const columns = [];
-    let start = 0;
-
-    for (let i = 0; i < columnCount; i++) {
-        const remainingColumns = columnCount - i;
-        const projectsLeft = totalProjects - start;
-        const projectsPerCurrentColumn = Math.ceil(projectsLeft / remainingColumns);
-
-        const end = start + projectsPerCurrentColumn;
-        columns.push(filtered_projects.slice(start, end));
-
-        start = end;
-    }
-
-    const handleRedirect = (link: string) => {
-        setIsClicked(true);
-        setTimeout(() => {
-            setIsClicked(false);
-            window.open(link, "_blank");
-        }, 2000);
-    }
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -107,69 +57,52 @@ export default function Projects() {
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'nextjs' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('nextjs')}>NextJS</li>
                 <li className={`flex justify-center items-center cursor-pointer py-2 px-8 rounded-sm ${activeItemProj === 'ia' ? 'bg-primary' : 'bg-card'}`} onClick={() => setActiveItemProj('ia')}>A.I</li>
             </ul> */}
-            <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 sm:grid-auto-rows gap-4 mt-4">
+            <div className="grid max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3 sm:grid-auto-rows gap-2 mt-4">
                 {projects.map((project, index) => (
-                    project.link ? (
-                        <Link key={index} href={project.link ?? '#'} target="_blank">
+                    <div key={index} className="p-1">
+                        <Link href={`/${locale}/${project.code}`}>
                             <div
-                                key={project.code}
                                 className="h-full bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
                                 style={{ transform: `rotate(${rotations[index] || 0}deg)`, transition: "transform 0.3s ease-in-out" }}
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}
                             >
-                                <div className="w-full flex flex-col gap-4">
-                                    {/* <div className="hidden group-hover:flex w-full h-full absolute top-0 left-0 background pointer-events-none rounded-full blur-2xl scale-150 -z-50"></div> */}
-                                    <div className="absolute top-0 left-0 bg-card w-full h-full -z-10 rounded-sm"></div>
-                                    <div className="w-full relative rounded-sm overflow-hidden">
+                            <div className="w-full flex flex-col gap-4">
+                                <div className="absolute top-0 left-0 bg-card w-full h-full -z-10 rounded-sm"></div>
+                                <div className="w-full relative rounded-sm overflow-hidden">
+                                    {project.media[0].type === 'video' ? (
+                                        project.media[0].src.includes('youtube.com') || project.media[0].src.includes('youtu.be') ? (
+                                            <iframe
+                                                className="rounded-sm w-full aspect-video group-hover:opacity-100 opacity-70 group-hover:scale-105 group-hover:transition-all"
+                                                src={project.media[0].src}
+                                                title={project.media[0].alt}
+                                                frameBorder="0"
+                                                allowFullScreen
+                                            />
+                                        ) : (
+                                            <video
+                                                className="rounded-sm w-full aspect-video object-cover group-hover:opacity-100 opacity-70 group-hover:scale-105 group-hover:transition-all"
+                                                controls
+                                                muted
+                                                playsInline
+                                            >
+                                                <source src={`/${project.media[0].src}`} type="video/mp4" />
+                                                Votre navigateur ne supporte pas la balise vidéo.
+                                            </video>
+                                        )
+                                    ) : (
                                         <Image
                                             className="rounded-sm w-full aspect-video object-cover group-hover:opacity-100 opacity-70 group-hover:scale-105 group-hover:transition-all"
                                             width={500}
                                             height={500}
-                                            src={`/${project.image}`}
-                                            alt={project.title}
+                                            src={project.media[0].src.startsWith('http') ? project.media[0].src : `/${project.media[0].src}`}
+                                            alt={project.media[0].alt}
                                         />
-                                    </div>
-                                    <h2 className="pl-4 italic font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}{project.link && (<MoveUpRight className="size-5 group-hover:bg-primary" />)}</h2>
-                                    <div className="flex flex-col">
-                                        <p className="text-left font-thin">{t(project.code + '_desc')}</p>
-                                        {/* <Button className='w-fit m-0 p-0' variant={'link'}>Voir le projet</Button> */}
-                                    </div>
+                                    )}
                                 </div>
-                                <h3 className="text-primary font-thin text-lg text-left">
-                                    {project.techno.map((tech, index) => (
-                                        <React.Fragment key={index}>
-                                            {index > 0 && ' • '}
-                                            {tech}
-                                        </React.Fragment>
-                                    ))}
-                                </h3>
-                            </div>
-                        </Link>
-                    ) : (
-                        <div
-                            key={index}
-                            className="h-full bg-card hover:border hover:transition-all border-primary p-5 group rounded-sm relative w-full flex flex-col justify-between transition-all gap-4"
-                            style={{ transform: `rotate(${rotations[index] || 0}deg)`, transition: "transform 0.3s ease-in-out" }}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={() => handleMouseLeave(index)}
-                        >
-                            <div className="w-full flex flex-col gap-4">
-                                {/* <div className="hidden group-hover:flex w-full h-full absolute top-0 left-0 background pointer-events-none rounded-full blur-2xl scale-150 -z-50"></div> */}
-                                <div className="absolute top-0 left-0 bg-card w-full h-full -z-10 rounded-sm"></div>
-                                <div className="w-full relative rounded-sm overflow-hidden">
-                                    <Image
-                                        className="rounded-sm w-full aspect-video object-cover group-hover:opacity-100 opacity-70 group-hover:scale-105 group-hover:transition-all"
-                                        width={500}
-                                        height={500}
-                                        src={`/${project.image}`}
-                                        alt={project.title}
-                                    />
-                                </div>
-                                <h2 className="pl-4 italic font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}{project.link && (<MoveUpRight className="size-5 group-hover:bg-primary" />)}</h2>
+                                <h2 className="pl-4 italic font-semibold text-xl mt-1 flex gap-2 items-center">{project.title}</h2>
                                 <div className="flex flex-col">
                                     <p className="text-left font-thin">{t(project.code + '_desc')}</p>
-                                    {/* <Button className='w-fit m-0 p-0' variant={'link'}>Voir le projet</Button> */}
                                 </div>
                             </div>
                             <h3 className="text-primary font-thin text-lg text-left">
@@ -180,8 +113,9 @@ export default function Projects() {
                                     </React.Fragment>
                                 ))}
                             </h3>
-                        </div>
-                    )
+                            </div>
+                        </Link>
+                    </div>
                 ))}
             </div>
         </div >
