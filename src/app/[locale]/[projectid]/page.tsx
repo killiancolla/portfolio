@@ -7,12 +7,26 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ExternalLink, Calendar, Users } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function ProjectPage() {
     const { projectid } = useParams();
     const t = useTranslations('Projects');
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     const project = projects.find(p => p.code === projectid);
+
+    if (!mounted) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+            </div>
+        );
+    }
 
     if (!project) {
         return (
@@ -92,40 +106,46 @@ export default function ProjectPage() {
 
                     <div className="lg:sticky lg:top-12">
                         <div className="space-y-4">
-                            {project.media.map((media, index) => (
-                                <div key={index} className="rounded-lg overflow-hidden shadow-lg">
-                                    {media.type === 'video' ? (
-                                        media.src.includes('youtube.com') || media.src.includes('youtu.be') ? (
-                                            <iframe
-                                                className="w-full aspect-video"
-                                                src={media.src}
-                                                title={media.alt}
-                                                frameBorder="0"
-                                                allowFullScreen
-                                            />
+                            {project.media && project.media.length > 0 ? (
+                                project.media.map((media, index) => (
+                                    <div key={index} className="rounded-lg overflow-hidden shadow-lg">
+                                        {media.type === 'video' ? (
+                                            media.src.includes('youtube.com') || media.src.includes('youtu.be') ? (
+                                                <iframe
+                                                    className="w-full aspect-video"
+                                                    src={media.src}
+                                                    title={media.alt}
+                                                    style={{ border: 0 }}
+                                                    allowFullScreen
+                                                />
+                                            ) : (
+                                                <video
+                                                    className="w-full aspect-video object-cover"
+                                                    controls
+                                                    muted
+                                                    playsInline
+                                                >
+                                                    <source src={`/${media.src}`} type="video/mp4" />
+                                                    Votre navigateur ne supporte pas la balise vidéo.
+                                                </video>
+                                            )
                                         ) : (
-                                            <video
+                                            <Image
                                                 className="w-full aspect-video object-cover"
-                                                controls
-                                                muted
-                                                playsInline
-                                            >
-                                                <source src={`/${media.src}`} type="video/mp4" />
-                                                Votre navigateur ne supporte pas la balise vidéo.
-                                            </video>
-                                        )
-                                    ) : (
-                                        <Image
-                                            className="w-full aspect-video object-cover"
-                                            width={800}
-                                            height={450}
-                                            src={media.src.startsWith('http') ? media.src : `/${media.src}`}
-                                            alt={media.alt}
-                                            priority={index === 0}
-                                        />
-                                    )}
+                                                width={800}
+                                                height={450}
+                                                src={media.src.startsWith('http') ? media.src : `/${media.src}`}
+                                                alt={media.alt}
+                                                priority={index === 0}
+                                            />
+                                        )}
+                                    </div>
+                                ))
+                            ) : (
+                                <div className="rounded-lg bg-gray-100 aspect-video flex items-center justify-center">
+                                    <p className="text-gray-500">Aucun média disponible</p>
                                 </div>
-                            ))}
+                            )}
                         </div>
                     </div>
                 </div>
