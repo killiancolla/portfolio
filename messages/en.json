@@ -54,6 +54,7 @@
         "youbotbuster_desc": "SaaS tool using AI to automate the removal of spam comments under YouTube videos.",
         "meetsponsors_desc": "Creation of a 'For You' algorithm using AI to efficiently connect content creators with sponsors.",
         "qovery_desc": "AI-powered DevOps platform that automates infrastructure management and deployments. Development of intelligent AI agents to provision, deploy, observe, secure and optimize cloud costs.",
+        "esport-calendar_desc": "Application to automatically add esport events to your calendars. Automatic synchronization of competitions and tournaments.",
         "end_status": "Completed",
         "created_in": "Created in ",
         "read_more": "Read more"

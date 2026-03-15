@@ -27,13 +27,13 @@ export const projects = [
         code: "youbotbuster",
         title: 'YouBotBuster',
         media: [
-            { type: 'image', src: 'youbotbuster.png', alt: 'YouBotBuster interface' }
+            { type: 'image', src: 'youbotbuster.png', alt: 'YouBotBuster interface' },
+            { type: 'video', src: 'https://www.youtube.com/embed/7J2li22_-Bs', alt: 'YouBotBuster demo' }
         ],
         techno: ["SaaS", "IA", "YouTube API", "Stripe API"],
         date: '2024',
         status: 'end_status',
-        people: 2,
-        link: "https://youbotbuster.com"
+        people: 2
     },
     {
         code: "socnet",
@@ -58,5 +58,18 @@ export const projects = [
         status: 'wip_status',
         people: 1,
         link: "https://pomodoro-seven-lemon.vercel.app/"
+    },
+    {
+        code: 'esport-calendar',
+        title: 'Esport Calendar',
+        media: [
+            { type: 'image', src: 'calendar.png', alt: 'Esport Calendar interface' },
+            { type: 'image', src: 'calendar-preview.png', alt: 'Esport Calendar preview' }
+        ],
+        techno: ["NextJS"],
+        date: '2026',
+        status: 'end_status',
+        people: 1,
+        link: "https://esport-calendar-zeta.vercel.app/"
     }
 ];
