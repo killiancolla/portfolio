@@ -36,7 +36,7 @@ function checkRateLimit(ip: string): boolean {
     if (!limit || now > limit.resetTime) {
         rateLimitStore.set(ip, {
             count: 1,
-            resetTime: now + 3600000, 
+            resetTime: now + 3600000,
         });
         return true;
     }
@@ -52,8 +52,8 @@ function checkRateLimit(ip: string): boolean {
 export async function POST(req: Request) {
     try {
         const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ||
-                   req.headers.get('x-real-ip') ||
-                   'unknown';
+            req.headers.get('x-real-ip') ||
+            'unknown';
 
         if (!checkRateLimit(ip)) {
             return NextResponse.json(
@@ -82,7 +82,6 @@ export async function POST(req: Request) {
             );
 
             const turnstileResult = await turnstileResponse.json();
-            console.log('[Turnstile] token reçu:', turnstileToken, '| résultat:', turnstileResult);
             if (!turnstileResult.success) {
                 return NextResponse.json(
                     { message: 'Vérification de sécurité échouée. Veuillez réessayer.' },
@@ -129,7 +128,7 @@ export async function POST(req: Request) {
 
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: process.env.EMAIL_USER, 
+            to: process.env.EMAIL_USER,
             subject: `[Contact] : ${sanitizedSubject}`,
             html: `
 <!DOCTYPE html>

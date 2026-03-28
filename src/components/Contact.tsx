@@ -14,12 +14,15 @@ import { BorderBeam } from "./../components/ui/border-beam";
 declare global {
   interface Window {
     turnstile?: {
-      render: (element: HTMLElement, options: {
+      render: (element: HTMLElement | string, options: {
         sitekey: string;
-        callback: (token: string) => void;
-      }) => void;
-      reset: () => void;
+        callback: (token: string) => string;
+        "error-callback"?: () => void;
+      }) => string;
+      reset: (widgetId?: string) => void;
+      getResponse: (widgetId?: string) => string | undefined;
     };
+    onloadTurnstileCallback?: () => void;
   }
 }
 
@@ -37,31 +40,40 @@ export default function About() {
   const [turnstileToken, setTurnstileToken] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const turnstileRef = useRef<HTMLDivElement>(null)
+  const widgetIdRef = useRef<string | null>(null)
 
   useEffect(() => {
     const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
     if (!siteKey) return;
 
-    const script = document.createElement('script');
-    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
-    script.async = true;
-    script.defer = true;
-    script.onload = () => {
-      if (window.turnstile && turnstileRef.current) {
-        window.turnstile.render(turnstileRef.current, {
+    const renderWidget = () => {
+      if (turnstileRef.current && !widgetIdRef.current && window.turnstile) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
           sitekey: siteKey,
           callback: (token: string) => {
             setTurnstileToken(token);
+            return token;
+          },
+          "error-callback": () => {
+            setTurnstileToken("");
           },
         });
       }
     };
-    document.head.appendChild(script);
+
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      window.onloadTurnstileCallback = renderWidget;
+      const script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback&render=explicit';
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
 
     return () => {
-      if (document.head.contains(script)) {
-        document.head.removeChild(script);
-      }
+      widgetIdRef.current = null;
     };
   }, []);
 
@@ -105,7 +117,8 @@ export default function About() {
         setMessage("")
         setTurnstileToken("")
         if (window.turnstile) {
-          window.turnstile.reset();
+          window.turnstile.reset(widgetIdRef.current ?? undefined);
+          widgetIdRef.current = null;
         }
       } else if (response.status === 429) {
         setBack(data.message || "Trop de tentatives. Veuillez réessayer plus tard.")
