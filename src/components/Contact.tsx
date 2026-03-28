@@ -1,3 +1,5 @@
+"use client";
+
 import { Label } from "./ui/label";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "./ui/button";
