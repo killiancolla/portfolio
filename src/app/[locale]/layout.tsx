@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { children } = props;
 
