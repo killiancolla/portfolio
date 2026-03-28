@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Turnstile } from '@marsidev/react-turnstile';
 
 export default function Contact() {
 
@@ -23,96 +24,34 @@ export default function Contact() {
   const [message, setMessage] = useState("")
   const [back, setBack] = useState("")
   const [loading, setLoading] = useState(false)
+  const [honeypot, setHoneypot] = useState("")
+  const [turnstileToken, setTurnstileToken] = useState("")
 
   const pathName = usePathname();
 
   async function sendEmail(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
+    if (!turnstileToken) {
+      setBack("Veuillez compléter la vérification de sécurité.")
+      return;
+    }
+
     setLoading(true)
 
     const response = await fetch('/api/send-mail', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        to: 'contact@killian-colla.com',
-        subject: "[Contact] : " + subject,
-        html: `
-                    <!DOCTYPE html>
-    <html lang="fr">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Nouvelle Réponse du Formulaire de Contact</title>
-      <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #f9f9f9;
-          margin: 0;
-          padding: 20px;
-        }
-        .container {
-          max-width: 600px;
-          margin: 0 auto;
-          background-color: #ffffff;
-          padding: 20px;
-          border-radius: 8px;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-          color: #333333;
-          font-size: 24px;
-          margin-bottom: 20px;
-        }
-        .info {
-          font-size: 16px;
-          color: #555555;
-          margin-bottom: 10px;
-        }
-        .message {
-          font-size: 16px;
-          color: #333333;
-          margin-top: 20px;
-          padding: 15px;
-          background-color: #f1f1f1;
-          border-radius: 5px;
-        }
-        .footer {
-          font-size: 12px;
-          color: #888888;
-          text-align: center;
-          margin-top: 30px;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h1>Nouvelle Réponse au Formulaire de Contact</h1>
-    
-        <div class="info">
-          <strong>Sujet :</strong> ${subject} <br>
-          <strong>Date et Heure :</strong> ${new Date().toLocaleString()} <br>
-          <strong>Email du Demandeur :</strong> ${email} <br>
-        </div>
-    
-        <div class="message">
-          <strong>Message :</strong> <br>
-          ${message}
-        </div>
-    
-        <div class="footer">
-          <p>Ce message a été généré automatiquement. Merci de ne pas répondre à cet email.</p>
-        </div>
-      </div>
-    </body>
-    </html>`
-      }),
+      body: JSON.stringify({ email, name, subject, message, honeypot, turnstileToken }),
     });
 
     setLoading(false)
 
     if (response.ok) {
       setBack("Merci pour votre message ! Nous vous ferons un retour d'ici 48 heures.")
+      setEmail(""); setName(""); setSubject(""); setMessage(""); setTurnstileToken("")
+    } else if (response.status === 429) {
+      setBack("Trop de tentatives. Veuillez réessayer plus tard.")
     } else {
       setBack("Une erreur s'est produite lors de l'envoi, merci de réessayer plus tard.")
     }
@@ -138,32 +77,16 @@ export default function Contact() {
               <div className='flex gap-4 flex-col'>
                 <h2 className='font-bold text-xl'>{t('link')}</h2>
                 <div className='flex items-start gap-2 h-12'>
-                  <Link
-                    href={"https://wa.me/33695041166"}
-                    className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all"
-                    target='_blank'
-                  >
+                  <Link href={"https://wa.me/33695041166"} className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all" target='_blank'>
                     <Image alt='Whatsapp logo' src={"/whatsapp.webp"} height={100} width={100} />
                   </Link>
-                  <Link
-                    className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all"
-                    href={"https://x.com/_killiandev"}
-                    target='_blank'
-                  >
+                  <Link className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all" href={"https://x.com/_killiandev"} target='_blank'>
                     <Image alt='X logo' src={"/x.webp"} height={100} width={100} />
                   </Link>
-                  <Link
-                    className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all"
-                    href={"https://www.linkedin.com/in/killian-colla-46b48b207/"}
-                    target='_blank'
-                  >
+                  <Link className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all" href={"https://www.linkedin.com/in/killian-colla-46b48b207/"} target='_blank'>
                     <Image alt='LinkedIn logo' src={"/linkedin.webp"} height={100} width={100} />
                   </Link>
-                  <Link
-                    className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all"
-                    href={"https://github.com/killiancolla"}
-                    target='_blank'
-                  >
+                  <Link className="h-full w-fit aspect-square object-contain hover:-translate-y-2 hover:rotate-12 hover:transition-all transition-all" href={"https://github.com/killiancolla"} target='_blank'>
                     <Image alt='GitHub logo' src={"/github.png"} height={100} width={100} />
                   </Link>
                 </div>
@@ -174,6 +97,8 @@ export default function Contact() {
             </div>
             <form className='max-sm:w-full w-1/2 flex flex-col my-auto gap-5' onSubmit={(e) => sendEmail(e)}>
               <p className='font-bold text-xl text-left'>Formulaire de contact</p>
+              {/* Honeypot anti-bot */}
+              <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} style={{ position: 'absolute', left: '-9999px' }} tabIndex={-1} autoComplete="off" aria-hidden="true" />
               <div className='w-full'>
                 <Input id='email' type="email" placeholder={`${t('email')}*`} className='w-full' value={email} onChange={(e) => setEmail(e.target.value)} required />
               </div>
@@ -186,15 +111,20 @@ export default function Contact() {
               <div className='w-full'>
                 <Textarea id='message' placeholder={t('message_placeholder')} value={message} onChange={(e) => setMessage(e.target.value)} />
               </div>
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA'}
+                onSuccess={(token) => setTurnstileToken(token)}
+                onError={() => setTurnstileToken("")}
+              />
               <div className='w-full'>
-                <Button className='w-full'>{loading ?
+                <Button className='w-full' disabled={loading}>{loading ?
                   <div className='h-full'>
                     <Image className='dark:hidden h-full' src={'/loader_light.svg'} width={100} height={100} alt='Loader' />
                     <Image className='dark:flex hidden h-full' src={'/loader_dark.svg'} width={100} height={100} alt='Loader' />
                   </div>
                   : t('send')}</Button>
               </div>
-              <p className={back.includes('erreur') ? 'text-red-400' : 'text-green-400'}>{back}</p>
+              <p className={back.includes('erreur') || back.includes('Trop') ? 'text-red-400' : back ? 'text-green-400' : ''}>{back}</p>
             </form>
           </div>
         </CardContent>
