@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, type HTMLMotionProps } from "framer-motion";
 import React, { useRef } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
@@ -57,7 +57,7 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
 Dock.displayName = "Dock";
 
-export interface DockIconProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DockIconProps extends Omit<HTMLMotionProps<"div">, "ref"> {
     size?: number;
     magnification?: number;
     distance?: number;
