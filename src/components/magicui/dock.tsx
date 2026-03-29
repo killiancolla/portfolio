@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { PropsWithChildren, useRef } from "react";
+import React, { useRef } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
     className?: string;
@@ -57,28 +57,25 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
 
 Dock.displayName = "Dock";
 
-export interface DockIconProps {
+export interface DockIconProps extends React.HTMLAttributes<HTMLDivElement> {
     size?: number;
     magnification?: number;
     distance?: number;
     mouseX?: any;
-    className?: string;
-    children?: React.ReactNode;
-    onClick?: () => void;
-    props?: PropsWithChildren;
 }
 
 const DockIcon = ({
     size,
     magnification = DEFAULT_MAGNIFICATION,
     distance = DEFAULT_DISTANCE,
-    mouseX,
+    mouseX: mouseXProp,
     className,
     children,
-    onClick,
     ...props
 }: DockIconProps) => {
     const ref = useRef<HTMLDivElement>(null);
+    const fallbackMouseX = useMotionValue(Infinity);
+    const mouseX = mouseXProp ?? fallbackMouseX;
 
     const distanceCalc = useTransform(mouseX, (val: number) => {
         const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -106,7 +103,6 @@ const DockIcon = ({
                 "flex aspect-square cursor-pointer items-center justify-center rounded-full bg-neutral-400/40",
                 className,
             )}
-            onClick={onClick}
             {...props}
         >
             {children}

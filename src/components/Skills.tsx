@@ -1,39 +1,58 @@
+"use client"
+
 import Image from "next/image";
-import IconCloud from "./magicui/icon-cloud";
 import { useTranslations } from 'next-intl';
-import { Switch } from "./ui/switch"
-import { Label } from "./ui/label";
-import { useState } from "react";
 import { motion } from 'framer-motion'
-import { OrbitingCircles } from "./magicui/orbiting-circles";
+
+const categories = [
+    {
+        key: 'category_frontend' as const,
+        skills: [
+            { name: "TypeScript", image: "typescript", color: "" },
+            { name: "JavaScript", image: "javascript", color: "" },
+            { name: "ReactJS", image: "react", color: "" },
+            { name: "HTML5", image: "html5", color: "" },
+            { name: "CSS3", image: "css", color: "" },
+            { name: "Tailwind", image: "tailwindcss", color: "" },
+            { name: "Next.js", image: "nextdotjs", color: "white" },
+        ]
+    },
+    {
+        key: 'category_backend' as const,
+        skills: [
+            { name: "NodeJS", image: "nodedotjs", color: "" },
+            { name: "Express", image: "express", color: "white" },
+            { name: "PHP", image: "php", color: "" },
+            { name: "Python", image: "python", color: "" },
+        ]
+    },
+    {
+        key: 'category_database' as const,
+        skills: [
+            { name: "PostgreSQL", image: "postgresql", color: "" },
+            { name: "MySQL", image: "mysql", color: "" },
+            { name: "MongoDB", image: "mongodb", color: "" },
+            { name: "Firebase", image: "firebase", color: "" },
+        ]
+    },
+    {
+        key: 'category_tools' as const,
+        skills: [
+            { name: "Git", image: "git", color: "" },
+            { name: "GitHub", image: "github", color: "white" },
+            { name: "Vercel", image: "vercel", color: "white" },
+        ]
+    },
+];
 
 export default function Skills() {
 
     const t = useTranslations('Skills')
-    const [showList, setShowList] = useState(false)
 
-    const skillsFromSlugs = [
-        { name: "TypeScript", image: "typescript", light: "_", dark: "_" },
-        { name: "JavaScript", image: "javascript", light: "_", dark: "_" },
-        { name: "ReactJS", image: "react", light: "_", dark: "_" },
-        { name: "HTML5", image: "html5", light: "_", dark: "_" },
-        { name: "CSS3", image: "css", light: "_", dark: "_" },
-        { name: "TailWind CSS", image: "tailwindcss", light: "_", dark: "_" },
-        { name: "PHP", image: "php", light: "_", dark: "_" },
-        { name: "NodeJS", image: "nodedotjs", light: "_", dark: "_" },
-        { name: "Express", image: "express", light: "_", dark: "white" },
-        { name: "NextJS", image: "nextdotjs", light: "_", dark: "white" },
-        { name: "PostgreSQL", image: "postgresql", light: "_", dark: "_" },
-        { name: "MySQL", image: "mysql", light: "_", dark: "_" },
-        { name: "MongoDB", image: "mongodb", light: "_", dark: "_" },
-        { name: "Firebase", image: "firebase", light: "_", dark: "_" },
-        { name: "Vercel", image: "vercel", light: "_", dark: "white" },
-        { name: "Git", image: "git", light: "_", dark: "_" },
-        { name: "GitHub", image: "github", light: "_", dark: "white" },
-        { name: "Python", image: "python", light: "_", dark: "_" }
-    ];
-
-    const slugs = skillsFromSlugs.map(skill => skill.image);
+    const containerVariants = {
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.1 } }
+    };
 
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
@@ -44,79 +63,48 @@ export default function Skills() {
         <div id='skills' className="part flex flex-col items-center text-center pt-20 w-4/5">
             <motion.div className='mb-10' variants={itemVariants} viewport={{ once: true, margin: "-75px 0px" }} initial="hidden" whileInView="visible">
                 <p className="mb-4 before:content-['\002605'] before:text-[#FB6423] before:mr-2.5 before:text-[15px] before:align-middle">{t('skills')}</p>
-                <h3 className='text-sm font-bold text-primary'>{t('skills_title1')}</h3>
-                <h3 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
+                <h2 className='text-sm font-bold text-primary'>{t('skills_title1')}</h2>
+                <h2 className="font-bold text-2xl after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#FB6423] after:relative after:-bottom-1.5 after:ml-auto after:mr-auto">
                     {t('skills_title2')}
-                </h3>
+                </h2>
             </motion.div>
-            <div className="flex items-center space-x-2">
-                <Switch checked={showList} onCheckedChange={() => setShowList(show => !show)} id="list-mode" />
-                <Label htmlFor="list-mode">{t('show_list')}</Label>
-            </div>
-            {showList ? (
-                <div className="flex flex-wrap justify-center items-center w-full gap-2 mt-10">
-                    {skillsFromSlugs.map((slug, index) => (
-                        <div key={index} className="flex max-sm:flex-col max-sm:justify-center max-sm:items-center sm:flex-row sm:px-10 max-sm:py-2 sm:py-4 rounded-sm bg-card max-sm:w-36 sm:w-48 h-16 justify-center items-center sm:gap-4 border">
-                            <Image width={100} height={100} className="max-sm:h-2/3 sm:w-1/3" alt="logo" unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`} />
-                            <p className="max-sm:items-center max-sm:justify-center max-sm:flex max-sm:text-base sm:w-2/3 sm:text-left">{slug.name}</p>
+
+            <motion.div
+                className="flex flex-col gap-8 w-full"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px 0px" }}
+            >
+                {categories.map((category) => (
+                    <motion.div key={category.key} variants={itemVariants} className="text-left">
+                        <div className="flex items-center gap-3 mb-4">
+                            <span className="text-xs font-bold text-primary uppercase tracking-widest">
+                                {t(category.key)}
+                            </span>
+                            <div className="flex-1 h-px bg-border" />
                         </div>
-                    ))}
-                </div>
-            ) : (
-                <>
-                    <div className="max-sm:hidden relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden">
-                        <OrbitingCircles iconSize={60} radius={180}>
-                            {skillsFromSlugs.slice(0, 10).map((slug, index) => (
-                                <Image
-                                    key={index}
-                                    width={100}
-                                    height={100}
-                                    alt="logo"
-                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
-                                />
+                        <div className="flex flex-wrap gap-2">
+                            {category.skills.map((skill) => (
+                                <div
+                                    key={skill.image}
+                                    className="flex items-center gap-2 bg-card border border-border hover:border-primary/60 rounded-sm px-3 py-2 transition-colors duration-200 cursor-default"
+                                >
+                                    <Image
+                                        unoptimized
+                                        width={18}
+                                        height={18}
+                                        alt={skill.name}
+                                        src={`https://cdn.simpleicons.org/${skill.image}${skill.color ? `/${skill.color}` : ""}`}
+                                        className="w-[18px] h-[18px] object-contain"
+                                    />
+                                    <span className="text-sm">{skill.name}</span>
+                                </div>
                             ))}
-                        </OrbitingCircles>
-
-                        <OrbitingCircles iconSize={50} radius={110} reverse>
-                            {skillsFromSlugs.slice(10, 18).map((slug, index) => (
-                                <Image
-                                    key={index + 10}
-                                    width={100}
-                                    height={100}
-                                    alt="logo"
-                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
-                                />
-                            ))}
-                        </OrbitingCircles>
-                    </div>
-                    <div className="sm:hidden relative flex h-[400px] w-full flex-col items-center justify-center overflow-hidden">
-                        <OrbitingCircles iconSize={40} radius={130}>
-                            {skillsFromSlugs.slice(0, 10).map((slug, index) => (
-                                <Image
-                                    key={index}
-                                    width={100}
-                                    height={100}
-                                    alt="logo"
-                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
-                                />
-                            ))}
-                        </OrbitingCircles>
-
-                        <OrbitingCircles iconSize={40} radius={80} reverse>
-                            {skillsFromSlugs.slice(10, 18).map((slug, index) => (
-                                <Image
-                                    key={index + 10}
-                                    width={100}
-                                    height={100}
-                                    alt="logo"
-                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
-                                />
-                            ))}
-                        </OrbitingCircles>
-                    </div>
-                </>
-            )
-            }
-        </div >
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+        </div>
     )
 }
