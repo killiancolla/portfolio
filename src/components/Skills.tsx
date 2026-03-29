@@ -17,7 +17,7 @@ export default function Skills() {
         { name: "JavaScript", image: "javascript", light: "_", dark: "_" },
         { name: "ReactJS", image: "react", light: "_", dark: "_" },
         { name: "HTML5", image: "html5", light: "_", dark: "_" },
-        { name: "CSS3", image: "css3", light: "_", dark: "_" },
+        { name: "CSS3", image: "css", light: "_", dark: "_" },
         { name: "TailWind CSS", image: "tailwindcss", light: "_", dark: "_" },
         { name: "PHP", image: "php", light: "_", dark: "_" },
         { name: "NodeJS", image: "nodedotjs", light: "_", dark: "_" },
@@ -57,7 +57,7 @@ export default function Skills() {
                 <div className="flex flex-wrap justify-center items-center w-full gap-2 mt-10">
                     {skillsFromSlugs.map((slug, index) => (
                         <div key={index} className="flex max-sm:flex-col max-sm:justify-center max-sm:items-center sm:flex-row sm:px-10 max-sm:py-2 sm:py-4 rounded-sm bg-card max-sm:w-36 sm:w-48 h-16 justify-center items-center sm:gap-4 border">
-                            <Image width={100} height={100} className="max-sm:h-2/3 sm:w-1/3" alt="logo" src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`} />
+                            <Image width={100} height={100} className="max-sm:h-2/3 sm:w-1/3" alt="logo" unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`} />
                             <p className="max-sm:items-center max-sm:justify-center max-sm:flex max-sm:text-base sm:w-2/3 sm:text-left">{slug.name}</p>
                         </div>
                     ))}
@@ -72,7 +72,7 @@ export default function Skills() {
                                     width={100}
                                     height={100}
                                     alt="logo"
-                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
                                 />
                             ))}
                         </OrbitingCircles>
@@ -84,7 +84,7 @@ export default function Skills() {
                                     width={100}
                                     height={100}
                                     alt="logo"
-                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
                                 />
                             ))}
                         </OrbitingCircles>
@@ -97,7 +97,7 @@ export default function Skills() {
                                     width={100}
                                     height={100}
                                     alt="logo"
-                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
                                 />
                             ))}
                         </OrbitingCircles>
@@ -109,7 +109,7 @@ export default function Skills() {
                                     width={100}
                                     height={100}
                                     alt="logo"
-                                    src={`https://cdn.simpleicons.org/${slug.image}/${slug.light}/${slug.dark}`}
+                                    unoptimized src={`https://cdn.simpleicons.org/${slug.image}${slug.dark !== "_" ? `/${slug.dark}` : ""}`}
                                 />
                             ))}
                         </OrbitingCircles>
