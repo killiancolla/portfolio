@@ -20,6 +20,7 @@ const categories = [
     {
         key: 'category_backend' as const,
         skills: [
+            { name: "Go", image: "go", color: "" },
             { name: "NodeJS", image: "nodedotjs", color: "" },
             { name: "Express", image: "express", color: "white" },
             { name: "PHP", image: "php", color: "" },
