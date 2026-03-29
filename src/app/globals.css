@@ -91,9 +91,6 @@
   animation: blink 1s infinite;
 }
 
-* {
-  user-select: none;
-}
 
 html, body {
   overflow-x: hidden;

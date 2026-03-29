@@ -4,14 +4,26 @@
         "intro": "私はKillianです。革新的なオンライン体験を作り出すことに情熱を注いでいるウェブ開発者です。私のポートフォリオを見て、技術と創造性をどのように融合させているかをご覧ください。",
         "contact": "お問い合わせ",
         "hello": "こんにちは、キリアンです",
-        "question": "プロジェクトがありますか？"
+        "question": "プロジェクトがありますか？",
+        "stat_years": "年の経験",
+        "stat_projects": "完成プロジェクト",
+        "stat_techs": "テクノロジー"
     },
     "About": {
         "about": "概要",
         "about_desc": "ウェブ開発の経験が5年あり、ショーケースサイトから複雑なウェブアプリケーションまで、さまざまなプロジェクトに取り組んできました。私の経歴と開発への情熱について詳しく知ってください。",
         "about-title1": "私の物語と",
         "about-title2": "感情",
-        "cv-download": "履歴書をダウンロード"
+        "cv-download": "履歴書をダウンロード",
+        "highlight_exp": "5年のフルスタックウェブ開発経験",
+        "highlight_stack": "React、Next.js、Node.js、TypeScript専門",
+        "highlight_degree": "AI・ビッグデータ修士号 — IPSSI Paris"
+    },
+    "Footer": {
+        "tagline": "モダンで高性能なウェブサイトを構築します。",
+        "nav_title": "ナビゲーション",
+        "social_title": "ソーシャル",
+        "rights": "全著作権所有。"
     },
     "NavBar": {
         "home": "ホーム",
@@ -62,7 +74,11 @@
         "skills": "スキル",
         "skills_title1": "スキルと",
         "skills_title2": "能力",
-        "show_list": "リストを見る"
+        "show_list": "リストを見る",
+        "category_frontend": "フロントエンド",
+        "category_backend": "バックエンド",
+        "category_database": "データベース",
+        "category_tools": "ツール"
     },
     "Services": {
         "title": "サービス",
@@ -108,6 +124,12 @@
         "discuss": "あなたのプロジェクトについて話しましょう",
         "text": "アイデアやブランドの立ち上げを考えていますか？ぜひご相談ください！お問い合わせいただき、一緒にどうサポートできるか考えましょう。",
         "link": "便利なリンク / ソーシャルネットワーク",
-        "portfolio": "ポートフォリオを見る"
+        "portfolio": "ポートフォリオを見る",
+        "form_title": "お問い合わせフォーム",
+        "response_time": "通常24時間以内に返信します",
+        "contact_success": "ありがとうございます！24時間以内にご連絡します。",
+        "contact_error": "エラーが発生しました。もう一度お試しください。",
+        "contact_rate_limit": "試行回数が多すぎます。後でお試しください。",
+        "contact_captcha": "セキュリティ確認を完了してください。"
     }
 }

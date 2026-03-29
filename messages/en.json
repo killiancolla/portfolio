@@ -4,14 +4,26 @@
         "title": "Web Developer",
         "intro": "I'm Killian, a web developer passionate about creating innovative online experiences. Explore my portfolio to see how I merge technology and creativity.",
         "contact": "Contact me",
-        "question": "Do you have a project?"
+        "question": "Do you have a project?",
+        "stat_years": "years of experience",
+        "stat_projects": "completed projects",
+        "stat_techs": "technologies"
     },
     "About": {
         "about": "About",
         "about_desc": "With 5 years of experience in web development, I have worked on a variety of projects ranging from showcase sites to complex web applications. Learn more about my background and my passion for development.",
         "about-title1": "My Stories and",
         "about-title2": "Feelings",
-        "cv-download": "Download CV"
+        "cv-download": "Download CV",
+        "highlight_exp": "5 years of full-stack web development experience",
+        "highlight_stack": "Specialized in React, Next.js, Node.js, TypeScript",
+        "highlight_degree": "Master's in AI & Big Data — IPSSI Paris"
+    },
+    "Footer": {
+        "tagline": "Building modern, high-performance websites.",
+        "nav_title": "Navigation",
+        "social_title": "Social",
+        "rights": "All rights reserved."
     },
     "NavBar": {
         "home": "Home",
@@ -63,7 +75,11 @@
         "skills": "Skills",
         "skills_title1": "Skills and",
         "skills_title2": "Competencies",
-        "show_list": "Show skills list"
+        "show_list": "Show skills list",
+        "category_frontend": "Frontend",
+        "category_backend": "Backend",
+        "category_database": "Database",
+        "category_tools": "Tools"
     },
     "Services": {
         "title": "Services",
@@ -109,6 +125,12 @@
         "discuss": "Let's discuss your project",
         "text": "Do you have a project in mind, an idea to develop, or a brand to launch? Let's talk! Contact me and let's see how I can help you.",
         "link": "Useful links / Social Networks",
-        "portfolio": "View my portfolio"
+        "portfolio": "View my portfolio",
+        "form_title": "Contact form",
+        "response_time": "Usually responds within 24h",
+        "contact_success": "Thank you! I'll get back to you within 24 hours.",
+        "contact_error": "An error occurred. Please try again.",
+        "contact_rate_limit": "Too many attempts. Please try later.",
+        "contact_captcha": "Please complete the security verification."
     }
 }

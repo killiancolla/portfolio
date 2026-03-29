@@ -1,9 +1,11 @@
+"use client"
+
 import { Button } from "./ui/button"
 import { useTranslations } from 'next-intl';
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Linkedin, PencilIcon, PencilLine, Phone } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 import { motion } from 'framer-motion'
 import { useEffect, useState } from "react";
 
@@ -24,7 +26,6 @@ export default function HomePage() {
   };
 
   const pathName = usePathname();
-
   const t = useTranslations('HomePage')
 
   const [visibleText, setVisibleText] = useState("");
@@ -36,91 +37,85 @@ export default function HomePage() {
       i++;
       if (i === t('title').length) clearInterval(interval);
     }, 100);
-
     return () => clearInterval(interval);
   }, [t]);
 
   return (
-    <div className="relative">
-      <motion.div className="background w-1/2 h-1/3 absolute top-1/2 left-1/2 blur-2xl rounded-full opacity-40 -translate-x-1/2 -translate-y-1/2 -z-10"></motion.div>
-      <motion.div
-        id="home"
-        className="part min-h-screen w-full flex flex-col items-center justify-center gap-4"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <motion.div variants={itemVariants} className="flex flex-col items-center gap-2">
+    <motion.div
+      id="home"
+      className="part min-h-screen w-full flex flex-col items-center justify-center gap-8"
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+    >
+      <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
+        {/* Photo avec glow */}
+        <div className="relative mb-2">
+          <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl scale-150" />
           <Image
-            className="w-32 rounded-full bg-white aspect-square object-cover object-center hover:-translate-y-2 hover:rotate-12 transition-all border-primary hover:border"
+            className="relative w-32 rounded-full aspect-square object-cover object-center border-2 border-primary/40"
             src={"/me.jpg"}
             alt="picture of me"
             width={200}
             height={200}
+            priority
+            loading="eager"
           />
+        </div>
 
-          <span
-            className={`inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`}
-          >
-            {t("hello")}
-          </span>
+        <span className="inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent text-lg">
+          {t("hello")}
+        </span>
 
-          <h2 className="font-bold sm:text-5xl max-sm:text-xl text-center relative border border-primary px-7 py-3 flex gap-2 mx-10">
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {visibleText}
-            </motion.p>
-            <div className="w-2 bg-white blinking-bar"></div>
-            <div className="w-5 h-5 absolute top-0 right-0 bg-primary flex justify-center items-center">
-              <PencilLine className="w-2/3 h-2/3" />
-            </div>
-          </h2>
+        <h1 className="font-bold sm:text-6xl max-sm:text-3xl text-center leading-tight">
+          {visibleText}
+          <span className="w-0.5 h-[0.85em] inline-block bg-foreground align-middle ml-1 blinking-bar" />
+        </h1>
 
-
-          <p className="sm:w-1/2 max-sm:w-5/6 text-center">
-            {t("intro")}
-          </p>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="flex flex-col items-center gap-3">
-          <h2 className="text-primary font-bold">
-            {t("question")}
-          </h2>
-          <div>
-            <Link className="relative group" href={`${pathName}/contact`}>
-              <Button className="">{t("contact")}</Button>
-            </Link>
-          </div>
-
-        </motion.div>
-        <motion.div variants={itemVariants} className="flex gap-4">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <Link href="https://github.com/killiancolla" target="_blank" aria-label="Visit my GitHub profile">
-              <Github className="hover:text-primary" />
-            </Link>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <Link
-              href="https://www.linkedin.com/in/killian-colla-46b48b207/"
-              target="_blank"
-              aria-label="Visit my LinkedIn profile"
-            >
-              <Linkedin className="hover:text-primary" />
-            </Link>
-          </motion.div>
-        </motion.div>
+        <p className="sm:w-1/2 max-sm:w-5/6 text-center text-muted-foreground leading-7">
+          {t("intro")}
+        </p>
       </motion.div>
-    </div>
+
+      {/* Stats */}
+      <motion.div variants={itemVariants} className="flex gap-10 max-sm:gap-6">
+        {[
+          { value: "5+", label: t("stat_years") },
+          { value: "15+", label: t("stat_projects") },
+          { value: "10+", label: t("stat_techs") },
+        ].map((stat, i) => (
+          <div key={i} className="flex flex-col items-center gap-1">
+            <span className="text-3xl font-bold text-primary">{stat.value}</span>
+            <span className="text-xs text-muted-foreground text-center max-w-[80px]">{stat.label}</span>
+          </div>
+        ))}
+      </motion.div>
+
+      <motion.div variants={itemVariants} className="flex flex-col items-center gap-4">
+        <Link href={`${pathName}/contact`}>
+          <Button size="lg">{t("contact")}</Button>
+        </Link>
+        <div className="flex gap-6">
+          <Link
+            href="https://github.com/killiancolla"
+            target="_blank"
+            aria-label="GitHub"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Github className="w-4 h-4" />
+            GitHub
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/killian-colla-46b48b207/"
+            target="_blank"
+            aria-label="LinkedIn"
+            className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+          >
+            <Linkedin className="w-4 h-4" />
+            LinkedIn
+          </Link>
+        </div>
+      </motion.div>
+    </motion.div>
   );
 }

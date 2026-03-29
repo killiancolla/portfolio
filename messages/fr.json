@@ -4,14 +4,20 @@
         "title": "Développeur Web",
         "intro": "Je suis Killian Colla, développeur web freelance, spécialisé dans la création de sites internet modernes et performants. J’accompagne entreprises et indépendants pour concevoir des sites web sur mesure, optimisés pour le référencement (SEO) et l’expérience utilisateur.",
         "contact": "Contactez-moi",
-        "question": "Vous avez un projet ?"
+        "question": "Vous avez un projet ?",
+        "stat_years": "ans d’expérience",
+        "stat_projects": "projets réalisés",
+        "stat_techs": "technologies"
     },
     "About": {
         "about": "À propos",
         "about_desc": "Avec 5 ans d'expérience en développement web, j'ai travaillé sur une variété de projets allant de sites vitrines à des applications web complexes. En savoir plus sur mon parcours et ma passion pour le développement.",
         "about-title1": "A propos de",
         "about-title2": "Moi",
-        "cv-download": "Télécharger mon CV"
+        "cv-download": "Télécharger mon CV",
+        "highlight_exp": "5 ans d'expérience en développement web full-stack",
+        "highlight_stack": "Spécialisé React, Next.js, Node.js, TypeScript",
+        "highlight_degree": "Master IA & Big Data — IPSSI Paris"
     },
     "Services": {
         "title": "Services",
@@ -42,6 +48,12 @@
             "title": "Conseil et accompagnement",
             "description": "Avancez avec confiance dans le monde digital. Des conseils techniques et un accompagnement sur mesure pour vos projets."
         }
+    },
+    "Footer": {
+        "tagline": "Création de sites web modernes et performants.",
+        "nav_title": "Navigation",
+        "social_title": "Réseaux sociaux",
+        "rights": "Tous droits réservés."
     },
     "NavBar": {
         "home": "Accueil",
@@ -93,7 +105,11 @@
         "skills": "Compétences",
         "skills_title1": "Compétences et",
         "skills_title2": "Aptitudes",
-        "show_list": "Voir la liste"
+        "show_list": "Voir la liste",
+        "category_frontend": "Frontend",
+        "category_backend": "Backend",
+        "category_database": "Base de données",
+        "category_tools": "Outils"
     },
     "Contact": {
         "contact-button": "Me contacter",
@@ -109,6 +125,12 @@
         "discuss": "Discutons de votre projet",
         "text": "Vous avez un projet en tête, une idée à développer, une marque à lancer ? Discutons-en ! Contactez-moi et voyons comment je vous aider.",
         "link": "Liens utiles / Réseaux Sociaux",
-        "portfolio": "Voir mon portfolio"
+        "portfolio": "Voir mon portfolio",
+        "form_title": "Formulaire de contact",
+        "response_time": "Répond généralement sous 24h",
+        "contact_success": "Merci pour votre message ! Je vous répondrai d'ici 24h.",
+        "contact_error": "Une erreur est survenue. Merci de réessayer.",
+        "contact_rate_limit": "Trop de tentatives. Réessayez plus tard.",
+        "contact_captcha": "Veuillez compléter la vérification de sécurité."
     }
 }
