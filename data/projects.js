@@ -70,6 +70,6 @@ export const projects = [
         date: '2026',
         status: 'end_status',
         people: 1,
-        link: "https://esport-calendar-zeta.vercel.app/"
+        link: "https://esport-calendar.com"
     }
 ];
