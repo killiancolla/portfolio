@@ -3,7 +3,7 @@ export const projects = [
         code: 'qovery',
         title: 'Qovery AI DevOps Copilot',
         media: [
-            { type: 'image', src: '690224b5ad4f1812f75d3545_Qover AI DevOps Copilot.png', alt: 'Qovery AI DevOps Copilot logo' },
+            { type: 'image', src: '690224b5ad4f1812f75d3545_Qover AI DevOps Copilot.webp', alt: 'Qovery AI DevOps Copilot logo' },
             { type: 'video', src: '1748840407216.mp4', alt: 'Qovery AI DevOps Copilot demo' }
         ],
         techno: ["IA", "DevOps", "TypeScript", "React"],
@@ -16,7 +16,7 @@ export const projects = [
         code: 'meetsponsors',
         title: 'MeetSponsors - Projet IA',
         media: [
-            { type: 'image', src: 'meetsponsors.png', alt: 'MeetSponsors algorithm visualization' }
+            { type: 'image', src: 'meetsponsors.webp', alt: 'MeetSponsors algorithm visualization' }
         ],
         techno: ["IA", "Python"],
         date: '2024',
@@ -27,7 +27,7 @@ export const projects = [
         code: "youbotbuster",
         title: 'YouBotBuster',
         media: [
-            { type: 'image', src: 'youbotbuster.png', alt: 'YouBotBuster interface' },
+            { type: 'image', src: 'youbotbuster.webp', alt: 'YouBotBuster interface' },
             { type: 'video', src: 'https://www.youtube.com/embed/7J2li22_-Bs', alt: 'YouBotBuster demo' }
         ],
         techno: ["SaaS", "IA", "YouTube API", "Stripe API"],
@@ -39,7 +39,7 @@ export const projects = [
         code: "socnet",
         title: 'Social Network',
         media: [
-            { type: 'image', src: 'social_network.jpeg', alt: 'Social Network interface' }
+            { type: 'image', src: 'social_network.webp', alt: 'Social Network interface' }
         ],
         techno: ["NextJS", "FireBase", "TailWind"],
         date: '2020',
@@ -51,7 +51,7 @@ export const projects = [
         code: 'pomodoro',
         title: 'Pomodoro',
         media: [
-            { type: 'image', src: 'pomodoro.png', alt: 'Pomodoro timer interface' }
+            { type: 'image', src: 'pomodoro.webp', alt: 'Pomodoro timer interface' }
         ],
         techno: ["ReactJS", "NodeJS"],
         date: '2020',
@@ -63,8 +63,8 @@ export const projects = [
         code: 'esport-calendar',
         title: 'Esport Calendar',
         media: [
-            { type: 'image', src: 'calendar.png', alt: 'Esport Calendar interface' },
-            { type: 'image', src: 'calendar-preview.png', alt: 'Esport Calendar preview' }
+            { type: 'image', src: 'calendar.webp', alt: 'Esport Calendar interface' },
+            { type: 'image', src: 'calendar-preview.webp', alt: 'Esport Calendar preview' }
         ],
         techno: ["NextJS"],
         date: '2026',

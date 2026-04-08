@@ -54,7 +54,7 @@ export default function HomePage() {
           <div className="absolute inset-0 rounded-full bg-primary/25 blur-2xl scale-150" />
           <Image
             className="relative w-32 rounded-full aspect-square object-cover object-center border-2 border-primary/40"
-            src={"/me.jpg"}
+            src={"/me.webp"}
             alt="picture of me"
             width={200}
             height={200}

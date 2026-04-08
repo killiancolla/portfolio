@@ -3,6 +3,8 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin(
     './i18n/request.ts'
 );
+const isDev = process.env.NODE_ENV === 'development';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     async headers() {
@@ -18,7 +20,7 @@ const nextConfig = {
                         key: 'Content-Security-Policy',
                         value: [
                             "default-src 'self'",
-                            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://challenges.cloudflare.com",
+                            `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://challenges.cloudflare.com`,
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
                             "font-src 'self' https://fonts.gstatic.com",
                             "img-src 'self' data: blob: https://cdn.simpleicons.org https://static.vecteezy.com",
