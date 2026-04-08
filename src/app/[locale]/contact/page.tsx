@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import ContactClient from "./ContactClient";
 
-const siteUrl = 'https://killian-colla.com';
+const siteUrl = 'https://www.killian-colla.com';
 
 const titles: Record<string, string> = {
   fr: "Contact - Killian Colla | Développeur Web Freelance",

@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { projects } from '../../../../data/projects';
 import ProjectClient from "./ProjectClient";
 
-const siteUrl = 'https://killian-colla.com';
+const siteUrl = 'https://www.killian-colla.com';
 
 export async function generateMetadata(
   { params }: { params: Promise<{ locale: string; projectid: string }> }

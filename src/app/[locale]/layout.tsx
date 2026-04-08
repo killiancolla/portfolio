@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
-const siteUrl = 'https://killian-colla.com';
+const siteUrl = 'https://www.killian-colla.com';
 
 const titles: Record<string, string> = {
   fr: "Killian Colla - Développeur Web Freelance",
@@ -36,6 +36,7 @@ export async function generateMetadata(
     alternates: {
       canonical: `${siteUrl}/${locale}`,
       languages: {
+        'x-default': `${siteUrl}/en`,
         'fr': `${siteUrl}/fr`,
         'en': `${siteUrl}/en`,
         'ja': `${siteUrl}/ja`,
