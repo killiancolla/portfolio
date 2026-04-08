@@ -31,11 +31,17 @@
         "skills": "Skills",
         "projects": "Projects",
         "portfolio": "Portfolio",
+        "blog": "Blog",
         "light": "Light",
         "dark": "Dark",
         "system": "System",
         "toggle": "Toggle Theme",
         "service": "Service"
+    },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Tips and resources on web development and digital presence in Nice, France.",
+        "empty": "No articles yet."
     },
     "Portfolio": {
         "portfolio": "Portfolio",

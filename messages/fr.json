@@ -62,10 +62,16 @@
         "service": "Services",
         "projects": "Projets",
         "portfolio": "Portfolio",
+        "blog": "Blog",
         "light": "Clair",
         "dark": "Sombre",
         "system": "Système",
         "toggle": "Changer de thème"
+    },
+    "Blog": {
+        "title": "Blog",
+        "subtitle": "Conseils et ressources sur la création de site internet à Nice et dans les Alpes-Maritimes.",
+        "empty": "Aucun article pour le moment."
     },
     "Portfolio": {
         "portfolio": "Portfolio",

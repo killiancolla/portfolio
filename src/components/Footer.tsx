@@ -21,6 +21,8 @@ export default function Footer({ className }: { className?: string }) {
         { section: 'portfolio', label: tNav('portfolio') },
     ];
 
+    const blogLabel = tNav('blog');
+
     const socialLinks = [
         { href: "https://wa.me/33695041166", icon: <MessageCircle className="w-4 h-4" />, label: "WhatsApp" },
         { href: "https://x.com/_killiandev", icon: <Twitter className="w-4 h-4" />, label: "X / Twitter" },
@@ -64,6 +66,12 @@ export default function Footer({ className }: { className?: string }) {
                                     {link.label}
                                 </Link>
                             ))}
+                            <Link
+                                href={`/${locale}/blog`}
+                                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                            >
+                                {blogLabel}
+                            </Link>
                         </div>
                     </div>
 

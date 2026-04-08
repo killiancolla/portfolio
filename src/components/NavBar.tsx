@@ -1,6 +1,6 @@
 "use client"
 
-import { Briefcase, CpuIcon, Flag, FolderOpenDot, House, Moon, ScanSearch, School, Sun } from 'lucide-react';
+import { BookOpen, Briefcase, CpuIcon, Flag, FolderOpenDot, House, Moon, ScanSearch, School, Sun } from 'lucide-react';
 import { Dock, DockIcon } from "@/components/magicui/dock";
 import { useTranslations } from 'next-intl'
 import { handleMouseEnter } from '../../utils/handleMouseEnter';
@@ -74,6 +74,22 @@ export default function NavBar() {
                         </p>
                     </DockIcon>
                 ))}
+
+                {/* Séparateur */}
+                <DockIcon className="w-px h-5 bg-border pointer-events-none rounded-none bg-transparent" style={{ width: '1px' }}>
+                    <div className="w-px h-5 bg-border" />
+                </DockIcon>
+
+                {/* Blog */}
+                <DockIcon
+                    className="group relative transition-colors"
+                    onClick={() => router.push('/' + pathName.split('/')[1] + '/blog')}
+                >
+                    <BookOpen className="w-4 h-4" />
+                    <p className='whitespace-nowrap transition-all duration-300 group-hover:opacity-100 opacity-0 absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs'>
+                        {t('blog')}
+                    </p>
+                </DockIcon>
 
                 {/* Séparateur */}
                 <DockIcon className="w-px h-5 bg-border pointer-events-none rounded-none bg-transparent" style={{ width: '1px' }}>

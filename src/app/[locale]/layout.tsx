@@ -136,12 +136,12 @@ export default async function LocaleLayout(props: {
     <html lang={locale} className="dark" style={{ colorScheme: "dark" }}>
       <GoogleTagManager gtmId="GTM-52DG8CCK" />
       <GoogleAnalytics gaId="G-LDVMHZZR03" />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
       <body className={`${poppins.className}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

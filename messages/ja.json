@@ -31,11 +31,17 @@
         "skills": "スキル",
         "projects": "プロジェクト",
         "portfolio": "ポートフォリオ",
+        "blog": "ブログ",
         "light": "ライト",
         "dark": "ダーク",
         "system": "システム",
         "toggle": "テーマを切り替える",
         "service": "サービス"
+    },
+    "Blog": {
+        "title": "ブログ",
+        "subtitle": "ウェブ開発に関する記事とヒント。",
+        "empty": "記事はまだありません。"
     },
     "Portfolio": {
         "portfolio": "ポートフォリオ",
