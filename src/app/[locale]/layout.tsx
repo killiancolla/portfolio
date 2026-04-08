@@ -11,10 +11,38 @@ import Footer from "@/components/Footer";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
-export const metadata: Metadata = {
-  title: "Killian Colla - Développeur Web",
-  description: "Je m'appelle Killian et je suis développeur web spécialisé dans les technologies ReactJS, NextJS, NodeJS.",
+const siteUrl = 'https://killian-colla.com';
+
+const titles: Record<string, string> = {
+  fr: "Killian Colla - Développeur Web Freelance",
+  en: "Killian Colla - Freelance Web Developer",
+  ja: "Killian Colla - フリーランスウェブ開発者",
 };
+
+const descriptions: Record<string, string> = {
+  fr: "Je m'appelle Killian, développeur web freelance spécialisé en ReactJS, NextJS et NodeJS. Création de sites modernes, performants et optimisés SEO.",
+  en: "I'm Killian, a freelance web developer specialized in ReactJS, NextJS and NodeJS. I build modern, high-performance and SEO-optimized websites.",
+  ja: "私はKillianです。ReactJS、NextJS、NodeJSを専門とするフリーランスのウェブ開発者です。",
+};
+
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: titles[locale] ?? titles['en'],
+    description: descriptions[locale] ?? descriptions['en'],
+    alternates: {
+      canonical: `${siteUrl}/${locale}`,
+      languages: {
+        'fr': `${siteUrl}/fr`,
+        'en': `${siteUrl}/en`,
+        'ja': `${siteUrl}/ja`,
+      },
+    },
+  };
+}
 
 export default async function LocaleLayout(props: {
   children: React.ReactNode;
