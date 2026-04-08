@@ -20,7 +20,7 @@ export async function generateMetadata(
   const description = t(descKey);
 
   return {
-    title: `${project.title} - Killian Colla`,
+    title: `${project.title} | Portfolio - Killian Colla`,
     description,
     alternates: {
       canonical: `${siteUrl}/${locale}/${projectid}`,

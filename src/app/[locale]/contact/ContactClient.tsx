@@ -114,7 +114,7 @@ export default function ContactClient() {
 
             {/* Colonne droite — formulaire */}
             <form className='max-sm:w-full sm:w-1/2 flex flex-col gap-4 text-left' onSubmit={sendEmail}>
-              <p className='font-bold text-xl text-left'>{t('form_title')}</p>
+              <h2 className='font-bold text-xl text-left'>{t('form_title')}</h2>
 
               {/* Honeypot anti-bot */}
               <input

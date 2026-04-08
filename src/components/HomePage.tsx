@@ -28,10 +28,11 @@ export default function HomePage() {
   const pathName = usePathname();
   const t = useTranslations('HomePage')
 
-  const [visibleText, setVisibleText] = useState("");
+  const [visibleText, setVisibleText] = useState(t('title'));
 
   useEffect(() => {
     let i = 0;
+    setVisibleText("");
     const interval = setInterval(() => {
       setVisibleText(t('title').substring(0, i + 1));
       i++;
@@ -99,6 +100,7 @@ export default function HomePage() {
           <Link
             href="https://github.com/killiancolla"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="GitHub"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
@@ -108,6 +110,7 @@ export default function HomePage() {
           <Link
             href="https://www.linkedin.com/in/killian-colla-46b48b207/"
             target="_blank"
+            rel="noopener noreferrer"
             aria-label="LinkedIn"
             className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
