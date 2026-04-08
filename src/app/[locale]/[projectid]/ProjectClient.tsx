@@ -60,7 +60,7 @@ export default function ProjectClient() {
 
                         <div>
                             <h2 className="text-2xl font-semibold mb-4">{project.title} — Description</h2>
-                            <p className="text-lg leading-relaxed">{t(project.code + '_desc')}</p>
+                            <p className="text-lg leading-relaxed">{t.has(project.code + '_fullDesc') ? t(project.code + '_fullDesc') : t(project.code + '_desc')}</p>
                         </div>
 
                         <div>
