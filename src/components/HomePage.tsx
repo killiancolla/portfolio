@@ -56,7 +56,7 @@ export default function HomePage() {
           <Image
             className="relative w-32 rounded-full aspect-square object-cover object-center border-2 border-primary/40"
             src={"/me.webp"}
-            alt="picture of me"
+            alt="Killian Colla - Freelance Web Developer"
             width={200}
             height={200}
             priority

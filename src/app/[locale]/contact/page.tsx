@@ -20,9 +20,12 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale } = await params;
 
+  const title = titles[locale] ?? titles['en'];
+  const description = descriptions[locale] ?? descriptions['en'];
+
   return {
-    title: titles[locale] ?? titles['en'],
-    description: descriptions[locale] ?? descriptions['en'],
+    title,
+    description,
     alternates: {
       canonical: `${siteUrl}/${locale}/contact`,
       languages: {
@@ -31,6 +34,29 @@ export async function generateMetadata(
         'en': `${siteUrl}/en/contact`,
         'ja': `${siteUrl}/ja/contact`,
       },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${siteUrl}/${locale}/contact`,
+      siteName: 'Killian Colla',
+      images: [
+        {
+          url: `${siteUrl}/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: 'Killian Colla - Freelance Web Developer',
+        },
+      ],
+      locale,
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      creator: '@_killiandev',
+      images: [`${siteUrl}/og-image.png`],
     },
   };
 }

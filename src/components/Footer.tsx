@@ -39,7 +39,7 @@ export default function Footer({ className }: { className?: string }) {
                                 src="/logo.png"
                                 width={40}
                                 height={40}
-                                alt="logo"
+                                alt="Killian Colla logo"
                                 className="w-10 h-10 rounded-sm"
                             />
                             <div>
