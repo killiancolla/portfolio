@@ -25,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     projects.map((project) => ({
       url: `${siteUrl}/${locale}/${project.code}`,
       lastModified: now,
-      changeFrequency: 'yearly' as const,
+      changeFrequency: 'monthly' as const,
       priority: 0.6,
     }))
   );

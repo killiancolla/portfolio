@@ -14,15 +14,15 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 const siteUrl = 'https://www.killian-colla.com';
 
 const titles: Record<string, string> = {
-  fr: "Killian Colla - Développeur Web Freelance",
-  en: "Killian Colla - Freelance Web Developer",
-  ja: "Killian Colla - フリーランスウェブ開発者",
+  fr: "Killian Colla - Développeur Web Freelance | Nice, Alpes-Maritimes (06)",
+  en: "Killian Colla - Freelance Web Developer | Nice, France",
+  ja: "Killian Colla - フリーランスウェブ開発者 | ニース",
 };
 
 const descriptions: Record<string, string> = {
-  fr: "Je m'appelle Killian, développeur web freelance spécialisé en ReactJS, NextJS et NodeJS. Création de sites modernes, performants et optimisés SEO.",
-  en: "I'm Killian, a freelance web developer specialized in ReactJS, NextJS and NodeJS. I build modern, high-performance and SEO-optimized websites.",
-  ja: "私はKillianです。ReactJS、NextJS、NodeJSを専門とするフリーランスのウェブ開発者です。",
+  fr: "Développeur web freelance basé à Nice (06), spécialisé en ReactJS, NextJS et NodeJS. Création de sites vitrine, SaaS et applications web sur mesure pour les Alpes-Maritimes et au-delà.",
+  en: "Freelance web developer based in Nice, France, specialized in ReactJS, NextJS and NodeJS. I build modern, high-performance and SEO-optimized websites.",
+  ja: "フランス・ニース在住のKillianです。ReactJS、NextJS、NodeJSを専門とするフリーランスのウェブ開発者です。",
 };
 
 export async function generateMetadata(
@@ -87,24 +87,48 @@ export default async function LocaleLayout(props: {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
+    "@type": "ProfessionalService",
     "name": "Killian Colla",
-    "jobTitle": jobTitles[locale] ?? jobTitles['en'],
+    "description": descriptions[locale] ?? descriptions['en'],
     "url": `${siteUrl}/${locale}`,
     "image": `${siteUrl}/me.webp`,
-    "sameAs": [
-      "https://github.com/killiancolla",
-      "https://www.linkedin.com/in/killian-colla-46b48b207/",
-      "https://x.com/_killiandev",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nice",
+      "addressRegion": "Alpes-Maritimes",
+      "postalCode": "06000",
+      "addressCountry": "FR",
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.7102,
+      "longitude": 7.2620,
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Nice" },
+      { "@type": "AdministrativeArea", "name": "Alpes-Maritimes" },
+      { "@type": "Country", "name": "France" },
     ],
-    "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "JavaScript"],
-    "offers": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": jobTitles[locale] ?? jobTitles['en'],
-        "description": descriptions[locale] ?? descriptions['en'],
-      },
+    "employee": {
+      "@type": "Person",
+      "name": "Killian Colla",
+      "jobTitle": jobTitles[locale] ?? jobTitles['en'],
+      "image": `${siteUrl}/me.webp`,
+      "sameAs": [
+        "https://github.com/killiancolla",
+        "https://www.linkedin.com/in/killian-colla-46b48b207/",
+        "https://x.com/_killiandev",
+      ],
+      "knowsAbout": ["React", "Next.js", "Node.js", "TypeScript", "JavaScript"],
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": jobTitles[locale] ?? jobTitles['en'],
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": locale === 'fr' ? "Création de site vitrine" : "Showcase Website" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": locale === 'fr' ? "Développement SaaS" : "SaaS Development" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": locale === 'fr' ? "Application web sur mesure" : "Custom Web Application" } },
+      ],
     },
   };
 
