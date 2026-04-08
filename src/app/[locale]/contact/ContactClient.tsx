@@ -81,7 +81,7 @@ export default function ContactClient() {
             {/* Colonne gauche */}
             <div className='max-sm:w-full sm:w-1/2 text-left flex flex-col justify-start gap-8'>
               <div className='flex flex-col gap-3'>
-                <h2 className='font-bold text-3xl'>{t('discuss')}</h2>
+                <h1 className='font-bold text-3xl'>{t('discuss')}</h1>
                 <p className='text-muted-foreground text-sm leading-6'>{t('text')}</p>
                 <div className='flex items-center gap-2 text-sm text-muted-foreground'>
                   <Clock className='w-3.5 h-3.5 text-primary' />

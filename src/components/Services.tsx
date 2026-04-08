@@ -93,7 +93,7 @@ export default function Services() {
                     </div>
                 ))}
             </motion.div>
-            <Link href={'https://cal.com/killian-colla-cahhc2/30min'} target='_blank'>
+            <Link href={'https://cal.com/killian-colla-cahhc2/30min'} target='_blank' rel="noopener noreferrer">
                 <Button className='overflow-hidden relative group'>
                     <div className='flex justify-center items-center group-hover:translate-x-[150%] transition-all'>
                         <Phone className='mr-4' />
