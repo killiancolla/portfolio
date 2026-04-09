@@ -5,6 +5,12 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 const workCards = [
     {
+        code: "qovery",
+        title: 'Qovery',
+        date: '2025 - présent',
+        tags: ['Golang', 'Rust', 'React', 'IA'],
+    },
+    {
         code: "unicancer",
         title: 'Unicancer',
         date: '2022 - 2024',

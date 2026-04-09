@@ -10,15 +10,15 @@ export default function Services() {
 
     const services = [
         {
-            icon: <Cloud className="h-8 w-8 mb-3 text-primary" />,
-            title: t('saas.title'),
-            description: t('saas.description'),
-            featured: true,
-        },
-        {
             icon: <Monitor className="h-8 w-8 mb-3 text-primary" />,
             title: t('showcase.title'),
             description: t('showcase.description'),
+            featured: true,
+        },
+        {
+            icon: <Cloud className="h-8 w-8 mb-3 text-primary" />,
+            title: t('saas.title'),
+            description: t('saas.description'),
         },
         {
             icon: <ShoppingCart className="h-8 w-8 mb-3 text-primary" />,

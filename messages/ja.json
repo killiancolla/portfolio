@@ -49,6 +49,8 @@
         "portfolio_title2": "経験",
         "portfolio_title3": "主な",
         "portfolio_title4": "学歴",
+        "qovery_position": "フルスタック・AIエンジニア",
+        "qovery_description": "QoveryのAI DevOps Copilot（クラウド運用を自動化するAIエージェント）の開発。QoveryのMCPおよびCopilot連携Slackボットの開発。2025年3月にフリーランスとして開始し、2025年10月に正社員として採用。",
         "unicancer_position": "フルスタック開発者",
         "unicancer_description": "PHP/Symfony、JavaScript、SQLを用いて革新的なソリューションを設計および導入する約10名のチームに所属するWebアプリケーション開発プロジェクトマネージャー。",
         "univevry_position": "フルスタック開発者",
@@ -61,8 +63,6 @@
     "Projects": {
         "projects": "プロジェクト",
         "project": "プロジェクト",
-        "pomodoro_desc": "音楽、タイマー、タスク管理、統計機能を備えたポモドーロテクニックアプリ。",
-        "socnet_desc": "関係管理、投稿、コメントなどを備えた架空のソーシャルネットワークのシミュレーション。",
         "wip_status": "作業中",
         "projects_title1": "私の創造的な",
         "projects_title2": "作品",
@@ -76,8 +76,6 @@
         "qovery_fullDesc": "クラウドインフラ管理とデプロイメントを自動化するAI駆動のDevOpsプラットフォーム。リソースのプロビジョニング、アプリデプロイ、パフォーマンス監視、クラウドコスト最適化が可能なインテリジェントAIエージェントを開発。主要クラウドプロバイダーとDevOpsツールと統合。",
         "meetsponsors_fullDesc": "SNSの「For You」フィードにインスパイアされたパーソナライズ推薦アルゴリズムをAIで開発。コンテンツクリエイターと関連スポンサーを効果的に結びつける。プロフィール、オーディエンス、ニッチを分析して最適なマッチングを提案し、パートナーシップの関連性を最大化。",
         "youbotbuster_fullDesc": "YouTube動画の不適切なコメントを自動検出・削除するAI搭載のSaaSツール。YouTube APIとAI分類モデルを統合し、スパム、ボット、不適切なコンテンツをリアルタイムで識別。Stripeによるサブスクリプションとコメント管理ダッシュボードを提供。",
-        "socnet_fullDesc": "関係管理（友達、フォロワー）、投稿、コメント、いいね、アカウント管理を備えた完全なSNSシミュレーション。Next.jsとFirebaseで認証とリアルタイムDBを実装。TailwindCSSのレスポンシブインターフェースを持つフルスタックプロジェクト。",
-        "pomodoro_fullDesc": "ポモドーロテクニックに基づく完全なWeb時間管理アプリ。設定可能なタイマー、タスクリスト、集中用音楽ライブラリ、詳細な生産性統計を搭載。ReactJSとNodeJSで構築され、複数のビジュアルテーマとセッション追跡を提供。",
         "esport-calendar_fullDesc": "eスポーツファンが競技イベントをカレンダー（Google Calendar、iCal、Outlook）に自動同期できるWebアプリ。主要eスポーツリーグのトーナメント、試合、大会をリアルタイムで同期。Next.jsで構築され、複数のソースからデータを集約して自動追跡。",
         "end_status": "完了",
         "created_in": "作成日 "

@@ -36,30 +36,6 @@ export const projects = [
         people: 2
     },
     {
-        code: "socnet",
-        title: 'Social Network',
-        media: [
-            { type: 'image', src: 'social_network.webp', alt: 'Social Network interface' }
-        ],
-        techno: ["NextJS", "FireBase", "TailWind"],
-        date: '2020',
-        status: 'wip_status',
-        people: 1,
-        link: "https://socialnetwork-six.vercel.app/"
-    },
-    {
-        code: 'pomodoro',
-        title: 'Pomodoro',
-        media: [
-            { type: 'image', src: 'pomodoro.webp', alt: 'Pomodoro timer interface' }
-        ],
-        techno: ["ReactJS", "NodeJS"],
-        date: '2020',
-        status: 'wip_status',
-        people: 1,
-        link: "https://pomodoro-seven-lemon.vercel.app/"
-    },
-    {
         code: 'esport-calendar',
         title: 'Esport Calendar',
         media: [
