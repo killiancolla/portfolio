@@ -8,6 +8,7 @@ import NavBar from "@/components/NavBar";
 import { Poppins } from "next/font/google";
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 import Footer from "@/components/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "700"] });
 
@@ -156,6 +157,7 @@ export default async function LocaleLayout(props: {
             </ClientLayout>
           </NextIntlClientProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
