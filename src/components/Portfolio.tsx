@@ -92,7 +92,7 @@ function TimelineCard({
                 viewport={{ once: false, margin: "-100px 0px" }}
                 initial="hidden"
                 whileInView="visible"
-                className="max-sm:w-4/5 relative border border-border hover:border-primary/50 transition-colors p-5 rounded-sm text-left flex flex-col gap-3"
+                className="relative border border-border hover:border-primary/50 transition-colors p-5 rounded-sm text-left flex flex-col gap-3 w-full"
             >
                 {/* Date visible sur mobile uniquement */}
                 <span className="sm:hidden text-xs text-muted-foreground">{date}</span>
@@ -148,10 +148,10 @@ export default function Portfolio() {
 
             {/* Timeline expériences */}
             <div className='relative w-full'>
-                <div className="absolute w-0.5 h-full bg-border max-sm:left-0 sm:left-1/2 -translate-x-1/2 top-0
+                <div className="max-sm:hidden absolute w-0.5 h-full bg-border sm:left-1/2 -translate-x-1/2 top-0
                     before:bg-[#FB6423] before:content-[''] before:w-4 before:h-4 before:absolute before:rounded-full before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:-top-3 before:animate-pulse
                     after:border-2 after:border-[#FB6423] after:content-[''] after:w-7 after:h-7 after:absolute after:rounded-full after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:-top-3" />
-                <div className='max-sm:flex max-sm:gap-4 max-sm:items-center max-sm:flex-col sm:grid sm:grid-cols-2 sm:gap-20'>
+                <div className='max-sm:flex max-sm:gap-4 max-sm:flex-col max-sm:items-center sm:grid sm:grid-cols-2 sm:gap-20'>
                     {workCards.map((card, index) => (
                         <TimelineCard
                             key={card.code}
@@ -174,10 +174,10 @@ export default function Portfolio() {
 
             {/* Timeline formations */}
             <div className='relative w-full'>
-                <div className="absolute w-0.5 h-full bg-border max-sm:left-0 sm:left-1/2 -translate-x-1/2 top-0
+                <div className="max-sm:hidden absolute w-0.5 h-full bg-border sm:left-1/2 -translate-x-1/2 top-0
                     before:bg-[#FB6423] before:content-[''] before:w-4 before:h-4 before:absolute before:rounded-full before:left-1/2 before:-translate-y-1/2 before:-translate-x-1/2 before:-top-3 before:animate-pulse
                     after:border-2 after:border-[#FB6423] after:content-[''] after:w-7 after:h-7 after:absolute after:rounded-full after:left-1/2 after:-translate-x-1/2 after:-translate-y-1/2 after:-top-3" />
-                <div className='max-sm:flex max-sm:gap-4 max-sm:items-center max-sm:flex-col sm:grid sm:grid-cols-2 sm:gap-20'>
+                <div className='max-sm:flex max-sm:gap-4 max-sm:flex-col max-sm:items-center sm:grid sm:grid-cols-2 sm:gap-20'>
                     {educationCards.map((card, index) => (
                         <TimelineCard
                             key={card.code}

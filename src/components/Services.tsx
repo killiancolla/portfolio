@@ -4,9 +4,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/
 import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Services() {
     const t = useTranslations('Services');
+    const pathName = usePathname();
+    const locale = pathName.split('/')[1] || 'fr';
 
     const services = [
         {
@@ -93,7 +96,7 @@ export default function Services() {
                     </div>
                 ))}
             </motion.div>
-            <Link href={'https://cal.com/killian-colla-cahhc2/30min'} target='_blank' rel="noopener noreferrer">
+            <Link href={`/${locale}/booking`}>
                 <Button className='overflow-hidden relative group'>
                     <div className='flex justify-center items-center group-hover:translate-x-[150%] transition-all'>
                         <Phone className='mr-4' />

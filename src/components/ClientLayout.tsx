@@ -15,7 +15,7 @@ const ClientLayout: React.FC<ClientLayoutProps> = ({ children }) => {
     const t = useTranslations("Contact");
 
     return (
-        <div>
+        <div className="pt-14 md:pt-0">
             <Link className="hidden sm:block fixed top-4 right-4 z-50" href={`/${pathName.split('/')[1]}/contact`}>
                 <Button variant={'secondary'}>{t('contact-button')}</Button>
             </Link>
