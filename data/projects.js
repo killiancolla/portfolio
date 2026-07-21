@@ -36,6 +36,19 @@ export const projects = [
         people: 2
     },
     {
+        code: 'justdubaiconciergerie',
+        title: 'Just Dubai Conciergerie',
+        media: [
+            { type: 'image', src: 'justdubaiconciergerie.webp', alt: 'Just Dubai Conciergerie website' },
+            { type: 'video', src: 'https://www.youtube.com/embed/UlJpLZU-fFg', alt: 'Just Dubai Conciergerie demo' }
+        ],
+        techno: ["NextJS", "Sanity"],
+        date: '2025',
+        status: 'end_status',
+        people: 1,
+        link: "https://www.justdubaiconciergerie.com/fr"
+    },
+    {
         code: 'esport-calendar',
         title: 'Esport Calendar',
         media: [

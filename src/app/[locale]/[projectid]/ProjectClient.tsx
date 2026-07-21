@@ -6,7 +6,36 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ExternalLink, Calendar, Users } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, PlayCircle } from 'lucide-react';
+import { useState } from 'react';
+
+function YouTubeFacade({ src, title }: { src: string; title: string }) {
+    const [playing, setPlaying] = useState(false);
+    const videoId = src.split('/embed/')[1]?.split('?')[0] ?? src.split('youtu.be/')[1];
+    const thumbnail = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+
+    if (playing) {
+        return (
+            <iframe
+                className="w-full aspect-video"
+                src={`${src}?autoplay=1`}
+                title={title}
+                style={{ border: 0 }}
+                allow="autoplay; fullscreen"
+                allowFullScreen
+            />
+        );
+    }
+
+    return (
+        <div className="relative w-full aspect-video cursor-pointer group" onClick={() => setPlaying(true)}>
+            <Image src={thumbnail} alt={title} fill className="object-cover" />
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+                <PlayCircle className="w-16 h-16 text-white drop-shadow-lg" />
+            </div>
+        </div>
+    );
+}
 
 export default function ProjectClient() {
     const { projectid } = useParams();
@@ -97,13 +126,7 @@ export default function ProjectClient() {
                                     <div key={index} className="rounded-lg overflow-hidden shadow-lg">
                                         {media.type === 'video' ? (
                                             media.src.includes('youtube.com') || media.src.includes('youtu.be') ? (
-                                                <iframe
-                                                    className="w-full aspect-video"
-                                                    src={media.src}
-                                                    title={media.alt}
-                                                    style={{ border: 0 }}
-                                                    allowFullScreen
-                                                />
+                                                <YouTubeFacade src={media.src} title={media.alt} />
                                             ) : (
                                                 <video
                                                     className="w-full aspect-video object-cover"
@@ -111,7 +134,7 @@ export default function ProjectClient() {
                                                     muted
                                                     playsInline
                                                 >
-                                                    <source src={`/${media.src}`} type="video/mp4" />
+                                                    <source src={`/${media.src}`} type={media.src.endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
                                                     Votre navigateur ne supporte pas la balise vidéo.
                                                 </video>
                                             )

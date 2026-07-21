@@ -51,7 +51,7 @@ export default function Projects() {
                                                     muted
                                                     playsInline
                                                 >
-                                                    <source src={`/${project.media[0].src}`} type="video/mp4" />
+                                                    <source src={`/${project.media[0].src}`} type={project.media[0].src.endsWith('.mov') ? 'video/quicktime' : 'video/mp4'} />
                                                 </video>
                                             )
                                         ) : (

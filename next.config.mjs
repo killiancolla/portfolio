@@ -23,7 +23,7 @@ const nextConfig = {
                             `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''} https://www.googletagmanager.com https://challenges.cloudflare.com https://app.cal.com`,
                             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://app.cal.com",
                             "font-src 'self' https://fonts.gstatic.com",
-                            "img-src 'self' data: blob: https://cdn.simpleicons.org https://static.vecteezy.com https://cal.com https://app.cal.com",
+                            "img-src 'self' data: blob: https://cdn.simpleicons.org https://static.vecteezy.com https://cal.com https://app.cal.com https://img.youtube.com",
                             "frame-src https://challenges.cloudflare.com https://www.youtube.com https://cal.com https://app.cal.com",
                             "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://api.cal.com https://app.cal.com",
                         ].join('; '),
@@ -41,6 +41,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'static.vecteezy.com'
+            },
+            {
+                protocol: 'https',
+                hostname: 'img.youtube.com'
             }
         ],
         dangerouslyAllowSVG: true,
