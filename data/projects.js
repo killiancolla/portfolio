@@ -36,6 +36,18 @@ export const projects = [
         people: 2
     },
     {
+        code: 'lecourrierdesterritoires',
+        title: 'Le Courrier des Territoires',
+        media: [
+            { type: 'image', src: 'lecourrierdesterritoires.webp', alt: 'Le Courrier des Territoires website' }
+        ],
+        techno: ["NextJS", "Neon", "Resend"],
+        date: '2025',
+        status: 'end_status',
+        people: 1,
+        link: "https://www.lecourrierdesterritoires.net/"
+    },
+    {
         code: 'justdubaiconciergerie',
         title: 'Just Dubai Conciergerie',
         media: [

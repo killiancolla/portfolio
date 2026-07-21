@@ -72,6 +72,8 @@
         "youbotbuster_desc": "YouTube動画の不適切なコメントを自動で削除するためのAIを活用したSaaSツール。",
         "meetsponsors_desc": "コンテンツクリエイターとスポンサーを効果的に結びつけるAI搭載の「For You」アルゴリズムを開発。",
         "qovery_desc": "インフラ管理とデプロイメントを自動化するAI駆動のDevOpsプラットフォーム。プロビジョニング、デプロイ、監視、セキュリティ、クラウドコスト最適化のためのインテリジェントAIエージェントの開発。",
+        "lecourrierdesterritoires_desc": "地域の団体と自治体とともに地域生活を発信するオンラインメディア。イベント掲載、ニュースレター登録、地域の取り組みを紹介。",
+        "lecourrierdesterritoires_fullDesc": "地域の団体活動、自治体、市民に特化した独立系メディア「Le Courrier des Territoires」の開発。団体がイベントやニュースを投稿し、自治体が地域の活動を発信し、読者が地域のニュースレターを購読できるプラットフォーム。フロントエンドにNext.js、データベースにNeon（サーバーレスPostgreSQL）、メール配信にResendを採用。",
         "justdubaiconciergerie_desc": "ドバイのコンシェルジュ向けショーケースサイト。プレミアムレンタカーとヨットの車両を紹介し、顧客とプロバイダーをつなぐ。",
         "justdubaiconciergerie_fullDesc": "Next.jsとSanityで構築されたJust Dubai Conciegergerieのサイト。ドバイで高級レンタカーとヨットサービスを専門とするエージェンシー。利用可能な車両と船舶を紹介し、顧客が予約のためにコンシェルジュに問い合わせられる。Sanityのバックオフィスでチームがカタログとコンテンツを自律的に管理可能。",
         "esport-calendar_desc": "eスポーツイベントをカレンダーに自動的に追加するアプリケーション。大会やトーナメントの自動同期機能。",
