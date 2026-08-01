@@ -92,7 +92,7 @@ export default async function CreationSiteVitrineNicePage(
         <div className="prose-blog">
           {isFr ? (
             <>
-              <h2>Pourquoi un site vitrine est indispensable à Nice en 2025</h2>
+              <h2>Pourquoi un site vitrine est indispensable à Nice en 2026</h2>
               <p>
                 La région Alpes-Maritimes concentre des milliers de TPE, artisans et
                 indépendants — restaurateurs sur la Promenade des Anglais, artisans à Vence,
