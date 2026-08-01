@@ -17,31 +17,37 @@ export default function Services() {
             title: t('showcase.title'),
             description: t('showcase.description'),
             featured: true,
+            href: `/${locale}/creation-site-vitrine-nice`,
         },
         {
             icon: <Cloud className="h-8 w-8 mb-3 text-primary" />,
             title: t('saas.title'),
             description: t('saas.description'),
+            href: `/${locale}/developpement-saas`,
         },
         {
             icon: <ShoppingCart className="h-8 w-8 mb-3 text-primary" />,
             title: t('ecommerce.title'),
             description: t('ecommerce.description'),
+            href: `/${locale}/site-e-commerce-nice`,
         },
         {
             icon: <Code className="h-8 w-8 mb-3 text-primary" />,
             title: t('customapps.title'),
             description: t('customapps.description'),
+            href: `/${locale}/application-web-sur-mesure`,
         },
         {
             icon: <Settings className="h-8 w-8 mb-3 text-primary" />,
             title: t('optimization.title'),
             description: t('optimization.description'),
+            href: `/${locale}/refonte-optimisation-site-web`,
         },
         {
             icon: <MessageCircle className="h-8 w-8 mb-3 text-primary" />,
             title: t('consulting.title'),
             description: t('consulting.description'),
+            href: `/${locale}/conseil-accompagnement-digital`,
         },
     ];
 
@@ -69,9 +75,10 @@ export default function Services() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full"
             >
                 {services.map((service, index) => (
-                    <div
+                    <Link
                         key={index}
-                        className={`rounded-md transition-all duration-300 border ${
+                        href={service.href}
+                        className={`rounded-md transition-all duration-300 border block ${
                             service.featured
                                 ? 'border-primary/50 shadow-[0_0_20px_-5px] shadow-primary/20'
                                 : 'border-transparent hover:border-primary/60'
@@ -93,7 +100,7 @@ export default function Services() {
                                 <CardDescription className="text-center text-sm leading-6">{service.description}</CardDescription>
                             </CardContent>
                         </Card>
-                    </div>
+                    </Link>
                 ))}
             </motion.div>
             <Link href={`/${locale}/booking`}>

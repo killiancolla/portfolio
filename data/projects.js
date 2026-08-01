@@ -10,7 +10,8 @@ export const projects = [
         date: '2024',
         status: 'end_status',
         people: 2,
-        link: "https://www.qovery.com/ai-devops-copilot"
+        link: "https://www.qovery.com/ai-devops-copilot",
+        serviceSlug: 'application-web-sur-mesure',
     },
     {
         code: 'meetsponsors',
@@ -21,7 +22,8 @@ export const projects = [
         techno: ["IA", "Python"],
         date: '2024',
         status: 'end_status',
-        people: 1
+        people: 1,
+        serviceSlug: 'developpement-saas',
     },
     {
         code: "youbotbuster",
@@ -33,7 +35,8 @@ export const projects = [
         techno: ["SaaS", "IA", "YouTube API", "Stripe API"],
         date: '2024',
         status: 'end_status',
-        people: 2
+        people: 2,
+        serviceSlug: 'developpement-saas',
     },
     {
         code: 'lecourrierdesterritoires',
@@ -45,7 +48,8 @@ export const projects = [
         date: '2025',
         status: 'end_status',
         people: 1,
-        link: "https://www.lecourrierdesterritoires.net/"
+        link: "https://www.lecourrierdesterritoires.net/",
+        serviceSlug: 'creation-site-vitrine-nice',
     },
     {
         code: 'justdubaiconciergerie',
@@ -58,7 +62,8 @@ export const projects = [
         date: '2025',
         status: 'end_status',
         people: 1,
-        link: "https://www.justdubaiconciergerie.com/fr"
+        link: "https://www.justdubaiconciergerie.com/fr",
+        serviceSlug: 'creation-site-vitrine-nice',
     },
     {
         code: 'esport-calendar',
@@ -71,6 +76,7 @@ export const projects = [
         date: '2026',
         status: 'end_status',
         people: 1,
-        link: "https://esport-calendar.com"
+        link: "https://esport-calendar.com",
+        serviceSlug: 'application-web-sur-mesure',
     }
 ];

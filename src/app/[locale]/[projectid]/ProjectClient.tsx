@@ -6,7 +6,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, ExternalLink, Calendar, Users, PlayCircle } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Calendar, Users, PlayCircle, Wrench } from 'lucide-react';
 import { useState } from 'react';
 
 function YouTubeFacade({ src, title }: { src: string; title: string }) {
@@ -38,7 +38,7 @@ function YouTubeFacade({ src, title }: { src: string; title: string }) {
 }
 
 export default function ProjectClient() {
-    const { projectid } = useParams();
+    const { projectid, locale } = useParams() as { projectid: string; locale: string };
     const t = useTranslations('Projects');
 
     const project = projects.find(p => p.code === projectid);
@@ -113,6 +113,18 @@ export default function ProjectClient() {
                                     <Button>
                                         <ExternalLink className="mr-2 h-4 w-4" />
                                         Voir le projet
+                                    </Button>
+                                </Link>
+                            </div>
+                        )}
+
+                        {project.serviceSlug && (
+                            <div>
+                                <h2 className="text-2xl font-semibold mb-4">Service associé</h2>
+                                <Link href={`/${locale}/${project.serviceSlug}`}>
+                                    <Button variant="outline">
+                                        <Wrench className="mr-2 h-4 w-4" />
+                                        En savoir plus sur ce service
                                     </Button>
                                 </Link>
                             </div>

@@ -5,6 +5,15 @@ import { getBlogPosts } from '../lib/blog';
 const siteUrl = 'https://www.killian-colla.com';
 const locales = ['fr', 'en', 'ja'];
 
+const serviceSlugs = [
+  'creation-site-vitrine-nice',
+  'developpement-saas',
+  'site-e-commerce-nice',
+  'application-web-sur-mesure',
+  'refonte-optimisation-site-web',
+  'conseil-accompagnement-digital',
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
@@ -47,5 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...homePages, ...contactPages, ...projectPages, ...blogListingPages, ...blogPostPages];
+  const servicePages = locales.flatMap((locale) =>
+    serviceSlugs.map((slug) => ({
+      url: `${siteUrl}/${locale}/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: locale === 'fr' ? 0.9 : 0.7,
+    }))
+  );
+
+  return [...homePages, ...servicePages, ...contactPages, ...projectPages, ...blogListingPages, ...blogPostPages];
 }
