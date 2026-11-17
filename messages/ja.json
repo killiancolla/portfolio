@@ -23,7 +23,9 @@
         "tagline": "モダンで高性能なウェブサイトを構築します。",
         "nav_title": "ナビゲーション",
         "social_title": "ソーシャル",
-        "rights": "全著作権所有。"
+        "rights": "全著作権所有。",
+        "legal": "法的通知",
+        "privacy": "プライバシーポリシー"
     },
     "NavBar": {
         "home": "ホーム",

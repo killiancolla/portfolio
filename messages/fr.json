@@ -53,7 +53,9 @@
         "tagline": "Création de sites web modernes et performants.",
         "nav_title": "Navigation",
         "social_title": "Réseaux sociaux",
-        "rights": "Tous droits réservés."
+        "rights": "Tous droits réservés.",
+        "legal": "Mentions légales",
+        "privacy": "Politique de confidentialité"
     },
     "NavBar": {
         "home": "Accueil",

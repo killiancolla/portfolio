@@ -23,7 +23,9 @@
         "tagline": "Building modern, high-performance websites.",
         "nav_title": "Navigation",
         "social_title": "Social",
-        "rights": "All rights reserved."
+        "rights": "All rights reserved.",
+        "legal": "Legal Notice",
+        "privacy": "Privacy Policy"
     },
     "NavBar": {
         "home": "Home",

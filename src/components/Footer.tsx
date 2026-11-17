@@ -97,13 +97,18 @@ export default function Footer({ className }: { className?: string }) {
             </div>
 
             <div className="border-t border-border">
-                <div className="max-w-screen-2xl mx-auto px-8 py-4 flex justify-between items-center max-sm:flex-col max-sm:gap-1 max-sm:text-center">
+                <div className="max-w-screen-2xl mx-auto px-8 py-4 flex justify-between items-center max-sm:flex-col max-sm:gap-2 max-sm:text-center">
                     <p className="text-xs text-muted-foreground">
                         © {new Date().getFullYear()} Killian Colla — {t('rights')}
                     </p>
-                    <p className="text-xs text-muted-foreground">
-                        Built with Next.js & Tailwind CSS
-                    </p>
+                    <div className="flex items-center gap-4">
+                        <Link href={`/${locale}/mentions-legales`} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                            {t('legal')}
+                        </Link>
+                        <Link href={`/${locale}/politique-de-confidentialite`} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                            {t('privacy')}
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>
