@@ -83,7 +83,7 @@ export default async function MentionsLegalesPage(
                 <li><strong>SIRET (siège) :</strong> 931 385 421 00025</li>
                 <li><strong>N° TVA intracommunautaire :</strong> FR77931385421</li>
                 <li><strong>Code APE :</strong> 62.01Z — Programmation informatique</li>
-                <li><strong>Adresse :</strong> 31 rue de la Villette, 06200 Nice, France</li>
+                <li><strong>Adresse :</strong> 31 rue fontaine de la ville, 06200 Nice, France</li>
                 <li><strong>Téléphone :</strong> +33 6 95 04 11 66</li>
                 <li><strong>Email :</strong> contact@killian-colla.com</li>
                 <li><strong>Directeur de la publication :</strong> Killian Colla</li>
@@ -148,7 +148,7 @@ export default async function MentionsLegalesPage(
                 <li><strong>SIRET (head office):</strong> 931 385 421 00025</li>
                 <li><strong>VAT number:</strong> FR77931385421</li>
                 <li><strong>APE code:</strong> 62.01Z — Computer programming</li>
-                <li><strong>Address:</strong> 31 rue de la Villette, 06200 Nice, France</li>
+                <li><strong>Address:</strong> 31 rue fontaine de la ville, 06200 Nice, France</li>
                 <li><strong>Phone:</strong> +33 6 95 04 11 66</li>
                 <li><strong>Email:</strong> contact@killian-colla.com</li>
                 <li><strong>Publication Director:</strong> Killian Colla</li>
