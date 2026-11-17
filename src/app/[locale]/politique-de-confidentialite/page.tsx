@@ -79,7 +79,7 @@ export default async function PolitiqueConfidentialitePage(
               <ul>
                 <li><strong>Killian Colla</strong> — Entrepreneur individuel (micro-entreprise)</li>
                 <li><strong>SIRET :</strong> 931 385 421 00025</li>
-                <li><strong>Adresse :</strong> 31 rue de la Villette, 06200 Nice, France</li>
+                <li><strong>Adresse :</strong> 31 rue fontaine de la ville, 06200 Nice, France</li>
                 <li><strong>Email :</strong> contact@killian-colla.com</li>
               </ul>
 
@@ -197,7 +197,7 @@ export default async function PolitiqueConfidentialitePage(
               <ul>
                 <li><strong>Killian Colla</strong> — Sole trader (micro-entreprise)</li>
                 <li><strong>SIRET:</strong> 931 385 421 00025</li>
-                <li><strong>Address:</strong> 31 rue de la Villette, 06200 Nice, France</li>
+                <li><strong>Address:</strong> 31 rue fontaine de la ville, 06200 Nice, France</li>
                 <li><strong>Email:</strong> contact@killian-colla.com</li>
               </ul>
 
